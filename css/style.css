@@ -245,6 +245,7 @@ footer.site .flogo img{height:22px}
   .mbar .wa{background:var(--wa);color:#fff}
   .mbar .call{background:var(--navy);color:#fff}
   .mbar .form{background:var(--gold-soft);color:#7a5a08}
+  footer.site{padding-bottom:calc(120px + env(safe-area-inset-bottom))}
   .press img{height:26px}
   .press img.tall{height:40px}
   .press{gap:22px 30px}
@@ -418,3 +419,36 @@ nav.main a{white-space:nowrap}
   nav.main a[aria-current]{box-shadow:none;color:var(--navy)}
   nav.main .btn{margin-top:14px;justify-content:center;border:0}
 }
+/* Podcasts and social */
+.watch h2{margin-bottom:8px}
+.watch .lead{margin-bottom:22px}
+.pchips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.pchips button{border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;padding:8px 16px;font:700 14px Lato,sans-serif;cursor:pointer}
+.pchips button.on{background:var(--navy);color:#fff}
+.pchips button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.ytg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.pod{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(11,29,118,.08);display:flex;flex-direction:column;min-width:0}
+.pod-hit{appearance:none;border:0;padding:0;margin:0;background:none;cursor:pointer;display:block;width:100%;font:inherit;text-align:left}
+.pod-hit:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+.yt-th{display:block;aspect-ratio:16/9;background:#0B1D76 center/cover no-repeat;position:relative}
+.yt-play{position:absolute;inset:0;margin:auto;width:56px;height:56px;border-radius:50%;background:rgba(214,159,26,.95)}
+.yt-play::before{content:"";position:absolute;left:22px;top:18px;border-style:solid;border-width:10px 0 10px 16px;border-color:transparent transparent transparent #fff}
+.pod iframe{width:100%;aspect-ratio:16/9;border:0;display:block;background:#000}
+.pod p{margin:0}
+.pod-show{font-style:normal;color:var(--gold);font-weight:900;font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:12px 14px 0}
+.pod-title{margin-top:4px;padding:0 14px;color:var(--navy);font-size:15px;font-weight:700;line-height:1.35}
+.pod-date{padding:6px 14px 14px;color:#777;font-size:13px}
+.pod-empty{grid-column:1/-1;margin:0;color:var(--muted)}
+.seeall{display:flex;flex-wrap:wrap;gap:12px 22px;margin:18px 0 0}
+.seeall a{color:var(--navy);font-weight:700}
+.watch-follow{margin-top:48px}
+.tt-wrap{background:#fff;border-radius:16px;border-top:4px solid var(--gold);box-shadow:0 4px 16px rgba(11,29,118,.08);padding:16px;display:flex;justify-content:center;min-height:180px}
+.tt-wrap[hidden]{display:none}
+.tiktok-embed{max-width:780px;min-width:288px;margin:0}
+.igsoon{color:#777;font-size:13px;margin:14px 0 0}
+.follow{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.follow a{padding:10px 18px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:700}
+.follow a.g{background:var(--gold)}
+.follow a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.follow a.g:focus-visible{outline-color:var(--navy)}
+@media(max-width:800px){.ytg{grid-template-columns:1fr}}
