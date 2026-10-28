@@ -106,6 +106,25 @@ nav.main .btn{padding:10px 18px;font-size:15px;color:#fff}
 .quote.big blockquote{color:#fff;font-size:clamp(20px,2.2vw,26px);font-weight:700;line-height:1.4}
 .quote.big figcaption{color:#c9d0f5;border-color:rgba(255,255,255,.18)}
 .quote.big figcaption b{color:#fff}
+.t-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 22px}
+.t-chip{font:inherit;font-weight:700;font-size:14.5px;color:var(--navy);background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;line-height:1.2}
+.t-chip:hover{border-color:var(--gold)}
+.t-chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.t-who{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.t-who img{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:center 18%;flex:none;background:#e7eaf2}
+.t-who b{color:var(--navy);font-size:15px;line-height:1.2}
+.t-duo{display:flex;flex:none}
+.t-duo img+img{margin-left:-12px;box-shadow:0 0 0 2px #fff}
+.quote.is-out{display:none}
+.quote.soon{background:var(--gold-soft);border-color:transparent}
+.quote.soon p{margin:0;color:var(--navy-ink);flex:1}
+.quote.soon .btn{align-self:flex-start;margin-top:16px}
+.t-pg{text-align:center;margin:22px 0 0;font-size:15px;color:var(--muted)}
+.t-pg a{font-weight:700;color:var(--navy)}
+@media (max-width:600px){
+  .t-chip{font-size:14px;padding:8px 12px}
+  .t-who img{width:40px;height:40px}
+}
 
 /* media / social */
 .social-band{display:grid;grid-template-columns:1fr 1fr;gap:22px}
