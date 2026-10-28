@@ -1,0 +1,102 @@
+{
+ "example": true,
+ "generated": "2026-10-05T12:22:42+08:00",
+ "transactions": [
+  {
+   "agent": "louis-tay",
+   "project": "Example HDB Block F",
+   "district": "D20",
+   "property_type": "HDB",
+   "transaction_type": "Sale",
+   "month": "2026-02",
+   "represented": "seller",
+   "price": null,
+   "photo": null,
+   "notes": "Placeholder row for layout only"
+  },
+  {
+   "agent": "jackie-mang",
+   "project": "Example Condo A",
+   "district": "D10",
+   "property_type": "Condo",
+   "transaction_type": "Sale",
+   "month": "2025-11",
+   "represented": "seller",
+   "price": null,
+   "photo": null,
+   "notes": "Placeholder row for layout only"
+  },
+  {
+   "agent": "jason-ang",
+   "project": "Example Condo B",
+   "district": "D15",
+   "property_type": "Condo",
+   "transaction_type": "Rental",
+   "month": "2025-09",
+   "represented": "landlord",
+   "price": null,
+   "photo": null,
+   "notes": "Placeholder row for layout only"
+  },
+  {
+   "agent": "louis-tay",
+   "project": "Example HDB Block G",
+   "district": "D22",
+   "property_type": "HDB",
+   "transaction_type": "Sale",
+   "month": "2025-08",
+   "represented": "buyer",
+   "price": null,
+   "photo": null,
+   "notes": "Placeholder row for layout only"
+  },
+  {
+   "agent": "benny-poh",
+   "project": "Example Landed Street C",
+   "district": "D15",
+   "property_type": "Landed",
+   "transaction_type": "Sale",
+   "month": "2025-06",
+   "represented": "buyer",
+   "price": null,
+   "photo": null,
+   "notes": "Placeholder row for layout only"
+  },
+  {
+   "agent": "brent-wang",
+   "project": "Example Shophouse H",
+   "district": "D3",
+   "property_type": "Commercial",
+   "transaction_type": "Rental",
+   "month": "2025-05",
+   "represented": "tenant",
+   "price": null,
+   "photo": null,
+   "notes": "Placeholder row for layout only"
+  },
+  {
+   "agent": "phoebe-goh",
+   "project": "Example Condo E",
+   "district": "D19",
+   "property_type": "Condo",
+   "transaction_type": "Sale",
+   "month": "2025-03",
+   "represented": "buyer",
+   "price": null,
+   "photo": null,
+   "notes": "Placeholder row for layout only"
+  },
+  {
+   "agent": "chantel-teo",
+   "project": "Example Walk-up Apartment D",
+   "district": "D2",
+   "property_type": "Condo",
+   "transaction_type": "Sale",
+   "month": "2024-12",
+   "represented": "seller",
+   "price": null,
+   "photo": null,
+   "notes": "Placeholder row for layout only"
+  }
+ ]
+}
