@@ -1,9 +1,18 @@
 {
- "last_updated": "2026-10-28T17:07:41+00:00",
+ "last_updated": "2026-10-28T17:32:09+00:00",
  "source": "CEA via data.gov.sg dataset d_ee7e46d3c57f7865790704632b0aef71",
  "agents": {
   "Louis Tay": {
    "total": 488,
+   "since_2017": 488,
+   "last_12_months": 20,
+   "last_12_months_from": "2025-11",
+   "last_12_months_to": "2026-10",
+   "focus": {
+    "kind": "town",
+    "name": "BUKIT MERAH",
+    "count": 71
+   },
    "by_property_type": {
     "HDB": 404,
     "CONDOMINIUM_APARTMENTS": 83,
@@ -37,6 +46,15 @@
   },
   "Jackie Mang": {
    "total": 178,
+   "since_2017": 178,
+   "last_12_months": 18,
+   "last_12_months_from": "2025-11",
+   "last_12_months_to": "2026-10",
+   "focus": {
+    "kind": "district",
+    "name": "09",
+    "count": 57
+   },
    "by_property_type": {
     "CONDOMINIUM_APARTMENTS": 157,
     "HDB": 19,
@@ -72,6 +90,15 @@
   },
   "Benny Poh": {
    "total": 159,
+   "since_2017": 159,
+   "last_12_months": 18,
+   "last_12_months_from": "2025-11",
+   "last_12_months_to": "2026-10",
+   "focus": {
+    "kind": "district",
+    "name": "09",
+    "count": 26
+   },
    "by_property_type": {
     "CONDOMINIUM_APARTMENTS": 136,
     "HDB": 22,
@@ -105,6 +132,15 @@
   },
   "Chantel Teo": {
    "total": 98,
+   "since_2017": 98,
+   "last_12_months": 6,
+   "last_12_months_from": "2025-11",
+   "last_12_months_to": "2026-10",
+   "focus": {
+    "kind": "district",
+    "name": "12",
+    "count": 15
+   },
    "by_property_type": {
     "CONDOMINIUM_APARTMENTS": 74,
     "HDB": 19,
@@ -138,6 +174,15 @@
   },
   "Phoebe Goh": {
    "total": 30,
+   "since_2017": 30,
+   "last_12_months": 8,
+   "last_12_months_from": "2025-11",
+   "last_12_months_to": "2026-10",
+   "focus": {
+    "kind": "district",
+    "name": "19",
+    "count": 4
+   },
    "by_property_type": {
     "HDB": 15,
     "CONDOMINIUM_APARTMENTS": 15
@@ -170,6 +215,15 @@
   },
   "Brent Wang": {
    "total": 130,
+   "since_2017": 130,
+   "last_12_months": 19,
+   "last_12_months_from": "2025-11",
+   "last_12_months_to": "2026-10",
+   "focus": {
+    "kind": "district",
+    "name": "18",
+    "count": 92
+   },
    "by_property_type": {
     "CONDOMINIUM_APARTMENTS": 117,
     "HDB": 10,
@@ -203,6 +257,15 @@
   },
   "Jason Ang": {
    "total": 360,
+   "since_2017": 360,
+   "last_12_months": 41,
+   "last_12_months_from": "2025-11",
+   "last_12_months_to": "2026-10",
+   "focus": {
+    "kind": "district",
+    "name": "15",
+    "count": 199
+   },
    "by_property_type": {
     "CONDOMINIUM_APARTMENTS": 310,
     "HDB": 40,
@@ -239,6 +302,15 @@
  },
  "team": {
   "total": 1443,
+  "since_2017": 1443,
+  "last_12_months": 130,
+  "last_12_months_from": "2025-11",
+  "last_12_months_to": "2026-10",
+  "focus": {
+   "kind": "district",
+   "name": "15",
+   "count": 243
+  },
   "by_property_type": {
    "CONDOMINIUM_APARTMENTS": 892,
    "HDB": 529,

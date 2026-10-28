@@ -24,10 +24,33 @@ def fetch(reg):
         if off >= r["total"]: return out
         time.sleep(2)
 def ym(s): return datetime.datetime.strptime(s.title(), "%b-%Y")
+def month_floor(dt): return datetime.datetime(dt.year, dt.month, 1)
+def add_months(dt, n):
+    m = dt.year * 12 + (dt.month - 1) + n
+    return datetime.datetime(m // 12, m % 12 + 1, 1)
+# Last 12 calendar months, including the month the script runs.
+WIN_END = month_floor(datetime.datetime.now(datetime.timezone.utc))
+WIN_START = add_months(WIN_END, -11)
+def focus_of(recs):
+    C = collections.Counter
+    towns = C(r["town"] for r in recs if r.get("town") not in ("-", "", None))
+    dists = C(r["district"] for r in recs if r.get("district") not in ("-", "", None))
+    town, dist = towns.most_common(1), dists.most_common(1)
+    # The single town or district value with the most records. Equal counts prefer the town.
+    if town and (not dist or town[0][1] >= dist[0][1]):
+        return {"kind": "town", "name": town[0][0], "count": town[0][1]}
+    if dist:
+        return {"kind": "district", "name": dist[0][0], "count": dist[0][1]}
+    return None
 def summ(recs):
     C = collections.Counter
     ds = [ym(r["transaction_date"]) for r in recs]
     return {"total": len(recs),
+      "since_2017": sum(d.year >= 2017 for d in ds),
+      "last_12_months": sum(WIN_START <= d <= WIN_END for d in ds),
+      "last_12_months_from": WIN_START.strftime("%Y-%m"),
+      "last_12_months_to": WIN_END.strftime("%Y-%m"),
+      "focus": focus_of(recs),
       "by_property_type": dict(C(r["property_type"] for r in recs).most_common()),
       "by_transaction_type": dict(C(r["transaction_type"] for r in recs).most_common()),
       "top_towns": dict(C(r["town"] for r in recs if r["town"] not in ("-", "")).most_common(6)),
@@ -45,5 +68,5 @@ with open(OUT, "w") as f:
       "team": dict(summ(team), included=[n for n, (_, i) in AGENTS.items() if i],
         note="Simple sum; two team agents on the same deal would be counted twice (records carry no deal ID).")},
       f, indent=1)
-print(json.dumps({n: (v["total"], v["first"], v["last"]) for n, v in res.items()}))
+print(json.dumps({n: (v["total"], v["since_2017"], v["last_12_months"], v.get("focus")) for n, v in res.items()}))
 print("wrote", OUT)
