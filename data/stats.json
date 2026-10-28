@@ -1,0 +1,356 @@
+{
+ "last_updated": "2026-10-28T17:32:09+00:00",
+ "source": "CEA via data.gov.sg dataset d_ee7e46d3c57f7865790704632b0aef71",
+ "agents": {
+  "Louis Tay": {
+   "total": 488,
+   "since_2017": 488,
+   "last_12_months": 20,
+   "last_12_months_from": "2025-11",
+   "last_12_months_to": "2026-10",
+   "focus": {
+    "kind": "town",
+    "name": "BUKIT MERAH",
+    "count": 71
+   },
+   "by_property_type": {
+    "HDB": 404,
+    "CONDOMINIUM_APARTMENTS": 83,
+    "LANDED": 1
+   },
+   "by_transaction_type": {
+    "RESALE": 407,
+    "WHOLE RENTAL": 79,
+    "ROOM RENTAL": 2
+   },
+   "top_towns": {
+    "BUKIT MERAH": 71,
+    "QUEENSTOWN": 46,
+    "KALLANG/WHAMPOA": 42,
+    "TOA PAYOH": 42,
+    "CLEMENTI": 35,
+    "GEYLANG": 32
+   },
+   "top_districts": {
+    "09": 18,
+    "10": 8,
+    "03": 8,
+    "12": 7,
+    "27": 6,
+    "13": 6
+   },
+   "first": "2017-05",
+   "last": "2026-09",
+   "reg_no": "R000567G",
+   "included_in_team": true
+  },
+  "Jackie Mang": {
+   "total": 178,
+   "since_2017": 178,
+   "last_12_months": 18,
+   "last_12_months_from": "2025-11",
+   "last_12_months_to": "2026-10",
+   "focus": {
+    "kind": "district",
+    "name": "09",
+    "count": 57
+   },
+   "by_property_type": {
+    "CONDOMINIUM_APARTMENTS": 157,
+    "HDB": 19,
+    "EXECUTIVE_CONDOMINIUM": 1,
+    "LANDED": 1
+   },
+   "by_transaction_type": {
+    "WHOLE RENTAL": 120,
+    "RESALE": 53,
+    "NEW SALE": 4,
+    "ROOM RENTAL": 1
+   },
+   "top_towns": {
+    "ANG MO KIO": 4,
+    "TAMPINES": 3,
+    "HOUGANG": 2,
+    "PUNGGOL": 2,
+    "BISHAN": 1,
+    "BEDOK": 1
+   },
+   "top_districts": {
+    "09": 57,
+    "15": 12,
+    "02": 11,
+    "16": 10,
+    "21": 8,
+    "03": 8
+   },
+   "first": "2017-11",
+   "last": "2026-10",
+   "reg_no": "R008878E",
+   "included_in_team": true
+  },
+  "Benny Poh": {
+   "total": 159,
+   "since_2017": 159,
+   "last_12_months": 18,
+   "last_12_months_from": "2025-11",
+   "last_12_months_to": "2026-10",
+   "focus": {
+    "kind": "district",
+    "name": "09",
+    "count": 26
+   },
+   "by_property_type": {
+    "CONDOMINIUM_APARTMENTS": 136,
+    "HDB": 22,
+    "LANDED": 1
+   },
+   "by_transaction_type": {
+    "WHOLE RENTAL": 134,
+    "RESALE": 24,
+    "NEW SALE": 1
+   },
+   "top_towns": {
+    "SENGKANG": 4,
+    "QUEENSTOWN": 4,
+    "GEYLANG": 3,
+    "KALLANG/WHAMPOA": 3,
+    "BUKIT MERAH": 3,
+    "BEDOK": 1
+   },
+   "top_districts": {
+    "09": 26,
+    "10": 16,
+    "15": 15,
+    "03": 11,
+    "16": 9,
+    "04": 9
+   },
+   "first": "2017-10",
+   "last": "2026-09",
+   "reg_no": "R008885H",
+   "included_in_team": true
+  },
+  "Chantel Teo": {
+   "total": 98,
+   "since_2017": 98,
+   "last_12_months": 6,
+   "last_12_months_from": "2025-11",
+   "last_12_months_to": "2026-10",
+   "focus": {
+    "kind": "district",
+    "name": "12",
+    "count": 15
+   },
+   "by_property_type": {
+    "CONDOMINIUM_APARTMENTS": 74,
+    "HDB": 19,
+    "LANDED": 5
+   },
+   "by_transaction_type": {
+    "WHOLE RENTAL": 68,
+    "RESALE": 28,
+    "NEW SALE": 2
+   },
+   "top_towns": {
+    "SENGKANG": 3,
+    "YISHUN": 3,
+    "PASIR RIS": 3,
+    "KALLANG/WHAMPOA": 2,
+    "MARINE PARADE": 2,
+    "PUNGGOL": 2
+   },
+   "top_districts": {
+    "12": 15,
+    "15": 9,
+    "03": 9,
+    "11": 6,
+    "18": 4,
+    "05": 4
+   },
+   "first": "2020-02",
+   "last": "2026-07",
+   "reg_no": "R013641J",
+   "included_in_team": true
+  },
+  "Phoebe Goh": {
+   "total": 30,
+   "since_2017": 30,
+   "last_12_months": 8,
+   "last_12_months_from": "2025-11",
+   "last_12_months_to": "2026-10",
+   "focus": {
+    "kind": "district",
+    "name": "19",
+    "count": 4
+   },
+   "by_property_type": {
+    "HDB": 15,
+    "CONDOMINIUM_APARTMENTS": 15
+   },
+   "by_transaction_type": {
+    "RESALE": 13,
+    "WHOLE RENTAL": 13,
+    "ROOM RENTAL": 4
+   },
+   "top_towns": {
+    "SENGKANG": 3,
+    "HOUGANG": 2,
+    "CENTRAL AREA": 2,
+    "PASIR RIS": 2,
+    "SERANGOON": 2,
+    "BUKIT MERAH": 1
+   },
+   "top_districts": {
+    "19": 4,
+    "10": 3,
+    "18": 2,
+    "02": 1,
+    "01": 1,
+    "21": 1
+   },
+   "first": "2018-05",
+   "last": "2026-07",
+   "reg_no": "R051932H",
+   "included_in_team": true
+  },
+  "Brent Wang": {
+   "total": 130,
+   "since_2017": 130,
+   "last_12_months": 19,
+   "last_12_months_from": "2025-11",
+   "last_12_months_to": "2026-10",
+   "focus": {
+    "kind": "district",
+    "name": "18",
+    "count": 92
+   },
+   "by_property_type": {
+    "CONDOMINIUM_APARTMENTS": 117,
+    "HDB": 10,
+    "EXECUTIVE_CONDOMINIUM": 3
+   },
+   "by_transaction_type": {
+    "WHOLE RENTAL": 99,
+    "RESALE": 18,
+    "ROOM RENTAL": 10,
+    "NEW SALE": 3
+   },
+   "top_towns": {
+    "YISHUN": 4,
+    "TAMPINES": 3,
+    "SERANGOON": 1,
+    "CLEMENTI": 1,
+    "GEYLANG": 1
+   },
+   "top_districts": {
+    "18": 92,
+    "16": 10,
+    "19": 4,
+    "09": 3,
+    "15": 3,
+    "14": 2
+   },
+   "first": "2020-02",
+   "last": "2026-06",
+   "reg_no": "R057382I",
+   "included_in_team": true
+  },
+  "Jason Ang": {
+   "total": 360,
+   "since_2017": 360,
+   "last_12_months": 41,
+   "last_12_months_from": "2025-11",
+   "last_12_months_to": "2026-10",
+   "focus": {
+    "kind": "district",
+    "name": "15",
+    "count": 199
+   },
+   "by_property_type": {
+    "CONDOMINIUM_APARTMENTS": 310,
+    "HDB": 40,
+    "LANDED": 8,
+    "STRATA_LANDED": 1,
+    "EXECUTIVE_CONDOMINIUM": 1
+   },
+   "by_transaction_type": {
+    "WHOLE RENTAL": 277,
+    "RESALE": 79,
+    "NEW SALE": 4
+   },
+   "top_towns": {
+    "PUNGGOL": 6,
+    "ANG MO KIO": 6,
+    "MARINE PARADE": 6,
+    "SENGKANG": 5,
+    "BEDOK": 4,
+    "TAMPINES": 3
+   },
+   "top_districts": {
+    "15": 199,
+    "10": 15,
+    "11": 15,
+    "18": 13,
+    "09": 12,
+    "03": 12
+   },
+   "first": "2017-01",
+   "last": "2026-07",
+   "reg_no": "R008889J",
+   "included_in_team": true
+  }
+ },
+ "team": {
+  "total": 1443,
+  "since_2017": 1443,
+  "last_12_months": 130,
+  "last_12_months_from": "2025-11",
+  "last_12_months_to": "2026-10",
+  "focus": {
+   "kind": "district",
+   "name": "15",
+   "count": 243
+  },
+  "by_property_type": {
+   "CONDOMINIUM_APARTMENTS": 892,
+   "HDB": 529,
+   "LANDED": 16,
+   "EXECUTIVE_CONDOMINIUM": 5,
+   "STRATA_LANDED": 1
+  },
+  "by_transaction_type": {
+   "WHOLE RENTAL": 790,
+   "RESALE": 622,
+   "ROOM RENTAL": 17,
+   "NEW SALE": 14
+  },
+  "top_towns": {
+   "BUKIT MERAH": 75,
+   "QUEENSTOWN": 52,
+   "KALLANG/WHAMPOA": 50,
+   "TOA PAYOH": 46,
+   "CLEMENTI": 38,
+   "GEYLANG": 37
+  },
+  "top_districts": {
+   "15": 243,
+   "18": 127,
+   "09": 121,
+   "03": 48,
+   "10": 47,
+   "16": 39
+  },
+  "first": "2017-01",
+  "last": "2026-10",
+  "included": [
+   "Louis Tay",
+   "Jackie Mang",
+   "Benny Poh",
+   "Chantel Teo",
+   "Phoebe Goh",
+   "Brent Wang",
+   "Jason Ang"
+  ],
+  "note": "Simple sum; two team agents on the same deal would be counted twice (records carry no deal ID)."
+ }
+}
