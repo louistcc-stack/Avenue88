@@ -230,3 +230,93 @@ fetch('data/transactions.json').then(r=>r.json()).then(d=>{
  window.addEventListener('resize',mark);
  buildDots();
 })();
+(function(){
+ const grid=document.getElementById('podcast-grid');
+ if(!grid)return;
+ const MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+ const chips=[...document.querySelectorAll('#watch .pchips button')];
+ let episodes=[],filter='all';
+ function formatDate(iso){
+  const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(iso||'');
+  if(!m)return '';
+  return Number(m[3])+' '+MONTHS[Number(m[2])-1]+' '+m[1];
+ }
+ function safeId(id){return /^[A-Za-z0-9_-]{6,20}$/.test(id||'')?id:''}
+ function thumb(url,id){
+  if(/^https:\/\/i\d?\.ytimg\.com\/vi\/[A-Za-z0-9_-]+\//.test(url||''))return url;
+  return 'https://i.ytimg.com/vi/'+id+'/hqdefault.jpg';
+ }
+ function card(ep){
+  const id=safeId(ep.id);
+  const article=document.createElement('article');
+  article.className='pod';
+  const btn=document.createElement('button');
+  btn.type='button';
+  btn.className='pod-hit';
+  btn.setAttribute('aria-label','Play '+(ep.title||'episode'));
+  const face=document.createElement('span');
+  face.className='yt-th';
+  if(id)face.style.backgroundImage='url("'+thumb(ep.thumbnail,id)+'")';
+  const play=document.createElement('span');
+  play.className='yt-play';
+  play.setAttribute('aria-hidden','true');
+  face.append(play);
+  btn.append(face);
+  btn.addEventListener('click',function(){
+   if(!id||btn.querySelector('iframe'))return;
+   const frame=document.createElement('iframe');
+   frame.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1';
+   frame.title=ep.title||'Podcast episode';
+   frame.allow='autoplay; encrypted-media; picture-in-picture';
+   frame.allowFullscreen=true;
+   btn.replaceWith(frame);
+  });
+  const show=document.createElement('p');
+  show.className='pod-show';
+  show.textContent=ep.showName||'';
+  const title=document.createElement('p');
+  title.className='pod-title';
+  title.textContent=ep.title||'';
+  const date=document.createElement('p');
+  date.className='pod-date';
+  date.textContent=formatDate(ep.date);
+  article.append(btn,show,title,date);
+  return article;
+ }
+ function render(){
+  const names={};
+  (episodes.shows||[]).forEach(function(s){names[s.id]=s.name});
+  const rows=episodes.list.filter(function(e){return filter==='all'||e.show===filter}).slice(0,6);
+  grid.replaceChildren();
+  if(!rows.length){
+   const p=document.createElement('p');
+   p.className='pod-empty';
+   p.textContent='No episodes in this list yet.';
+   grid.append(p);
+   return;
+  }
+  rows.forEach(function(ep){grid.append(card(Object.assign({showName:names[ep.show]||''},ep)))});
+ }
+ chips.forEach(function(btn){
+  btn.addEventListener('click',function(){
+   filter=btn.dataset.show||'all';
+   chips.forEach(function(b){
+    const on=b===btn;
+    b.classList.toggle('on',on);
+    b.setAttribute('aria-pressed',on?'true':'false');
+   });
+   render();
+  });
+ });
+ fetch('data/podcasts.json').then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+  episodes={shows:d.shows||[],list:(d.episodes||[]).slice().sort(function(a,b){return (b.date||'').localeCompare(a.date||'')||(b.id||'').localeCompare(a.id||'')})};
+  render();
+ }).catch(function(){
+  const p=document.createElement('p');
+  p.className='pod-empty';
+  p.textContent='Episodes are unavailable right now. The playlist links below still work.';
+  grid.append(p);
+ });
+ const box=document.getElementById('tiktok-box');
+ if(box)window.setTimeout(function(){if(!box.querySelector('iframe'))box.hidden=true},8000);
+})();
