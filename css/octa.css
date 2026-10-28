@@ -1,0 +1,44 @@
+/* Octa Score page styles (separate from style.css on purpose) */
+.octa .eyebrow{color:var(--gold,#D69F1A);font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:13px;margin:0 0 8px}
+.octa-hero{background:linear-gradient(135deg,#0B1D76,#13278f);color:#fff;padding:clamp(48px,7vw,96px) 0}
+.octa-hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.octa-hero h1{color:#fff;font-size:clamp(32px,4.6vw,54px);line-height:1.1;margin:18px 0 16px}
+.octa-hero .lead{color:#dfe3f5}
+.octa-logo{width:min(360px,80%);height:auto;background:#fff;border-radius:14px;padding:6px 14px}
+.btn-gold{background:#D69F1A;color:#0B1D76}.btn-gold:hover{background:#e8b437}
+.btn-ghost-light{border:2px solid rgba(255,255,255,.6);color:#fff}.btn-ghost-light:hover{background:rgba(255,255,255,.1)}
+.octa-note{font-size:14px;color:#c4cbea;margin-top:14px}
+.octa-hero-card{background:#fff;border-radius:20px;padding:22px;color:#0B1D76;text-align:center;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.octa-hero-card p{margin:4px 0 0;font-weight:700;font-size:14px;color:#5b6275}
+.octa-badge{position:absolute;top:16px;left:16px;text-align:left}
+.octa-badge b{font-size:40px;font-weight:900}.octa-badge small{color:#5b6275}
+.ex,.ex-tag{display:inline-block;background:#fdf3dc;color:#8a6109;font-weight:900;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px}
+.ex{display:block;width:max-content}
+.octa-radar{width:100%;max-width:340px;height:auto;display:block;margin:0 auto}
+.octa-radar .grid{fill:none;stroke:#dfe2ee;stroke-width:1.5}
+.octa-radar .spoke{stroke:#dfe2ee;stroke-width:1}
+.octa-radar .shape{fill:rgba(214,159,26,.35);stroke:#D69F1A;stroke-width:3;stroke-linejoin:round;transition:all .2s}
+.octa-radar .lbl{font:900 15px Lato,sans-serif;fill:#0B1D76}
+.octa-play{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.octa-chart{position:sticky;top:100px;background:#fff;border:1px solid var(--line,#e6e8ef);border-radius:20px;padding:22px;text-align:center}
+.octa-total{margin-top:6px;color:#0B1D76}.octa-total b{font-size:52px;font-weight:900}.octa-total span{color:#5b6275;font-size:20px}
+.octa-total em{display:block;font-style:normal;font-weight:900;color:#D69F1A;text-transform:uppercase;letter-spacing:.1em;font-size:14px}
+.pillars{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.pillars li{border:1px solid var(--line,#e6e8ef);border-radius:14px;padding:14px 16px;background:#fff}
+.pillars .ph{display:flex;justify-content:space-between;gap:10px;color:#0B1D76}
+.pillars output{font-weight:900;color:#D69F1A}
+.pillars p{margin:4px 0 8px;color:var(--muted,#5b6275);font-size:15px}
+.pillars input[type=range]{width:100%;accent-color:#0B1D76}
+.small.center,.octa .center{text-align:center}
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:#fff;border-radius:18px;padding:26px}
+.step span{display:inline-grid;place-items:center;width:44px;height:44px;background:#0B1D76;color:#fff;font-weight:900;clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%)}
+.step p{color:var(--muted,#5b6275)}
+.octa-get{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.ticks{list-style:none;padding:0;margin:20px 0}.ticks li{padding:8px 0 8px 32px;position:relative}
+.ticks li:before{content:"";position:absolute;left:0;top:12px;width:18px;height:18px;background:#D69F1A;clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%)}
+.wrap.narrow{max-width:820px}
+.octa .faq details{background:#fff;border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.octa .faq summary{font-weight:900;color:#0B1D76;cursor:pointer}
+.disclaimer{font-size:14px;color:var(--muted,#5b6275);margin-top:28px;border-top:1px solid var(--line,#e6e8ef);padding-top:18px}
+@media(max-width:900px){.octa-hero-grid,.octa-play,.octa-get{grid-template-columns:1fr}.steps3{grid-template-columns:1fr}.octa-chart{position:static}.octa-hero-card{max-width:380px}}
