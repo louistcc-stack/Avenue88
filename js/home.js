@@ -326,6 +326,34 @@ fetch('data/transactions.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
    return u.href;
   }catch(e){return ''}
  }
+ function igTypeLabel(type){
+  return {reel:'Reel',carousel:'Carousel',photo:'Photo'}[type]||'Instagram';
+ }
+ function replaceWithFallback(quote){
+  const href=quote.getAttribute('data-instgrm-permalink')||'https://www.instagram.com/avenue88property/';
+  const caption=(quote.querySelector('a')&&quote.querySelector('a').textContent)||'View on Instagram';
+  const a=document.createElement('a');
+  a.className='ig-fallback';
+  a.href=href;
+  a.target='_blank';
+  a.rel='noopener';
+  const kicker=document.createElement('span');
+  kicker.className='ig-kicker';
+  kicker.textContent=igTypeLabel(quote.getAttribute('data-type'));
+  const strong=document.createElement('strong');
+  strong.textContent=caption;
+  const cta=document.createElement('span');
+  cta.className='ig-cta';
+  cta.textContent='View on Instagram';
+  a.append(kicker,strong,cta);
+  quote.replaceWith(a);
+ }
+ function fallbackUnembedded(){
+  if(!ig)return;
+  ig.querySelectorAll('blockquote.instagram-media').forEach(function(quote){
+   if(!quote.querySelector('iframe'))replaceWithFallback(quote);
+  });
+ }
  function loadInstagramEmbeds(){
   if(window.instgrm&&window.instgrm.Embeds){window.instgrm.Embeds.process();return}
   if(igScriptStarted)return;
@@ -334,7 +362,9 @@ fetch('data/transactions.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
   s.async=true;
   s.src='https://www.instagram.com/embed.js';
   s.onload=function(){if(window.instgrm&&window.instgrm.Embeds)window.instgrm.Embeds.process()};
+  s.onerror=function(){fallbackUnembedded()};
   document.body.appendChild(s);
+  window.setTimeout(fallbackUnembedded,8000);
  }
  function watchInstagram(){
   const section=document.getElementById('watch');
@@ -373,6 +403,7 @@ fetch('data/transactions.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
   quote.className='instagram-media';
   quote.setAttribute('data-instgrm-permalink',href);
   quote.setAttribute('data-instgrm-version','14');
+  if(post.type)quote.setAttribute('data-type',post.type);
   const link=document.createElement('a');
   link.href=href;
   link.target='_blank';
