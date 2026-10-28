@@ -102,7 +102,7 @@
     set(el.agent, p.get('agent')); set(el.ptype, p.get('type')); set(el.ttype, p.get('txn')); set(el.year, p.get('year'));
   }
 
-  fetch('data/transactions.json', { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(d => {
+  fetch('data/transactions.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(d => {
     rows = (d.transactions || []).slice().sort((a, b) => b.month.localeCompare(a.month));
     example = d.example !== false;
     if (!example && el.banner) el.banner.hidden = true;

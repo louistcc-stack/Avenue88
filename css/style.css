@@ -442,13 +442,27 @@ nav.main a{white-space:nowrap}
 .seeall{display:flex;flex-wrap:wrap;gap:12px 22px;margin:18px 0 0}
 .seeall a{color:var(--navy);font-weight:700}
 .watch-follow{margin-top:48px}
-.tt-wrap{background:#fff;border-radius:16px;border-top:4px solid var(--gold);box-shadow:0 4px 16px rgba(11,29,118,.08);padding:16px;display:flex;justify-content:center;min-height:180px}
-.tt-wrap[hidden]{display:none}
-.tiktok-embed{max-width:780px;min-width:288px;margin:0}
-.igsoon{color:#777;font-size:13px;margin:14px 0 0}
+.ig-heading{margin:0 0 14px;font-size:20px;color:var(--navy)}
+.ig-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
+.ig-grid .instagram-media{margin:0!important;min-width:0!important;width:100%!important;max-width:none!important;border-radius:16px}
+.ig-promo,.ig-fallback{display:flex;flex-direction:column;justify-content:flex-end;gap:8px;min-height:280px;padding:22px;border-radius:16px;text-decoration:none;color:#fff;background:linear-gradient(165deg,#0B1D76 0%,#1a2744 100%);box-shadow:0 8px 24px rgba(11,29,118,.16)}
+.ig-promo{max-width:320px}
+.ig-fallback strong{font-size:18px;line-height:1.35;font-weight:900}
+.ig-promo .ig-kicker,.ig-fallback .ig-kicker{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.ig-promo strong{font-size:26px;line-height:1.2;font-weight:900}
+.ig-promo .ig-handle{font-weight:700;font-size:16px}
+.ig-follow{margin:16px 0 0}
+.ig-follow a,.ig-promo .ig-cta{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border-radius:999px;background:var(--gold);color:#fff;text-decoration:none;font-weight:700;line-height:1.2}
+.ig-follow a:focus-visible,.ig-promo:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
 .follow{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.follow a{padding:10px 18px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:700}
+.follow a{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;line-height:1.2}
 .follow a.g{background:var(--gold)}
 .follow a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .follow a.g:focus-visible{outline-color:var(--navy)}
-@media(max-width:800px){.ytg{grid-template-columns:1fr}}
+@media(max-width:800px){
+ .ytg{grid-template-columns:1fr}
+ .ig-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+ .ig-grid::-webkit-scrollbar{display:none}
+ .ig-grid > *{flex:0 0 86%;scroll-snap-align:start;scroll-snap-stop:always}
+ .ig-grid:has(> .ig-promo:only-child){display:grid;grid-template-columns:minmax(0,320px);overflow:visible}
+}
