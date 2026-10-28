@@ -315,87 +315,86 @@ fetch('data/transactions.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
   render();
  }
  fetch('data/podcasts.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(usePodcasts).catch(function(){usePodcasts(PODCAST_FALLBACK)});
- const tt=document.getElementById('tiktok-grid');
- const TT_ICON='<svg class="tt-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.5 3c.4 2.4 1.8 4.2 4.2 4.6v2.5a7 7 0 0 1-3.9-1.1v6.6a6.1 6.1 0 1 1-6.1-6.1c.3 0 .6 0 .9.1v2.6a3.5 3.5 0 1 0 2.4 3.3V3h2.5z"/></svg>';
- function safeThumb(url){return /^https:\/\//.test(url||'')?String(url).replace(/["\\]/g,''):''}
- function tiktokCard(video){
-  const article=document.createElement('article');
-  article.className='tt-card';
-  const id=/^\d{6,}$/.test(String(video.id||''))?String(video.id):'';
-  const face=document.createElement('button');
-  face.type='button';
-  face.className='tt-face';
-  const title=document.createElement('b');
-  title.textContent=(video.title||'').trim()||'Watch on TikTok';
-  face.setAttribute('aria-label','Play '+(title.textContent));
-  face.insertAdjacentHTML('beforeend',TT_ICON);
-  const play=document.createElement('span');
-  play.className='yt-play';
-  play.setAttribute('aria-hidden','true');
-  face.append(play);
-  const thumb=safeThumb(video.thumbnail);
-  if(thumb){face.style.backgroundImage='url("'+thumb+'")';face.classList.add('has-thumb')}
-  face.addEventListener('click',function(){
-   if(!id||article.querySelector('iframe'))return;
-   const frame=document.createElement('iframe');
-   frame.src='https://www.tiktok.com/player/v1/'+id+'?autoplay=1';
-   frame.title=title.textContent;
-   frame.allow='autoplay; encrypted-media; fullscreen; picture-in-picture';
-   frame.allowFullscreen=true;
-   face.replaceWith(frame);
-  });
-  article.append(face);
-  if((video.agent||'').trim()){
-   const who=document.createElement('p');
-   who.className='tt-agent';
-   who.textContent=video.agent.trim();
-   article.append(who);
-  }
-  article.append(title);
-  if(video.url){
-   const open=document.createElement('a');
-   open.className='tt-open';
-   open.href=video.url;
-   open.target='_blank';
-   open.rel='noopener';
-   open.textContent='Open on TikTok';
-   article.append(open);
-  }
-  if(video.url&&(!(video.title||'').trim()||!thumb)){
-   fetch('https://www.tiktok.com/oembed?url='+encodeURIComponent(video.url),{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(data){
-    if(!data)return;
-    if(!(video.title||'').trim()&&data.title){title.textContent=data.title;if(!article.querySelector('iframe'))face.setAttribute('aria-label','Play '+data.title)}
-    const pic=safeThumb(data.thumbnail_url);
-    if(pic&&face.isConnected){face.style.backgroundImage='url("'+pic+'")';face.classList.add('has-thumb')}
-   }).catch(function(){});
-  }
-  return article;
+ const ig=document.getElementById('instagram-grid');
+ const igFollow=document.getElementById('ig-follow');
+ let igScriptStarted=false;
+ function igPermalink(url){
+  try{
+   const u=new URL(url);
+   if(u.protocol!=='https:')return '';
+   if(u.hostname!=='www.instagram.com'&&u.hostname!=='instagram.com')return '';
+   return u.href;
+  }catch(e){return ''}
  }
- function tiktokPromo(){
+ function loadInstagramEmbeds(){
+  if(window.instgrm&&window.instgrm.Embeds){window.instgrm.Embeds.process();return}
+  if(igScriptStarted)return;
+  igScriptStarted=true;
+  const s=document.createElement('script');
+  s.async=true;
+  s.src='https://www.instagram.com/embed.js';
+  s.onload=function(){if(window.instgrm&&window.instgrm.Embeds)window.instgrm.Embeds.process()};
+  document.body.appendChild(s);
+ }
+ function watchInstagram(){
+  const section=document.getElementById('watch');
+  if(!section||!('IntersectionObserver' in window)){loadInstagramEmbeds();return}
+  const io=new IntersectionObserver(function(entries){
+   if(!entries.some(function(e){return e.isIntersecting}))return;
+   loadInstagramEmbeds();
+   io.disconnect();
+  },{rootMargin:'240px'});
+  io.observe(section);
+ }
+ function instagramPromo(){
   const a=document.createElement('a');
-  a.className='tt-card is-promo';
-  a.href='https://www.tiktok.com/@avenue88property';
+  a.className='ig-promo';
+  a.href='https://www.instagram.com/avenue88property/';
   a.target='_blank';
   a.rel='noopener';
   const kicker=document.createElement('span');
-  kicker.className='tt-kicker';
-  kicker.textContent='TikTok';
+  kicker.className='ig-kicker';
+  kicker.textContent='Instagram';
   const strong=document.createElement('strong');
-  strong.textContent='Watch us on TikTok';
+  strong.textContent='Latest on Instagram';
   const handle=document.createElement('span');
-  handle.className='tt-handle';
+  handle.className='ig-handle';
   handle.textContent='@avenue88property';
-  a.append(kicker,strong,handle);
+  const cta=document.createElement('span');
+  cta.className='ig-cta';
+  cta.textContent='Follow @avenue88property';
+  a.append(kicker,strong,handle,cta);
   return a;
  }
- function renderTikTok(list){
-  if(!tt)return;
-  tt.replaceChildren();
-  const rows=(list||[]).filter(function(v){return v&&typeof v.url==='string'&&v.url});
-  if(!rows.length){tt.append(tiktokPromo());return}
-  rows.forEach(function(v){tt.append(tiktokCard(v))});
+ function instagramPost(post){
+  const href=igPermalink(post.url);
+  if(!href)return null;
+  const quote=document.createElement('blockquote');
+  quote.className='instagram-media';
+  quote.setAttribute('data-instgrm-permalink',href);
+  quote.setAttribute('data-instgrm-version','14');
+  const link=document.createElement('a');
+  link.href=href;
+  link.target='_blank';
+  link.rel='noopener';
+  link.textContent=(post.caption||'').trim()||'View this post on Instagram';
+  quote.append(link);
+  return quote;
  }
- fetch('data/tiktok.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
-  renderTikTok(Array.isArray(d)?d:(d&&d.videos)||[]);
- }).catch(function(){renderTikTok([])});
+ function renderInstagram(list){
+  if(!ig)return;
+  ig.replaceChildren();
+  const rows=(list||[]).map(instagramPost).filter(Boolean);
+  if(!rows.length){
+   ig.append(instagramPromo());
+   if(igFollow)igFollow.hidden=true;
+   return;
+  }
+  rows.forEach(function(node){ig.append(node)});
+  if(igFollow)igFollow.hidden=false;
+  watchInstagram();
+ }
+ fetch('data/instagram.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+  renderInstagram(Array.isArray(d)?d:(d&&d.posts)||[]);
+ }).catch(function(){renderInstagram([])});
 })();

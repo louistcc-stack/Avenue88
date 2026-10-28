@@ -2,14 +2,14 @@
 
 This is a temporary review site.
 
-## TikTok videos
+## Instagram posts
 
-`data/tiktok.json` is the list behind **Latest on TikTok**, newest first. Each item is:
+`data/instagram.json` feeds **Latest on Instagram @avenue88property**. It is an array, newest first. Each item is:
 
-- `id`: the number from the video URL
-- `url`: full TikTok video link
-- `title`: short caption. Leave it blank and the page will ask `https://www.tiktok.com/oembed?url=...` for a title and thumbnail, and use them only if that request returns them
-- `thumbnail`: optional image URL. TikTok's oEmbed often has no thumbnail, so the card stays navy with the TikTok icon when this is empty
-- `agent`: optional name, shown on the card when set
+- `url`: the public post or reel link, such as `https://www.instagram.com/p/.../` or `https://www.instagram.com/reel/.../`
+- `type`: `post` or `reel`
+- `caption`: short text used as the link inside the embed before Instagram's script runs
 
-Replace the file with the latest videos (about six). The homepage loads it with `cache: 'no-cache'`. A card plays TikTok's own player only after a tap. **Open on TikTok** is always there if the player is blocked.
+An empty array shows a single Follow card. When the list has posts, the page embeds each one with Instagram's official blockquote and loads `https://www.instagram.com/embed.js` only once the section is near the screen. Desktop shows three across. Phones scroll them sideways.
+
+`data/tiktok.json` is kept in the repo and is not shown on the homepage. The TikTok button in Follow along still links to @avenue88property.
