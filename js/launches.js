@@ -20,7 +20,7 @@ function prefill(name){const f=document.getElementById('enquiry');if(!f)return f
 document.addEventListener('click',e=>{const a=e.target.closest('.nl-brochure');if(!a)return;
  if(document.getElementById('enquiry')&&location.pathname.endsWith('launches.html')){e.preventDefault();prefill(a.dataset.project)}
  else{a.href='launches.html?project='+encodeURIComponent(a.dataset.project)+'#contact'}});
-fetch('data/launches.json').then(r=>r.json()).then(d=>{
+fetch('data/launches.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
  const P=d.projects;
  const teaser=document.getElementById('nl-teaser');
  if(teaser){const pick=P.filter(p=>p.status==='Just Launched').concat(P.filter(p=>p.status==='Upcoming')).slice(0,4);teaser.innerHTML=pick.map(card).join('');}
