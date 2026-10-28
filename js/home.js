@@ -1,3 +1,13 @@
+(function(){
+ const root=document.getElementById('testimonials');if(!root)return;
+ const chips=[...root.querySelectorAll('.t-chip')],cards=[...root.querySelectorAll('.t-card')],note=root.querySelector('.t-pg');
+ function apply(id){
+  chips.forEach(c=>{const on=c.dataset.filter===id;c.classList.toggle('on',on);c.setAttribute('aria-pressed',on?'true':'false')});
+  cards.forEach(card=>{const agents=(card.dataset.agents||'').split(/\s+/);card.classList.toggle('is-out',id!=='all'&&!agents.includes(id))});
+  if(note)note.hidden=id!=='all'&&id!=='louis';
+ }
+ chips.forEach(c=>c.addEventListener('click',()=>apply(c.dataset.filter)));
+})();
 fetch('data/transactions.json').then(r=>r.json()).then(d=>{
  const el=document.getElementById('resultStrip');if(!el)return;
  const name=a=>a.split('-').map(w=>w[0].toUpperCase()+w.slice(1)).join(' ');
