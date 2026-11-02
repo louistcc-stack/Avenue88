@@ -1,13 +1,13 @@
 {
- "last_updated": "2026-10-28T17:32:09+00:00",
+ "last_updated": "2026-11-02T02:48:27+00:00",
  "source": "CEA via data.gov.sg dataset d_ee7e46d3c57f7865790704632b0aef71",
  "agents": {
   "Louis Tay": {
    "total": 488,
    "since_2017": 488,
-   "last_12_months": 20,
-   "last_12_months_from": "2025-11",
-   "last_12_months_to": "2026-10",
+   "last_12_months": 18,
+   "last_12_months_from": "2025-12",
+   "last_12_months_to": "2026-11",
    "focus": {
     "kind": "town",
     "name": "BUKIT MERAH",
@@ -47,9 +47,9 @@
   "Jackie Mang": {
    "total": 178,
    "since_2017": 178,
-   "last_12_months": 18,
-   "last_12_months_from": "2025-11",
-   "last_12_months_to": "2026-10",
+   "last_12_months": 15,
+   "last_12_months_from": "2025-12",
+   "last_12_months_to": "2026-11",
    "focus": {
     "kind": "district",
     "name": "09",
@@ -91,9 +91,9 @@
   "Benny Poh": {
    "total": 159,
    "since_2017": 159,
-   "last_12_months": 18,
-   "last_12_months_from": "2025-11",
-   "last_12_months_to": "2026-10",
+   "last_12_months": 17,
+   "last_12_months_from": "2025-12",
+   "last_12_months_to": "2026-11",
    "focus": {
     "kind": "district",
     "name": "09",
@@ -133,9 +133,9 @@
   "Chantel Teo": {
    "total": 98,
    "since_2017": 98,
-   "last_12_months": 6,
-   "last_12_months_from": "2025-11",
-   "last_12_months_to": "2026-10",
+   "last_12_months": 5,
+   "last_12_months_from": "2025-12",
+   "last_12_months_to": "2026-11",
    "focus": {
     "kind": "district",
     "name": "12",
@@ -176,8 +176,8 @@
    "total": 30,
    "since_2017": 30,
    "last_12_months": 8,
-   "last_12_months_from": "2025-11",
-   "last_12_months_to": "2026-10",
+   "last_12_months_from": "2025-12",
+   "last_12_months_to": "2026-11",
    "focus": {
     "kind": "district",
     "name": "19",
@@ -216,9 +216,9 @@
   "Brent Wang": {
    "total": 130,
    "since_2017": 130,
-   "last_12_months": 19,
-   "last_12_months_from": "2025-11",
-   "last_12_months_to": "2026-10",
+   "last_12_months": 17,
+   "last_12_months_from": "2025-12",
+   "last_12_months_to": "2026-11",
    "focus": {
     "kind": "district",
     "name": "18",
@@ -258,9 +258,9 @@
   "Jason Ang": {
    "total": 360,
    "since_2017": 360,
-   "last_12_months": 41,
-   "last_12_months_from": "2025-11",
-   "last_12_months_to": "2026-10",
+   "last_12_months": 37,
+   "last_12_months_from": "2025-12",
+   "last_12_months_to": "2026-11",
    "focus": {
     "kind": "district",
     "name": "15",
@@ -303,9 +303,9 @@
  "team": {
   "total": 1443,
   "since_2017": 1443,
-  "last_12_months": 130,
-  "last_12_months_from": "2025-11",
-  "last_12_months_to": "2026-10",
+  "last_12_months": 117,
+  "last_12_months_from": "2025-12",
+  "last_12_months_to": "2026-11",
   "focus": {
    "kind": "district",
    "name": "15",
