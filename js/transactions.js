@@ -5,6 +5,7 @@
   const agentsEl = $('#a88-agents');
   if (!agentsEl) return;
   const agents = JSON.parse(agentsEl.textContent);
+  const CEA = {"jackie-mang":"R008878E","jason-ang":"R008889J","benny-poh":"R008885H","chantel-teo":"R013641J","phoebe-goh":"R051932H","louis-tay":"R000567G","brent-wang":"R057382I"};
   const A = Object.fromEntries(agents.map(a => [a.slug, a]));
   const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -40,7 +41,7 @@
       return `<article class="ag-card" data-agent="${a.slug}">
         <div class="ag-photo"><img src="img/team-${a.slug}.webp" alt="${esc(a.name)}" loading="lazy" width="480" height="632">
           <ul class="ag-regions">${regions.map(r => `<li>${esc(r)}</li>`).join('')}</ul>${example ? '<span class="tx-sample">Sample</span>' : ''}</div>
-        <div class="ag-body"><h3>${esc(a.name)}</h3><p class="ag-title">${a.tag}</p>
+        <div class="ag-body"><h3 class="nm">${esc(a.name)} <span class="cea">CEA ${CEA[a.slug]||""}</span></h3><p class="ag-title">${a.tag}</p>
           <ul class="ag-stats">${stats}</ul>
           <button class="ag-view" type="button" aria-pressed="false" data-agent="${a.slug}">See ${esc(a.first)}'s transactions</button></div>
       </article>`;
