@@ -4,13 +4,14 @@ This is a temporary review site.
 
 ## Instagram posts
 
-`data/instagram.json` feeds the homepage **INSTAGRAM.** row. It is an array, newest first. Each item is:
+`data/instagram.json` feeds the homepage **INSTAGRAM.** grid. It is an array, newest first. Each item is:
 
 - `url`: the public post or reel link, such as `https://www.instagram.com/p/.../` or `https://www.instagram.com/reel/.../`
-- `type`: `post`, `reel`, `carousel` or `photo`
-- `caption`: the line shown on the dark card
+- `type`: `photo`, `reel` or `carousel`
+- `caption`: the line shown on the card
+- `image`: optional local thumbnail, `assets/instagram/<shortcode>.jpg`
 
-An empty array hides that row. The four-handle Follow strip stays either way. Cards link out to Instagram. They are not the official white embed.
+`scripts/fetch_instagram_images.py` downloads each thumbnail from `instagram.com/p/<shortcode>/media/?size=l`. If that fetch fails and no file is already saved, the card uses Instagram's official embed instead. Do not add stock or generated images.
 
 `data/tiktok.json` is kept in the repo and is not shown on the homepage. The TikTok button in Follow along still links to @avenue88property.
 

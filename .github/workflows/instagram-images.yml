@@ -1,0 +1,45 @@
+name: Instagram thumbnails
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - data/instagram.json
+      - scripts/fetch_instagram_images.py
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram-images
+  cancel-in-progress: false
+
+jobs:
+  thumbnails:
+    if: github.event_name == 'workflow_dispatch' || github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download post thumbnails
+        run: python3 scripts/fetch_instagram_images.py
+
+      - name: Commit thumbnails if they changed
+        run: |
+          git add -- data/instagram.json assets/instagram
+          if git diff --cached --quiet -- data/instagram.json assets/instagram; then
+            echo "No thumbnail changes; skipping commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update Instagram post thumbnails"
+          git push origin HEAD
