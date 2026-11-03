@@ -109,7 +109,7 @@ def score(result, query, name):
     named = [t for t in tokens(name) if t not in GENERIC and len(t) >= 4]
     blob = " ".join((search, building, phrase(result.get("ADDRESS"))))
     hits = [t for t in named if t in blob]
-    if len(hits) >= 2 or (len(named) == 1 and named[0] in blob):
+    if len(hits) >= 2:
         points += 5
     if q and (search == q or road == q):
         points += 8

@@ -19,15 +19,21 @@ function fmtDay(s){
  if(Number.isNaN(d.getTime()))return'';
  return d.toLocaleDateString('en-SG',{day:'numeric',month:'short',year:'numeric'});
 }
-function monthKey(p){
+function groupKey(p){
+ if(p.preview_group_key)return p.preview_group_key;
  const src=p.launch_date||p.preview_date||'';
- return /^\d{4}-\d{2}/.test(src)?src.slice(0,7):'TBC';
+ return /^\d{4}-\d{2}/.test(src)?src.slice(0,7)+'-0':'TBC';
 }
 function monthLabel(key){
  if(key==='TBC')return'TBC';
  const names=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
- const [y,m]=key.split('-');
- return (names[+m-1]||key)+' '+y;
+ const parts=String(key).match(/^(\d{4})-(\d{2})/);
+ if(!parts)return key;
+ return names[+parts[2]-1]+' '+parts[1];
+}
+function groupLabel(key,items){
+ const labelled=(items||[]).find(p=>p.preview_group_label&&p.preview_group_key===key);
+ return labelled?labelled.preview_group_label:monthLabel(key);
 }
 function topYear(p){return /^\d{4}/.test(p.top||'')?p.top.slice(0,4):''}
 function statusClass(s){
@@ -104,18 +110,22 @@ function actions(p){
  [compareBtn(p),mapBtn(p),brochure(p),whatsapp(p)].forEach(n=>{if(n)box.append(n)});
  return box;
 }
+function previewText(p){return p.preview_target||fmtDay(p.preview_date)}
 function facts(p){
  const rows=[
   ['Location',[p.district,p.address].filter(Boolean).join(' · ')],
+  ['Region',p.region],
+  ['Developer',p.developer],
+  ['Tenure',p.tenure],
+  ['Est. units',p.total_units],
+  ['Land psf ppr',p.land_psf_ppr],
   ['Type',p.type],
-  ['Launch',p.launch_date?fmtDay(p.launch_date):'TBC'],
-  ['Preview',fmtDay(p.preview_date)],
+  ['Launch',p.launch_date?fmtDay(p.launch_date):''],
+  ['Preview',previewText(p)],
   ['TOP',topYear(p)],
   ['Price from',p.price_from],
   ['PSF from',p.psf_from]
  ];
- if(p.tenure)rows.push(['Tenure',p.tenure]);
- if(p.total_units)rows.push(['Units',p.total_units]);
  const dl=el('dl','nl-facts');
  rows.filter(r=>r[1]).forEach(([k,v])=>{
   const d=el('div');
@@ -144,7 +154,7 @@ function row(p){
  art.append(thumb);
  const mid=el('div');
  mid.append(el('h3',null,p.name||''));
- const bits=[p.area||p.district,p.status,monthLabel(monthKey(p))].filter(Boolean);
+ const bits=[p.area||p.district,p.status,groupLabel(groupKey(p),[p])].filter(Boolean);
  mid.append(el('p',null,bits.join(' · ')));
  const side=el('div','nl-side');
  if(p.price_from)side.append(el('div','nl-price',p.price_from));
@@ -158,7 +168,7 @@ function filtered(){
  const q=(f.q.value||'').trim().toLowerCase();
  const region=f.region.value, district=f.district.value, price=f.price.value, year=f.top.value;
  return projects.filter(p=>{
-  if(q&&![p.name,p.address,p.area,p.district].join(' ').toLowerCase().includes(q))return false;
+  if(q&&![p.name,p.address,p.area,p.district,p.region,p.developer,p.preview_target].join(' ').toLowerCase().includes(q))return false;
   if(region&&p.region_group!==region)return false;
   if(district&&p.district!==district)return false;
   if(status&&p.status!==status)return false;
@@ -178,7 +188,7 @@ function nowKey(){
 function groupMonths(list){
  const buckets=new Map();
  list.forEach(p=>{
-  const k=monthKey(p);
+  const k=groupKey(p);
   if(!buckets.has(k))buckets.set(k,[]);
   buckets.get(k).push(p);
  });
@@ -194,7 +204,7 @@ function groupMonths(list){
 }
 function monthBlock(key,items){
  const sec=el('section','nl-month');
- sec.append(el('h2',null,monthLabel(key)));
+ sec.append(el('h2',null,groupLabel(key,items)));
  const grid=el('div','nl-grid');
  items.forEach(p=>grid.append(card(p)));
  sec.append(grid);
@@ -232,6 +242,8 @@ function render(){
    }
   }
  }
+ const timeline=document.getElementById('nl-timeline-note');
+ if(timeline)timeline.hidden=view!=='pipeline';
  paintBar();
 }
 function setView(next){
@@ -267,13 +279,16 @@ function compareRows(list){
   ['Price from',p=>p.price_from],
   ['PSF from',p=>p.psf_from],
   ['District',p=>p.area||p.district],
+  ['Region',p=>p.region],
+  ['Developer',p=>p.developer],
   ['Type',p=>p.type],
-  ['Launch',p=>fmtDay(p.launch_date)||'TBC'],
-  ['Preview',p=>fmtDay(p.preview_date)],
-  ['TOP',p=>topYear(p)]
+  ['Launch',p=>fmtDay(p.launch_date)],
+  ['Preview',p=>previewText(p)],
+  ['TOP',p=>topYear(p)],
+  ['Tenure',p=>p.tenure],
+  ['Est. units',p=>p.total_units],
+  ['Land psf ppr',p=>p.land_psf_ppr]
  ];
- if(list.some(p=>p.tenure))rows.push(['Tenure',p=>p.tenure]);
- if(list.some(p=>p.total_units))rows.push(['Units',p=>p.total_units]);
  return rows;
 }
 function openCompare(){
