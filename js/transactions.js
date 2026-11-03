@@ -5,6 +5,7 @@
   const agentsEl = $('#a88-agents');
   if (!agentsEl) return;
   const agents = JSON.parse(agentsEl.textContent);
+  const CEA = {"jackie-mang":"R008878E","jason-ang":"R008889J","benny-poh":"R008885H","chantel-teo":"R013641J","phoebe-goh":"R051932H","louis-tay":"R000567G","brent-wang":"R057382I"};
   const A = Object.fromEntries(agents.map(a => [a.slug, a]));
   const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -40,7 +41,7 @@
       return `<article class="ag-card" data-agent="${a.slug}">
         <div class="ag-photo"><img src="img/team-${a.slug}.webp" alt="${esc(a.name)}" loading="lazy" width="480" height="632">
           <ul class="ag-regions">${regions.map(r => `<li>${esc(r)}</li>`).join('')}</ul>${example ? '<span class="tx-sample">Sample</span>' : ''}</div>
-        <div class="ag-body"><h3>${esc(a.name)}</h3><p class="ag-title">${a.tag}</p>
+        <div class="ag-body"><h3 class="nm">${esc(a.name)} <span class="cea">CEA ${CEA[a.slug]||""}</span></h3><p class="ag-title">${a.tag}</p>
           <ul class="ag-stats">${stats}</ul>
           <button class="ag-view" type="button" aria-pressed="false" data-agent="${a.slug}">See ${esc(a.first)}'s transactions</button></div>
       </article>`;
@@ -62,19 +63,16 @@
 
   function card(r) {
     const a = A[r.agent] || { slug: r.agent, name: r.agent, first: r.agent };
-    const media = r.photo ? `<img src="img/transactions/${esc(r.photo)}" alt="${esc(r.project)}" loading="lazy">` : `<div class="tx-ico">${icon(r.property_type)}</div>`;
-    const price = r.price ? `<li>S$${Number(r.price).toLocaleString('en-SG')}</li>` : '';
+    const chips = [r.property_type, r.district, region(r.district)].filter(Boolean).map(c => `<span>${esc(c)}</span>`).join('');
+    const price = r.price ? ` · S$${Number(r.price).toLocaleString('en-SG')}` : '';
     return `<article class="tx-card">
-      <div class="tx-media t-${esc(r.property_type).toLowerCase()}">${media}
-        ${example ? '<span class="tx-sample">Sample</span>' : ''}<span class="tx-badge ${r.transaction_type === 'Rental' ? 'rent' : 'sale'}">${esc(r.transaction_type)}</span></div>
-      <div class="tx-body">
-        <div class="tx-meta">${esc(r.property_type)} &middot; ${esc(r.district)}${region(r.district) ? ' &middot; ' + region(r.district) : ''}</div>
-        <h3>${esc(r.project)}</h3>
-        <ul class="tx-facts"><li>${esc(fmtMonth(r.month))}</li><li>Represented the ${esc(r.represented)}</li>${price}</ul>
-        ${r.notes ? `<p class="tx-notes">${esc(r.notes)}</p>` : ''}
-        <div class="tx-foot"><span class="tx-agent"><img src="img/team-${esc(a.slug)}.webp" alt="" width="40" height="40" loading="lazy">${esc(a.name)}</span>
-          <a class="btn btn-wa" href="${waLink(a)}" target="_blank" rel="noopener">${WAI}Talk to ${esc(a.first)}</a></div>
-      </div></article>`;
+      <div class="tx-meta">${example ? '<span class="tx-sample">Sample</span>' : ''}${chips}</div>
+      <h3>${esc(r.project)}</h3>
+      <p class="tx-line">${esc(fmtMonth(r.month))} · Represented the ${esc(r.represented)}${price}</p>
+      ${r.notes ? `<p class="tx-notes">${esc(r.notes)}</p>` : ''}
+      <div class="tx-foot"><span class="tx-agent"><img src="img/team-${esc(a.slug)}.webp" alt="" width="40" height="40" loading="lazy"><span>${esc(a.name)}</span></span>
+        <a class="btn btn-wa" href="${waLink(a)}" target="_blank" rel="noopener">${WAI}Talk to ${esc(a.first)}</a></div>
+    </article>`;
   }
 
   function render(updateUrl) {
