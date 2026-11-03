@@ -168,16 +168,34 @@ function filtered(){
   return true;
  });
 }
+function nowKey(){
+ const d=new Date();
+ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0');
+}
 function groupMonths(list){
- const map=new Map();
+ const buckets=new Map();
  list.forEach(p=>{
   const k=monthKey(p);
-  if(!map.has(k))map.set(k,[]);
-  map.get(k).push(p);
+  if(!buckets.has(k))buckets.set(k,[]);
+  buckets.get(k).push(p);
  });
- return [...map.keys()].sort((a,b)=>{
-  if(a==='TBC')return 1;if(b==='TBC')return -1;return a<b?-1:1;
- }).map(k=>[k,map.get(k)]);
+ const now=nowKey();
+ const forward=[], tbc=[], past=[];
+ [...buckets.keys()].sort().forEach(k=>{
+  const row=[k,buckets.get(k)];
+  if(k==='TBC')tbc.push(row);
+  else if(k>=now)forward.push(row);
+  else past.push(row);
+ });
+ return {forward,tbc,past};
+}
+function monthBlock(key,items){
+ const sec=el('section','nl-month');
+ sec.append(el('h2',null,monthLabel(key)));
+ const grid=el('div','nl-grid');
+ items.forEach(p=>grid.append(card(p)));
+ sec.append(grid);
+ return sec;
 }
 
 function render(){
@@ -201,14 +219,14 @@ function render(){
    out.forEach(p=>grid.append(card(p)));
    host.append(grid);
   }else{
-   groupMonths(out).forEach(([key,items])=>{
-    const sec=el('section','nl-month');
-    sec.append(el('h2',null,monthLabel(key)));
-    const grid=el('div','nl-grid');
-    items.forEach(p=>grid.append(card(p)));
-    sec.append(grid);
-    host.append(sec);
-   });
+   const groups=groupMonths(out);
+   groups.forward.concat(groups.tbc).forEach(([key,items])=>host.append(monthBlock(key,items)));
+   if(groups.past.length){
+    const box=el('details','nl-earlier');
+    box.append(el('summary',null,'Launched earlier'));
+    groups.past.forEach(([key,items])=>box.append(monthBlock(key,items)));
+    host.append(box);
+   }
   }
  }
  paintBar();
@@ -332,14 +350,30 @@ function ensureMap(){
    }
    map.addSource('projects',{type:'geojson',data:{type:'FeatureCollection',features:[]}});
    map.addLayer({id:'pins',type:'circle',source:'projects',paint:{
-    'circle-radius':7,'circle-color':'#D69F1A','circle-stroke-width':2,'circle-stroke-color':'#05081c'
+    'circle-radius':['interpolate',['linear'],['zoom'],9,8,12,11,15,15],
+    'circle-color':'#D69F1A','circle-stroke-width':2,'circle-stroke-color':'#05081c'
    }});
-   map.on('click','pins',e=>{
+   map.addLayer({id:'pin-labels',type:'symbol',source:'projects',minzoom:13,layout:{
+    'text-field':['get','name'],
+    'text-font':['Noto Sans Regular'],
+    'text-size':13,
+    'text-offset':[0,1.05],
+    'text-anchor':'top',
+    'text-max-width':12,
+    'text-optional':true
+   },paint:{
+    'text-color':'#ffffff','text-halo-color':'#05081c','text-halo-width':1.5
+   }});
+   const openPin=e=>{
     const id=e.features&&e.features[0]&&e.features[0].properties.id;
     if(id)openPopup(id);
+   };
+   map.on('click','pins',openPin);
+   map.on('click','pin-labels',openPin);
+   ['pins','pin-labels'].forEach(layer=>{
+    map.on('mouseenter',layer,()=>{map.getCanvas().style.cursor='pointer'});
+    map.on('mouseleave',layer,()=>{map.getCanvas().style.cursor=''});
    });
-   map.on('mouseenter','pins',()=>{map.getCanvas().style.cursor='pointer'});
-   map.on('mouseleave','pins',()=>{map.getCanvas().style.cursor=''});
    syncMap(lastFiltered);
    if(flyId){const id=flyId;flyId=null;openPopup(id)}
   });
@@ -355,7 +389,7 @@ function syncMap(list){
   features:list.filter(hasPoint).map(p=>({
    type:'Feature',
    geometry:{type:'Point',coordinates:[p.lng,p.lat]},
-   properties:{id:p.id}
+   properties:{id:p.id,name:p.name||''}
   }))
  });
  map.resize();

@@ -1,5 +1,9 @@
 
 const btn=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
+const bar=document.querySelector('header.nav');
+function paintNav(){if(bar)bar.classList.toggle('scrolled',window.scrollY>8)}
+paintNav();
+addEventListener('scroll',paintNav,{passive:true});
 btn&&btn.addEventListener('click',()=>{const o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
 nav&&nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded',false)}));
 const A88_WA='6580830688',A88_MAIL='https://formsubmit.co/ajax/avenue88property@gmail.com';
