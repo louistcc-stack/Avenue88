@@ -141,6 +141,18 @@ def apply_fields(project, row, key, label):
     project["preview_group_key"] = key
     project["preview_group_label"] = label
     project["preview_source"] = "Huttons preview timeline 22 Oct 2026"
+    if row.get("force_location"):
+        district = f"D{int(row['district']):02d}"
+        project["district"] = district
+        project["address"] = row["location"]
+        if row.get("area"):
+            project["area"] = row["area"]
+        blurb = project.get("blurb") or ""
+        if blurb:
+            project["blurb"] = (
+                blurb.replace("Along River Valley Road", row["location"])
+                .replace("D10 - Tanglin / Holland", row.get("area") or district)
+            )
 
 
 def main():
@@ -169,7 +181,7 @@ def main():
                     f"Matched PDF '{row['name']}' to existing '{project['name']}' after ignoring (EC)/GLS wording."
                 )
             pdf_district = f"D{int(row['district']):02d}"
-            if (project.get("district") or "") != pdf_district:
+            if not row.get("force_location") and (project.get("district") or "") != pdf_district:
                 ambiguous.append(
                     f"Matched '{project['name']}' by name, but the district differs: "
                     f"existing {project.get('district') or 'blank'} / {project.get('address') or 'no address'}; "
