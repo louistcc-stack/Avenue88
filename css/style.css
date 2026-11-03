@@ -123,7 +123,8 @@ svg{width:1.15em;height:1.15em;flex:none}
 .map-fallback svg{width:32px;height:32px}
 @media(max-width:900px){.nl-hero-grid,.field-row,.contact{grid-template-columns:1fr}}
 form.enquiry{background:var(--card);border:1px solid var(--line);padding:22px}
-.consent{display:flex;gap:8px;font-size:13px;color:var(--mute);align-items:flex-start}
+.consent{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--mute)}
+.consent input{width:auto;flex:none;margin:2px 0 0}
 .form-note,.fine,.disclaimer{color:var(--mute);font-size:13px}
 .hl{color:#fff}
 @media(max-width:900px){
