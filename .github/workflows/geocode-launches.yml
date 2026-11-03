@@ -27,6 +27,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Re-apply the Huttons preview timeline
+        run: python3 scripts/apply_preview_timeline.py
+
       - name: Add OneMap coordinates for projects that do not have them
         run: python3 scripts/geocode_launches.py
 

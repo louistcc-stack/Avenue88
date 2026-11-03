@@ -16,4 +16,6 @@ An empty array hides that row. The four-handle Follow strip stays either way. Ca
 
 ## New launches map
 
+`data/preview-timeline.json` is the Huttons 2027 residential preview timeline (updated 22 Oct 2026). `scripts/apply_preview_timeline.py` copies developer, tenure, estimated units, land psf ppr, region, and target preview onto `data/launches.json`. Run it again after a Huttons refresh so those fields are not dropped. `-` and `Redev` in the land column are left blank. The industrial page is not included.
+
 `scripts/geocode_launches.py` fills `lat` and `lng` on `data/launches.json` from Singapore OneMap's public search. It does not invent a point. A project OneMap cannot match is marked `geocode_status: flagged` and is left off the map. The script skips a project that was already geocoded, or already flagged, for the same address. `.github/workflows/geocode-launches.yml` runs it when `data/launches.json` changes on `main`, and on demand.
