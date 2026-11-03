@@ -11,7 +11,8 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="img/favicon.png">
 <link rel="preload" href="fonts/lato-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=20261103">
+<link rel="stylesheet" href="css/style.css?v=20261103d">
+<link rel="stylesheet" href="css/launches.css?v=20261103d">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Avenue 88 Property","url":"https://www.avenue88property.com/","telephone":"+6580830688","email":"avenue88property@gmail.com","image":"https://www.avenue88property.com/","address":{"@type":"PostalAddress","streetAddress":"3 Bishan Place, #05-01, CPF Bishan Building","postalCode":"579838","addressCountry":"SG"},"parentOrganization":{"@type":"RealEstateAgent","name":"Huttons Asia Pte Ltd"},"sameAs":["https://www.facebook.com/Avenue88Property","https://www.instagram.com/avenue88property","https://www.youtube.com/c/Avenue88Property"]}</script>
 </head>
 <body>
@@ -34,22 +35,35 @@
 
 <section class="page-hero tx-hero nl-hero"><div class="wrap nl-hero-grid"><div>
 <h1>LAUNCHES<span>.</span></h1>
-<p class="lead">Upcoming and fresh condo and EC launches, in one place.</p>
-<div class="btn-row"><a class="btn btn-navy" href="#nl-search">Browse launches</a><a class="btn btn-ghost" href="#contact">Ask us anything</a></div>
+<p class="lead">By month, on a map, side by side.</p>
+<div class="btn-row"><a class="btn gold" href="#nl-search">Browse</a><a class="btn ghost" href="#nl-search" data-open-view="map">Map</a></div>
 </div><div class="nl-collage" aria-hidden="true"><img src="img/launches/01f112d7a2474e0683f8adfabe8ce9a0.webp" alt=""><img src="img/launches/02a030d8f3ca4ed1b2093e94e3b31115.webp" alt=""><img src="img/launches/030fee210b074a86a512f1f6cfaf62b6.webp" alt=""></div>
 </div></section>
 <section class="section tx-search-sec" id="nl-search"><div class="wrap">
+<div class="nl-tools">
 <form class="tx-filters nl-filters" id="nl-form" role="search">
-<div class="field tx-q"><label for="nl-q">Project name or location</label><input id="nl-q" name="q" type="search" placeholder="e.g. Lentor, D10 or a project name" autocomplete="off"></div>
-<div class="field"><label for="nl-region">District / area</label><select id="nl-region" name="region"><option value="">All areas</option></select></div>
-<div class="field"><label for="nl-status">Status</label><select id="nl-status" name="status"><option value="">Any status</option><option>Upcoming</option><option>Just Launched</option><option>Recently Launched</option></select></div>
-<div class="field"><label for="nl-type">Property type</label><select id="nl-type" name="type"><option value="">All types</option></select></div>
-<div class="field"><label for="nl-tenure">Tenure</label><select id="nl-tenure" name="tenure"><option value="">Any tenure</option></select></div>
-<div class="field"><label for="nl-top">Expected TOP</label><select id="nl-top" name="top"><option value="">Any year</option></select></div>
-<button class="tx-reset" id="nl-reset" type="button">Clear filters</button>
+<div class="field tx-q"><label for="nl-q">Project or area</label><input id="nl-q" name="q" type="search" placeholder="Name, road or district" autocomplete="off"></div>
+<div class="field"><label for="nl-region">Region</label><select id="nl-region" name="region"><option value="">All regions</option></select></div>
+<div class="field"><label for="nl-district">District</label><select id="nl-district" name="district"><option value="">All districts</option></select></div>
+<div class="field"><label for="nl-price">Price from</label><select id="nl-price" name="price"></select></div>
+<div class="field"><label for="nl-top">TOP year</label><select id="nl-top" name="top"><option value="">Any year</option></select></div>
+<button class="tx-reset" id="nl-reset" type="button">Clear</button>
 </form>
+<div class="nl-views" role="group" aria-label="Layout">
+<button type="button" data-view="pipeline" aria-pressed="true">Pipeline</button>
+<button type="button" data-view="grid" aria-pressed="false">Grid</button>
+<button type="button" data-view="list" aria-pressed="false">List</button>
+<button type="button" data-view="map" aria-pressed="false">Map</button>
+</div>
+<div class="nl-chips" id="nl-chips" role="group" aria-label="Status"></div>
+</div>
 <p class="tx-count" id="nl-count" aria-live="polite">Loading launches&hellip;</p>
-<div class="nl-grid" id="nl-results"></div>
+<div id="nl-results"></div>
+<div id="nl-map-wrap" hidden>
+<div id="nl-map" role="region" aria-label="Launch map"></div>
+<p class="nl-map-note" id="nl-map-fallback" hidden>This browser cannot draw the 3D map. The list is shown instead.</p>
+<p class="nl-map-note" id="nl-unmapped"></p>
+</div>
 <noscript><p>Please turn on JavaScript to browse launches.</p></noscript>
 <p class="nl-source" id="nl-source">Project info sourced from Huttons. Details are indicative and subject to change.</p>
 </div></section>
@@ -58,7 +72,7 @@
 <div>
 <span class="eyebrow">Contact us</span>
 <h2>Let's talk property.</h2>
-<p class="lead">Buying, selling, renting or upgrading? Drop us a message and we'll get back to you soon. Prefer to chat now? WhatsApp or call us.</p>
+<p class="lead">Ask for a brochure.</p>
 <ul class="contact-list">
 <li><span class="ci"><svg viewBox="0 0 24 24" fill="#1fa855" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></span><div><small>WhatsApp</small><a href="https://wa.me/6580830688?text=Hi%20Avenue%2088%2C%20I%27d%20like%20to%20chat%20about%20my%20property%20plans." target="_blank" rel="noopener">+65 8083 0688</a></div></li>
 <li><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><div><small>Call</small><a href="tel:+6580830688">+65 8083 0688</a></div></li>
@@ -85,9 +99,21 @@
 </form>
 </div></section>
 </main>
+<div class="nl-compare-bar" id="nl-compare-bar" hidden>
+<p id="nl-compare-names"></p>
+<div class="btn-row"><button class="btn gold" type="button" id="nl-compare-open">Compare</button><button class="btn ghost" type="button" id="nl-compare-clear">Clear</button></div>
+</div>
+<div class="nl-sheet" id="nl-compare" hidden>
+<div class="nl-sheet-card" role="dialog" aria-modal="true" aria-labelledby="nl-compare-title">
+<button class="btn ghost" type="button" id="nl-compare-close">Close</button>
+<h2 id="nl-compare-title">COMPARE<span>.</span></h2>
+<div class="nl-table-wrap"><table class="nl-table" id="nl-compare-table"></table></div>
+<a class="btn btn-wa" id="nl-compare-wa" href="https://wa.me/6580830688" target="_blank" rel="noopener">WhatsApp us</a>
+</div>
+</div>
 <footer>
 <div class="fl"><img src="img/logo-avenue88.png" alt=""><p><a href="https://wa.me/6580830688">+65 8083 0688</a> · <a href="mailto:avenue88property@gmail.com">avenue88property@gmail.com</a></p></div>
 <p class="legal">Huttons Asia Pte Ltd · Licence L3008899K<br>Louis Tay R000567G · Jason Ang R008889J · Jackie Mang R008878E · Benny Poh R008885H · Brent Wang R057382I · Chantel Teo R013641J · Phoebe Goh R051932H</p>
 </footer>
-<script src="js/main.js?v=20261103"></script><script src="js/launches.js?v=20261103"></script>
+<script src="js/main.js?v=20261103d"></script><script src="js/launches.js?v=20261103d"></script>
 </body></html>
