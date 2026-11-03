@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#05081c">
 <link rel="icon" href="img/favicon.png">
 <link rel="preload" href="fonts/lato-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=20261103j">
+<link rel="stylesheet" href="css/style.css?v=20261103k">
 </head>
 <body>
 <header class="nav">
@@ -32,7 +32,7 @@
 <h1>PLANNING YOUR<br>NEXT MOVE<span>.</span></h1>
 <p class="lead">Let's do the maths together first. An honest price range for selling, buying, or an HDB upgrade.</p>
 <div class="cta">
-<a class="btn gold" href="#valuation">Get my free assessment</a>
+<a class="btn gold" href="#val-form">Get my free assessment</a>
 <a class="btn ghost" href="https://wa.me/6580830688?text=Hi%20Avenue%2088%2C%20I%27d%20like%20a%20price%20range%20for%20my%20home." target="_blank" rel="noopener">WhatsApp us</a>
 </div>
 </div>
@@ -44,7 +44,7 @@
 <button class="vplay" id="val-play" type="button" aria-label="Play">▶</button>
 </div>
 </section>
-<section class="section" id="valuation"><div class="wrap vform">
+<section class="section" id="val-form"><div class="wrap vform">
 <h2>Your details.</h2>
 <p class="lead">Tell us about your home.</p>
 <form class="enquiry a88-lead" id="valuation" data-form="Home valuation" data-subject="Home valuation" novalidate>
@@ -55,7 +55,10 @@
 </div>
 <div class="field"><label for="v-name">Your name</label><input id="v-name" name="name" required autocomplete="name"></div>
 <div class="field"><label for="v-phone">Mobile number</label><input id="v-phone" name="phone" type="tel" required inputmode="tel" placeholder="8xxx xxxx" autocomplete="tel"></div>
+<div class="field-row v-addr">
 <div class="field"><label for="v-address">Property address or postal code</label><input id="v-address" name="address" placeholder="e.g. Blk 123 Bishan St 12"></div>
+<div class="field"><label for="v-unit">Unit no.</label><input id="v-unit" name="unit" placeholder="#05-123" autocomplete="off"></div>
+</div>
 <div class="field"><label for="v-type">Property type</label><select id="v-type" name="type"><option>HDB</option><option>Condo / EC</option><option>Landed</option><option>Not sure yet</option></select></div>
 <label class="consent"><input type="checkbox" name="consent" required> <span>I agree that Avenue 88 (Huttons Asia Pte Ltd) may contact me about my enquiry and use my details in line with the PDPA.</span></label>
 <button class="btn gold" type="submit">Get my free assessment</button>
@@ -67,7 +70,7 @@
 <div class="fl"><img src="img/logo-avenue88.png" alt=""><p><a href="https://wa.me/6580830688">+65 8083 0688</a> · <a href="mailto:avenue88property@gmail.com">avenue88property@gmail.com</a></p></div>
 <p class="legal">Huttons Asia Pte Ltd · Licence L3008899K<br>Louis Tay R000567G · Jason Ang R008889J · Jackie Mang R008878E · Benny Poh R008885H · Brent Wang R057382I · Chantel Teo R013641J · Phoebe Goh R051932H</p>
 </footer>
-<script src="js/main.js?v=20261103v"></script>
+<script src="js/main.js?v=20261103k"></script>
 <script>
 (function(){
  var v=document.getElementById('val-video'),b=document.getElementById('val-play');

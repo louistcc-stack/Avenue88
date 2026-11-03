@@ -125,6 +125,7 @@ input,select,textarea{width:100%;background:#0c1433;color:#fff;border:1px solid 
 .nl-collage img:first-child{grid-column:1 / -1;height:180px}
 .tx-reset{align-self:end;height:46px;padding:0 16px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55);border-radius:2px;font:inherit;font-size:13px;font-weight:900;letter-spacing:.06em;cursor:pointer;white-space:nowrap}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.v-addr{grid-template-columns:7fr 3fr}
 .cta-band{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:28px}
 svg{width:1.15em;height:1.15em;flex:none}
 .contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px;align-items:start}
