@@ -2,6 +2,10 @@
 
 This is a temporary review site.
 
+## Navigation
+
+The header and footer page links are drawn from `A88_NAV` in `js/main.js`. Each page leaves `<nav id="nav"></nav>` empty. Edit that list to change the links everywhere. The current page is marked with `aria-current` and shown in gold.
+
 ## Instagram posts
 
 `data/instagram.json` feeds the homepage **INSTAGRAM.** grid. It is an array, newest first. Each item is:

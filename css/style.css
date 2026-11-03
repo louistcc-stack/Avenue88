@@ -6,13 +6,13 @@
 body{margin:0;background:var(--bg);color:#fff;font-family:Lato,system-ui,sans-serif;line-height:1.55}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
-.nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px 5vw;background:linear-gradient(#05081ce6,transparent)}
+.nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 3vw;background:linear-gradient(#05081ce6,transparent)}
 .nav.scrolled{background:#05081c}
 .nav img{height:36px;width:auto;filter:brightness(0) invert(1)}
-.nav-right{display:flex;align-items:center;gap:22px}
-.nav nav{display:flex;gap:22px;align-items:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+.nav-right{display:flex;align-items:center;gap:14px;min-width:0}
+.nav nav{display:flex;gap:12px;align-items:center;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;white-space:nowrap}
 .nav nav a[aria-current]{color:var(--gold)}
-.pill{border:1px solid var(--gold);color:var(--gold);padding:10px 16px;border-radius:40px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;white-space:nowrap}
+.pill{border:1px solid var(--gold);color:var(--gold);padding:10px 14px;border-radius:40px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;white-space:nowrap}
 .menu-btn{display:none;background:none;border:0;width:42px;height:32px;padding:0;cursor:pointer}
 .menu-btn span{display:block;height:2px;background:#fff;margin:6px 0}
 .hero{position:relative;height:100vh;min-height:620px;overflow:hidden;background:#05081c}
@@ -30,9 +30,9 @@ h1 span,h2 span{color:var(--gold)}
 .btn-wa{background:#1fa855;color:#fff}
 .btn-light{background:#fff;color:#05081c}
 .nums{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.nums div,.nums a{padding:70px 5vw;border-right:1px solid var(--line);display:block}
+.nums div,.nums a{padding:70px 3vw;border-right:1px solid var(--line);display:block;text-align:center}
 .nums div:last-child,.nums a:last-child{border:0}
-.nums b{display:block;font-size:clamp(56px,7vw,104px);font-weight:900;letter-spacing:-.04em;line-height:1}
+.nums b{display:block;font-size:clamp(56px,7vw,104px);font-weight:900;letter-spacing:-.04em;line-height:1;white-space:nowrap}
 .nums i{font-style:normal;color:var(--gold);font-size:.6em;vertical-align:.35em}
 .nums span{display:block;margin-top:14px;color:var(--mute);text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:700}
 .sec,.page-hero,.section{padding:110px 5vw 36px}
@@ -89,6 +89,10 @@ h2.nm,h3.nm{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px}
 .soc-arrow{margin-left:auto;flex:none;opacity:0;transform:translateX(-6px);transition:.2s;color:var(--gold)}
 .follow a:hover .soc-arrow{opacity:1;transform:none}
 footer{padding:56px 5vw 80px;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;color:var(--mute);font-size:13px;line-height:1.8}
+.fl{order:1}
+.legal{order:2}
+.foot-links{order:3;flex:1 0 100%;display:flex;flex-wrap:wrap;gap:10px 18px;margin:0;padding-top:22px;border-top:1px solid var(--line);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.foot-links a[aria-current]{color:var(--gold)}
 .fl img{height:36px;filter:brightness(0) invert(1);opacity:.85;margin-bottom:12px}
 .legal{max-width:680px;text-align:right}
 .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
@@ -180,11 +184,13 @@ form.enquiry{background:var(--card);border:1px solid var(--line);padding:22px}
 .consent input{width:auto;flex:none;margin:2px 0 0}
 .form-note,.fine,.disclaimer{color:var(--mute);font-size:13px}
 .hl{color:#fff}
-@media(max-width:900px){
+@media(max-width:1100px){
  .menu-btn{display:block}
  .nav{background:#05081cf0}
- .nav nav{display:none;position:absolute;left:0;right:0;top:100%;background:#05081cf5;flex-direction:column;align-items:flex-start;padding:16px 6vw 22px}
+ .nav nav{display:none;position:absolute;left:0;right:0;top:100%;background:#05081cf5;flex-direction:column;align-items:flex-start;gap:16px;padding:16px 6vw 22px;white-space:normal}
  .nav nav.open{display:flex}
+}
+@media(max-width:900px){
  .nums{grid-template-columns:1fr}
  .nums div,.nums a{border-right:0;border-bottom:1px solid var(--line);padding:36px 6vw}
  .ag{flex-basis:calc((100% - 14px)/2)}

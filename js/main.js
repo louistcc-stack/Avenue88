@@ -1,11 +1,45 @@
 
+const A88_NAV=[
+ {label:'Team',page:'about.html'},
+ {label:'Watch',page:'index.html',hash:'#watch'},
+ {label:'Launches',page:'launches.html'},
+ {label:'Transactions',page:'transactions.html'},
+ {label:'Upgrade',page:'hdb-upgrading.html'},
+ {label:'Octa',page:'octa-score.html'},
+ {label:'Tools',page:'index.html',hash:'#tools'},
+ {label:'Value',page:'valuation.html'}
+];
+function a88Page(){const file=(location.pathname.split('/').pop()||'index.html');return file||'index.html'}
+function a88Href(item){return a88Page()==='index.html'&&item.hash?item.hash:item.page+(item.hash||'')}
+function a88Current(item){const here=a88Page();return item.hash?here==='index.html'&&location.hash===item.hash:here===item.page}
+function a88Fill(root){
+ root.replaceChildren();
+ A88_NAV.forEach(item=>{
+  const a=document.createElement('a');
+  a.href=a88Href(item);
+  a.textContent=item.label;
+  if(a88Current(item))a.setAttribute('aria-current','page');
+  root.append(a);
+ });
+}
 const btn=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
 const bar=document.querySelector('header.nav');
+if(nav)a88Fill(nav);
+document.querySelectorAll('footer').forEach(footer=>{
+ if(footer.querySelector('.foot-links'))return;
+ const links=document.createElement('nav');
+ links.className='foot-links';
+ links.setAttribute('aria-label','Pages');
+ a88Fill(links);
+ const legal=footer.querySelector('.legal');
+ footer.insertBefore(links,legal);
+});
 function paintNav(){if(bar)bar.classList.toggle('scrolled',window.scrollY>8)}
 paintNav();
 addEventListener('scroll',paintNav,{passive:true});
+addEventListener('hashchange',()=>{if(nav)a88Fill(nav);document.querySelectorAll('.foot-links').forEach(a88Fill)});
 btn&&btn.addEventListener('click',()=>{const o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
-nav&&nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded',false)}));
+nav&&nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('open');btn&&btn.setAttribute('aria-expanded','false')}});
 const A88_WA='6580830688',A88_MAIL='https://formsubmit.co/ajax/avenue88property@gmail.com';
 const A88_LABELS={goal:'Goal',name:'Name',phone:'Mobile',email:'Email',hdbType:'HDB type',town:'Town',timeline:'Timeline',address:'Property address',unit:'Unit no.',type:'Property type',topic:'Interested in',message:'Message',project:'Project / address',intent:'Buying, selling or upgrading',calc:'Calculator snapshot'};
 document.querySelectorAll('form.a88-lead').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();
