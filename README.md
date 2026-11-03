@@ -13,3 +13,7 @@ This is a temporary review site.
 An empty array hides that row. The four-handle Follow strip stays either way. Cards link out to Instagram. They are not the official white embed.
 
 `data/tiktok.json` is kept in the repo and is not shown on the homepage. The TikTok button in Follow along still links to @avenue88property.
+
+## New launches map
+
+`scripts/geocode_launches.py` fills `lat` and `lng` on `data/launches.json` from Singapore OneMap's public search. It does not invent a point. A project OneMap cannot match is marked `geocode_status: flagged` and is left off the map. The script skips a project that was already geocoded, or already flagged, for the same address. `.github/workflows/geocode-launches.yml` runs it when `data/launches.json` changes on `main`, and on demand.

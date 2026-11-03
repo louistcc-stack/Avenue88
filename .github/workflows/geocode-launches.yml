@@ -1,0 +1,43 @@
+name: Geocode new launches
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - data/launches.json
+
+permissions:
+  contents: write
+
+concurrency:
+  group: geocode-launches
+  cancel-in-progress: false
+
+jobs:
+  geocode:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Add OneMap coordinates for projects that do not have them
+        run: python3 scripts/geocode_launches.py
+
+      - name: Commit data/launches.json if coordinates changed
+        run: |
+          git add -- data/launches.json
+          if git diff --cached --quiet -- data/launches.json; then
+            echo "No new coordinates; skipping commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Add OneMap coordinates for new launches"
+          git push origin HEAD
