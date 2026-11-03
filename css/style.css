@@ -108,14 +108,23 @@ input,select,textarea{width:100%;background:#0c1433;color:#fff;border:1px solid 
 .tx-reset{align-self:end;height:46px;background:#fff;color:#05081c;border:0;font-weight:900;cursor:pointer}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .cta-band{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:28px}
-.contact-list{list-style:none;padding:0;margin:0}
-.contact-list li{display:flex;gap:12px;margin-bottom:12px}
-.map iframe{width:100%;height:220px;border:0;filter:grayscale(1) contrast(1.1)}
-@media(max-width:900px){.nl-hero-grid,.field-row{grid-template-columns:1fr}}
+svg{width:1.15em;height:1.15em;flex:none}
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px;align-items:start}
+.contact-list{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:10px}
+.contact-list li{display:flex;gap:14px;align-items:center;margin:0;padding:14px 16px;background:#0c1433;border:1px solid #ffffff14}
+.contact-list .ci{display:grid;place-items:center;width:42px;height:42px;flex:none;border-radius:10px;background:#12183a;color:var(--gold)}
+.contact-list .ci svg{width:22px;height:22px}
+.contact-list .ci svg[fill="#1fa855"]{fill:var(--gold)}
+.contact-list small{display:block;margin:0 0 4px;color:var(--gold);font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+.contact-list a{font-weight:700}
+.map{position:relative;height:360px;margin-top:4px;border-radius:12px;overflow:hidden;border:1px solid #ffffff14;background:#0c1433}
+.map iframe{position:absolute;inset:0;z-index:1;width:100%;height:100%;border:0;filter:grayscale(.4) contrast(1.05) brightness(.82)}
+.map-fallback{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:20px;text-align:center;color:#fff}
+.map-fallback svg{width:32px;height:32px}
+@media(max-width:900px){.nl-hero-grid,.field-row,.contact{grid-template-columns:1fr}}
 form.enquiry{background:var(--card);border:1px solid var(--line);padding:22px}
 .consent{display:flex;gap:8px;font-size:13px;color:var(--mute);align-items:flex-start}
 .form-note,.fine,.disclaimer{color:var(--mute);font-size:13px}
-.map{border:1px solid var(--line);min-height:180px}
 .hl{color:#fff}
 @media(max-width:900px){
  .menu-btn{display:block}
