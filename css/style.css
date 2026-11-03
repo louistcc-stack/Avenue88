@@ -15,10 +15,9 @@ a{color:inherit;text-decoration:none}
 .pill{border:1px solid var(--gold);color:var(--gold);padding:10px 16px;border-radius:40px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;white-space:nowrap}
 .menu-btn{display:none;background:none;border:0;width:42px;height:32px;padding:0;cursor:pointer}
 .menu-btn span{display:block;height:2px;background:#fff;margin:6px 0}
-.hero{position:relative;height:100vh;min-height:620px;overflow:hidden}
-.poster{position:absolute;inset:0;background:url(../img/cover-01.webp) center/cover}
-.bg{opacity:.55;transform-origin:center;position:absolute;top:50%;left:50%;width:177.78vh;min-width:100%;height:56.25vw;min-height:100%;transform:translate(-50%,-50%) scale(1.35);border:0;pointer-events:none}
-.shade{position:absolute;inset:0;background:linear-gradient(90deg,#05081cf5 0%,#05081cd9 55%,#05081c99),linear-gradient(0deg,#05081c 0%,transparent 35%)}
+.hero{position:relative;height:100vh;min-height:620px;overflow:hidden;background:#05081c}
+.poster{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center 42%}
+.shade{position:absolute;inset:0;background:linear-gradient(90deg,#05081ce6 0%,#05081ca8 34%,#05081c66 62%,#05081c3d 100%),linear-gradient(to top,#05081cd9 0%,#05081c55 22%,transparent 48%)}
 .hc{position:absolute;left:5vw;bottom:12vh;right:5vw}
 h1{font-weight:900;font-size:clamp(72px,12vw,180px);line-height:.85;letter-spacing:-.04em;margin:0}
 h1 span,h2 span{color:var(--gold)}
@@ -133,6 +132,10 @@ form.enquiry{background:var(--card);border:1px solid var(--line);padding:22px}
  .tool{min-height:220px;padding:24px}
  .bio{grid-template-columns:1fr}
  .bio img{max-width:280px}
+}
+@media(max-width:700px){
+ .poster{top:68px;right:0;bottom:auto;left:0;width:100%;height:auto;object-fit:cover;object-position:center 35%}
+ .shade{background:linear-gradient(to top,#05081cf2 0%,#05081cc4 34%,#05081c73 58%,#05081c38 100%)}
 }
 @media(max-width:600px){
  .ep,.igc{flex-basis:78vw}
