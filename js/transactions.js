@@ -62,19 +62,16 @@
 
   function card(r) {
     const a = A[r.agent] || { slug: r.agent, name: r.agent, first: r.agent };
-    const media = r.photo ? `<img src="img/transactions/${esc(r.photo)}" alt="${esc(r.project)}" loading="lazy">` : `<div class="tx-ico">${icon(r.property_type)}</div>`;
-    const price = r.price ? `<li>S$${Number(r.price).toLocaleString('en-SG')}</li>` : '';
+    const chips = [r.property_type, r.district, region(r.district)].filter(Boolean).map(c => `<span>${esc(c)}</span>`).join('');
+    const price = r.price ? ` · S$${Number(r.price).toLocaleString('en-SG')}` : '';
     return `<article class="tx-card">
-      <div class="tx-media t-${esc(r.property_type).toLowerCase()}">${media}
-        ${example ? '<span class="tx-sample">Sample</span>' : ''}<span class="tx-badge ${r.transaction_type === 'Rental' ? 'rent' : 'sale'}">${esc(r.transaction_type)}</span></div>
-      <div class="tx-body">
-        <div class="tx-meta">${esc(r.property_type)} &middot; ${esc(r.district)}${region(r.district) ? ' &middot; ' + region(r.district) : ''}</div>
-        <h3>${esc(r.project)}</h3>
-        <ul class="tx-facts"><li>${esc(fmtMonth(r.month))}</li><li>Represented the ${esc(r.represented)}</li>${price}</ul>
-        ${r.notes ? `<p class="tx-notes">${esc(r.notes)}</p>` : ''}
-        <div class="tx-foot"><span class="tx-agent"><img src="img/team-${esc(a.slug)}.webp" alt="" width="40" height="40" loading="lazy">${esc(a.name)}</span>
-          <a class="btn btn-wa" href="${waLink(a)}" target="_blank" rel="noopener">${WAI}Talk to ${esc(a.first)}</a></div>
-      </div></article>`;
+      <div class="tx-meta">${example ? '<span class="tx-sample">Sample</span>' : ''}${chips}</div>
+      <h3>${esc(r.project)}</h3>
+      <p class="tx-line">${esc(fmtMonth(r.month))} · Represented the ${esc(r.represented)}${price}</p>
+      ${r.notes ? `<p class="tx-notes">${esc(r.notes)}</p>` : ''}
+      <div class="tx-foot"><span class="tx-agent"><img src="img/team-${esc(a.slug)}.webp" alt="" width="40" height="40" loading="lazy"><span>${esc(a.name)}</span></span>
+        <a class="btn btn-wa" href="${waLink(a)}" target="_blank" rel="noopener">${WAI}Talk to ${esc(a.first)}</a></div>
+    </article>`;
   }
 
   function render(updateUrl) {
