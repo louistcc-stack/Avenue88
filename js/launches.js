@@ -138,7 +138,10 @@ function card(p){
 function row(p){
  const art=el('article','nl-row');
  art.dataset.id=p.id;
- art.append(imgOrPh(p));
+ const thumb=el('div','nl-img nl-thumb');
+ thumb.append(imgOrPh(p));
+ const b=badge(p);if(b)thumb.append(b);
+ art.append(thumb);
  const mid=el('div');
  mid.append(el('h3',null,p.name||''));
  const bits=[p.area||p.district,p.status,monthLabel(monthKey(p))].filter(Boolean);

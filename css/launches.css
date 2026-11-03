@@ -14,12 +14,9 @@
 .nl-earlier summary{cursor:pointer;font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:clamp(18px,2vw,22px);padding:22px 0;color:#fff}
 .nl-earlier summary::-webkit-details-marker{display:none}
 .nl-month:first-child h2{margin-top:8px}
-.nl-badge.st-up{background:transparent;color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
-.nl-badge.st-new{background:var(--gold);color:#05081c}
-.nl-badge.st-rec{background:#1c2748;color:#fff}
-.nl-badge.st-pre{background:#123c34;color:#d8fff4}
-.nl-badge.st-sell{background:#123c34;color:#d8fff4}
-.nl-badge.st-out{background:#3a1d1d;color:#ffd0d0}
+.nl-badge.st-up,.nl-badge.st-new,.nl-badge.st-rec,.nl-badge.st-pre,.nl-badge.st-sell,.nl-badge.st-out{background:#D69F1A;color:#05081c;box-shadow:none}
+.nl-row .nl-thumb{position:relative;width:132px;height:88px;aspect-ratio:auto;overflow:hidden}
+.nl-row .nl-thumb img,.nl-row .nl-thumb .nl-ph{width:100%;height:100%;object-fit:cover}
 .nl-list{display:flex;flex-direction:column;gap:10px}
 .nl-row{display:grid;grid-template-columns:132px minmax(0,1fr) auto;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);padding:10px}
 .nl-row img,.nl-row .nl-ph{width:132px;height:88px;object-fit:cover;background:var(--navy)}
@@ -53,6 +50,7 @@ body.has-compare{padding-bottom:84px}
 .nl-table td:first-child{color:var(--mute);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:900;white-space:nowrap}
 @media(max-width:800px){
   .nl-row{grid-template-columns:88px minmax(0,1fr)}
+  .nl-row .nl-thumb{width:88px;height:72px}
   .nl-row .nl-side{grid-column:1 / -1}
   .nl-compare-bar{flex-wrap:wrap}
   #nl-map{height:68vh}
