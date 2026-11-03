@@ -22,11 +22,6 @@
   const shows={};
   (d.shows||[]).forEach(function(s){shows[s.id]=s.name});
   const eps=(d.episodes||[]).slice().sort(function(a,b){return (b.date||'').localeCompare(a.date||'')});
-  const hero=document.getElementById('hero-video');
-  if(hero&&eps[0]&&/^[A-Za-z0-9_-]{6,20}$/.test(eps[0].id)){
-   const id=eps[0].id;
-   hero.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&mute=1&loop=1&playlist='+id+'&controls=0&modestbranding=1&playsinline=1&rel=0';
-  }
   const row=document.getElementById('watch-row');
   if(!row)return;
   row.replaceChildren();
