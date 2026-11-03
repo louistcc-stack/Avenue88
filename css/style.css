@@ -151,3 +151,17 @@ form.enquiry{background:var(--card);border:1px solid var(--line);padding:22px}
  .ep,.igc{flex-basis:78vw}
  footer{padding-bottom:calc(36px + env(safe-area-inset-bottom))}
 }
+.vhero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:center;min-height:calc(100vh - 92px);padding:24px 6vw 64px}
+.vhero h1{font-size:clamp(56px,7vw,108px)}
+.vphone{position:relative;width:min(360px,100%);margin-left:auto;aspect-ratio:9/16;border-radius:32px;overflow:hidden;background:#000;box-shadow:0 0 0 8px #12183a}
+.vphone video{width:100%;height:100%;object-fit:cover;display:block;background:#000}
+.vplay{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:68px;height:68px;border:0;border-radius:50%;background:#D69F1A;color:#05081c;font-size:22px;cursor:pointer;z-index:2}
+.vplay[hidden]{display:none}
+.vform{max-width:640px}
+.vtabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+.vtabs label{display:flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid #ffffff24;font-size:13px;font-weight:700}
+.vtabs input{width:auto}
+@media(max-width:800px){
+ .vhero{grid-template-columns:1fr;min-height:0;padding:104px 6vw 40px}
+ .vphone{width:min(320px,100%);margin:8px auto 0}
+}
