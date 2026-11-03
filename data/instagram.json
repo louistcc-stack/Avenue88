@@ -2,31 +2,43 @@
   {
     "url": "https://www.instagram.com/reel/De8l7NXDycj/",
     "type": "reel",
-    "caption": "5-Room at Bukit Batok"
+    "caption": "5-Room at Bukit Batok",
+    "image": "assets/instagram/De8l7NXDycj.jpg",
+    "image_source": "instagram.com/p/De8l7NXDycj/media/?size=l"
   },
   {
     "url": "https://www.instagram.com/p/De3g-xVk-ik/",
     "type": "carousel",
-    "caption": "The Venue Residences & Shoppes"
+    "caption": "The Venue Residences & Shoppes",
+    "image": "assets/instagram/De3g-xVk-ik.jpg",
+    "image_source": "instagram.com/p/De3g-xVk-ik/media/?size=l"
   },
   {
     "url": "https://www.instagram.com/p/DexwAvYz3FB/",
     "type": "photo",
-    "caption": "2:45 AM. More tabs open. Still no decision?"
+    "caption": "2:45 AM. More tabs open. Still no decision?",
+    "image": "assets/instagram/DexwAvYz3FB.jpg",
+    "image_source": "instagram.com/p/DexwAvYz3FB/media/?size=l"
   },
   {
     "url": "https://www.instagram.com/p/DewMPILE-RX/",
     "type": "carousel",
-    "caption": "Before you buy a new launch, there's one number most buyers never look at."
+    "caption": "Before you buy a new launch, there's one number most buyers never look at.",
+    "image": "assets/instagram/DewMPILE-RX.jpg",
+    "image_source": "instagram.com/p/DewMPILE-RX/media/?size=l"
   },
   {
     "url": "https://www.instagram.com/reel/DeaipPWvSim/",
     "type": "reel",
-    "caption": "Thomson Reserve OCTA Score"
+    "caption": "Thomson Reserve OCTA Score",
+    "image": "assets/instagram/DeaipPWvSim.jpg",
+    "image_source": "instagram.com/p/DeaipPWvSim/media/?size=l"
   },
   {
     "url": "https://www.instagram.com/p/DeY0-0-k7Zp/",
     "type": "carousel",
-    "caption": "What does an Excellent project look like years later?"
+    "caption": "What does an Excellent project look like years later?",
+    "image": "assets/instagram/DeY0-0-k7Zp.jpg",
+    "image_source": "instagram.com/p/DeY0-0-k7Zp/media/?size=l"
   }
 ]
