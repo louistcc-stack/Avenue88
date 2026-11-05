@@ -291,6 +291,18 @@ form.enquiry{background:var(--card);border:1px solid var(--line);padding:22px}
 .cap{padding:56px 16px 16px}.cap h3{line-height:1.2}
 .sec.nx-host{padding-bottom:88px}
 @media(max-width:700px){.sec.nx-host{padding-bottom:70px}}
+/* Hero: keep the headline on the left and the group photo's faces clear of it. */
+.hero .poster{inset:auto 0 auto auto;top:50%;width:60%;height:auto;max-width:none;object-fit:cover;object-position:center 18%;transform:translateY(-50%)}
+.hero .shade{background:linear-gradient(90deg,#1A1612f5 0%,#1A1612ee 32%,#1A16128a 40%,rgba(26,22,18,.2) 46%,rgba(26,22,18,0) 50%)}
+.hero .hc{left:4.5vw;right:auto;bottom:6vh;width:40%;max-width:42%}
+.hero h1{font-size:clamp(56px,min(9vw,15vh),150px)}
+@media(max-width:700px){
+ .hero{height:auto;min-height:0;padding-top:84px}
+ .hero .poster{position:relative;inset:auto;top:auto;transform:none;width:100%;height:52vw;max-height:250px;object-fit:cover;object-position:center 28%}
+ .hero .shade{display:none}
+ .hero .hc{position:relative;left:auto;right:auto;bottom:auto;width:auto;max-width:none;padding:20px 6vw 28px}
+ .hero h1{font-size:clamp(52px,15vw,84px)}
+}
 /* Light sections below the hero. Photo captions keep their dark gradient. */
 #watch,.section.soft{background:var(--bg-alt)}
 #tools,.follow{background:var(--bg-deep)}
