@@ -228,3 +228,50 @@ form.enquiry{background:var(--card);border:1px solid var(--line);padding:22px}
  .vhero{grid-template-columns:1fr;min-height:0;padding:104px 6vw 40px}
  .vphone{width:min(320px,100%);margin:8px auto 0}
 }
+/* Homepage: shorter hero so the key-figures bar shows on first load */
+:root{--nums-h:206px}
+.hero{height:calc(100vh - var(--nums-h));height:calc(100svh - var(--nums-h));min-height:440px}
+.hero .poster{object-position:center 30%}
+.hc{bottom:7vh}
+.hero h1{font-size:clamp(64px,min(12vw,19vh),180px)}
+.hc p{margin:18px 0 24px}
+.nums div,.nums a{padding:36px 3vw}
+.nums b{font-size:clamp(48px,min(7vw,11vh),96px)}
+@media(max-width:900px){
+ :root{--nums-h:126px}
+ .nums{grid-template-columns:repeat(3,1fr)}
+ .nums div,.nums a{padding:20px 2vw;border-bottom:0;border-right:1px solid var(--line)}
+ .nums div:last-child,.nums a:last-child{border:0}
+ .nums b{font-size:clamp(26px,8vw,48px);letter-spacing:-.03em}
+ .nums span{font-size:9.5px;letter-spacing:.06em;margin-top:8px;line-height:1.35}
+}
+@media(max-width:700px){
+ .hero{min-height:500px}
+ .hero h1{font-size:clamp(60px,18vw,96px)}
+ .hc{bottom:4.5vh}
+ .hc p{margin:14px 0 20px}
+}
+/* Next-section button */
+.nx-host{position:relative}
+.nx{position:absolute;right:3vw;bottom:24px;z-index:6;width:46px;height:46px;border-radius:999px;border:0;background:var(--gold);color:#05081c;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px #0007;transition:transform .2s,opacity .2s;opacity:.92}
+.nx:hover{opacity:1;transform:translateY(2px)}
+.nx:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.nx svg{width:20px;height:20px}
+.nx.up svg{transform:rotate(180deg)}
+.hero .nx{bottom:28px;animation:nxb 2.2s ease-in-out infinite}
+@keyframes nxb{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+@media(prefers-reduced-motion:reduce){.hero .nx{animation:none}.nx{transition:none}}
+@media(max-width:700px){.nx{width:40px;height:40px;right:16px;bottom:14px}.hero .nx{bottom:16px}}
+/* Team cards: consistent head height/size per portrait (zoom from source, no new pixels) */
+.ag img{transform:scale(var(--z,1));transform-origin:50% 30%}
+.ag:hover img{transform:scale(calc(var(--z,1) * 1.04))}
+.ag[href$="#jason-ang"] img{object-position:50% 50%;--z:1.37;transform-origin:92% 57%}
+.ag[href$="#jackie-mang"] img{object-position:50% 50%;--z:1.21;transform-origin:7% 32%}
+.ag[href$="#benny-poh"] img{object-position:50% 50%;--z:1.09;transform-origin:100% 24%}
+.ag[href$="#brent-wang"] img{object-position:50% 50%;--z:1.50;transform-origin:99% 100%}
+.ag[href$="#chantel-teo"] img{object-position:50% 50%;--z:1.41;transform-origin:23% 90%}
+.ag[href$="#phoebe-goh"] img{object-position:65% 50%;--z:1.00;transform-origin:50% 50%}
+.ag[href$="#louis-tay"] img{object-position:100% 50%;--z:1.00;transform-origin:50% 50%}
+.cap{padding:56px 16px 16px}.cap h3{line-height:1.2}
+.sec.nx-host{padding-bottom:88px}
+@media(max-width:700px){.sec.nx-host{padding-bottom:70px}}
