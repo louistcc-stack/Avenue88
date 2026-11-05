@@ -58,3 +58,23 @@ document.querySelectorAll('form.a88-lead').forEach(f=>f.addEventListener('submit
   .then(r=>{if(!r.ok)throw 0;say("Thanks, "+name+"! We've got your details and will be in touch soon.",'#168a45');f.reset()})
   .catch(()=>say("Thanks, "+name+"! WhatsApp should have opened with your details. If not, call us on 8083 0688.",'#168a45'));
 }));
+(function(){
+ if(document.querySelector('.wa-float'))return;
+ const a=document.createElement('a');
+ a.className='wa-float';
+ a.href='https://wa.me/'+A88_WA;
+ a.target='_blank';
+ a.rel='noopener';
+ a.setAttribute('aria-label','WhatsApp us');
+ a.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg><span>WhatsApp us</span>';
+ document.body.append(a);
+ const place=()=>{
+  const nums=document.querySelector('.nums');
+  if(!nums){document.body.classList.remove('wa-raised');return}
+  const r=nums.getBoundingClientRect();
+  document.body.classList.toggle('wa-raised',r.top<innerHeight&&r.bottom>innerHeight-8);
+ };
+ place();
+ addEventListener('scroll',place,{passive:true});
+ addEventListener('resize',place);
+})();
