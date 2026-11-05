@@ -1,14 +1,14 @@
 /* HDB upgrading page. Shares style.css for header, type, and forms. */
-.hdb-hero{background:linear-gradient(135deg,#0B1D76,#13278f);color:#fff;padding:clamp(48px,7vw,88px) 0}
+.hdb-hero{background:transparent;color:inherit;padding:clamp(48px,7vw,88px) 0}
 .hdb-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
-.hdb-hero h1{color:#fff;font-size:clamp(40px,12vw,110px);line-height:.9;margin:10px 0 14px}
-.hdb-hero .lead{color:#dfe3f5;max-width:640px}
-.hdb-hero .eyebrow{color:#D69F1A}
+.hdb-hero h1{color:var(--ink);font-size:clamp(40px,12vw,110px);line-height:.9;margin:10px 0 14px}
+.hdb-hero .lead{color:var(--mute);max-width:640px}
+.hdb-hero .eyebrow{color:var(--gold-ink)}
 .hdb .btn.btn-gold{background:#D69F1A;color:#0B1D76;border-radius:999px;border:0}
 .hdb .btn.btn-gold:hover{background:#e8b437}
-.btn-ghost-light{border:2px solid rgba(255,255,255,.6);color:#fff;background:transparent}
-.btn-ghost-light:hover{background:rgba(255,255,255,.1)}
-.hdb-note{font-size:14px;color:#c4cbea;margin:14px 0 0}
+.btn-ghost-light{border:2px solid var(--ink);color:var(--ink);background:transparent}
+.btn-ghost-light:hover{background:rgba(28,25,23,.06)}
+.hdb-note{font-size:14px;color:var(--mute);margin:14px 0 0}
 .hero-card{background:#fff;color:#0B1D76;border-radius:20px;padding:26px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
 .hero-card h2{font-size:26px;margin:0 0 8px}
 .hero-card p{color:#5b6275;margin:0 0 16px}
@@ -17,7 +17,7 @@
 .letter-row a:hover{background:#13278f}
 .path{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .path li{background:#fff;border:1px solid var(--line,#e6e8ef);border-radius:16px;padding:18px}
-.path b{display:block;color:#D69F1A;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.path b{display:block;color:var(--gold-ink);font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
 .path p{color:var(--muted,#5b6275);margin:0;font-size:15px}
 .callout{background:#fbf3df;border-radius:16px;padding:18px 20px;color:#3a4155;margin-top:22px}
 .callout b{color:#0B1D76}
@@ -49,7 +49,7 @@
 .stepper-nav button[aria-selected="true"]{background:#0B1D76;color:#D69F1A}
 .step-panel{background:#fff;border:1px solid var(--line,#e6e8ef);border-radius:18px;padding:22px 24px;margin-top:14px}
 .step-panel h3{margin-bottom:6px}
-.step-kicker{color:#D69F1A;font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:13px;margin:0 0 6px}
+.step-kicker{color:var(--gold-ink);font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:13px;margin:0 0 6px}
 .step-panel p{color:#3a4155}
 .reviews-link{font-weight:700}
 .hdb-form-grid{display:grid;grid-template-columns:1fr .9fr;gap:36px;align-items:start}
@@ -59,18 +59,10 @@
   .hdb-hero-grid,.calc-grid,.hdb-form-grid,.path{grid-template-columns:1fr}
   .hero-card{max-width:460px}
 }
-.hdb,.hdb .section,.hdb .section.soft{background:transparent;color:#fff}
-.hdb h1,.hdb h2,.hdb h3,.hdb .budget-figure,.hdb .age-readout,.hdb .age-col{color:#fff}
-.path li,.gap-card,.calc-card,.out-card,.hero-card,.step-panel,.stepper-nav button{background:#0c1433;color:#fff;border-color:#ffffff18}
-.hero-card p,.path p,.fine,.limit-line,.sale-note,.budget-label,.stats dt,.age-col small,.age-scale,.step-panel p,.hdb .disclaimer{color:#9aa0b8}
-.stats dd,.callout b,.reset-link{color:#fff}
-.callout{background:#1a1408;color:#f3d48a}
-.stepper-nav button{border-color:#D69F1A}
-.stepper-nav button[aria-selected="true"]{background:#0B1D76;color:#D69F1A}
-.letter-row a{background:#05081c}
-.age-slider{accent-color:#D69F1A}
-.age-col .bar{background:#24306a}
-.hdb-hero{background:transparent;padding-top:20px}
+.hdb-hero{padding-top:20px}
+.stepper-nav button[aria-selected="true"]{background:var(--navy);color:var(--gold)}
+.letter-row a{background:var(--navy);color:var(--gold)}
+.hero-card,.path li,.gap-card,.calc-card,.out-card,.step-panel{background:var(--card);border-color:var(--line)}
 @media(max-width:600px){
   .stepper-nav button{min-height:52px;font-size:20px;border-radius:12px}
   .stepper-nav button span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

@@ -1,18 +1,18 @@
 /* Octa Score page styles (separate from style.css on purpose) */
-.octa .eyebrow{color:var(--gold,#D69F1A);font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:13px;margin:0 0 8px}
-.octa-hero{background:linear-gradient(135deg,#0B1D76,#13278f);color:#fff;padding:clamp(48px,7vw,96px) 0}
+.octa .eyebrow{color:var(--gold-ink,#6E520C);font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:13px;margin:0 0 8px}
+.octa-hero{background:transparent;color:inherit;padding:clamp(48px,7vw,96px) 0}
 .octa-hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
-.octa-hero h1{color:#fff;font-size:clamp(32px,4.6vw,54px);line-height:1.1;margin:12px 0 16px}
-.octa-hero .lead{color:#dfe3f5}
-.prop-line{color:#fff;font-weight:900;font-size:clamp(18px,2.2vw,24px);line-height:1.35;margin:16px 0 0}
+.octa-hero h1{color:var(--ink);font-size:clamp(32px,4.6vw,54px);line-height:1.1;margin:12px 0 16px}
+.octa-hero .lead{color:var(--mute)}
+.prop-line{color:var(--ink);font-weight:900;font-size:clamp(18px,2.2vw,24px);line-height:1.35;margin:16px 0 0}
 .prop-heading{line-height:1.25}
 .prop-word{display:inline-flex;gap:1px;align-items:center;background:#0B1D76;border-radius:8px;padding:1px 7px 2px;line-height:1.05;vertical-align:2px;white-space:nowrap}
 .prop-word span{color:#D69F1A;font-weight:900}
 .octa-hero .prop-word{box-shadow:inset 0 0 0 1.5px rgba(214,159,26,.7)}
 .octa-logo{width:min(360px,80%);height:auto;background:#fff;border-radius:14px;padding:6px 14px}
 .btn-gold{background:#D69F1A;color:#0B1D76}.btn-gold:hover{background:#e8b437}
-.btn-ghost-light{border:2px solid rgba(255,255,255,.6);color:#fff}.btn-ghost-light:hover{background:rgba(255,255,255,.1)}
-.octa-note{font-size:14px;color:#c4cbea;margin-top:14px}
+.btn-ghost-light{border:2px solid var(--ink);color:var(--ink)}.btn-ghost-light:hover{background:rgba(28,25,23,.06)}
+.octa-note{font-size:14px;color:var(--mute);margin-top:14px}
 .octa-hero-card{background:#fff;border-radius:20px;padding:22px;color:#0B1D76;text-align:center;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.25)}
 .octa-hero-card p{margin:4px 0 0;font-weight:700;font-size:14px;color:#5b6275}
 .octa-badge{position:absolute;top:16px;left:16px;text-align:left}
@@ -25,18 +25,18 @@
 .octa-radar .spoke{stroke:#dfe2ee;stroke-width:1}
 .octa-radar .shape{fill:rgba(214,159,26,.35);stroke:#D69F1A;stroke-width:3;stroke-linejoin:round;transition:all .2s}
 .octa-radar .lbl-letter,.octa-radar .lbl-name{paint-order:stroke fill;stroke:#fff;stroke-width:3px;stroke-linejoin:round}
-.octa-radar .lbl-letter{font:900 18px Lato,sans-serif;fill:#D69F1A}
+.octa-radar .lbl-letter{font:900 18px Lato,sans-serif;fill:#6E520C}
 .octa-radar .lbl-name{font:700 14px Lato,sans-serif;fill:#0B1D76}
 .octa-play{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
 .octa-chart{position:sticky;top:100px;background:#fff;border:1px solid var(--line,#e6e8ef);border-radius:20px;padding:22px 12px 18px;text-align:center;overflow:visible}
-.octa-total{margin-top:6px;color:#0B1D76}.octa-total b{font-size:52px;font-weight:900}.octa-total span{color:#5b6275;font-size:20px}
-.octa-total em{display:block;font-style:normal;font-weight:900;color:#D69F1A;text-transform:uppercase;letter-spacing:.1em;font-size:14px}
+.octa-total{margin-top:6px;color:var(--ink)}.octa-total b{font-size:52px;font-weight:900}.octa-total span{color:var(--mute);font-size:20px}
+.octa-total em{display:block;font-style:normal;font-weight:900;color:var(--gold-ink);text-transform:uppercase;letter-spacing:.1em;font-size:14px}
 .pillars{list-style:none;margin:0;padding:0;display:grid;gap:12px}
 .pillars li{border:1px solid var(--line,#e6e8ef);border-radius:14px;padding:14px 16px;background:#fff}
 .pillars .ph{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#0B1D76}
 .pillars .ph b{display:flex;align-items:center;gap:8px;min-width:0}
 .pletter{display:inline-grid;place-items:center;width:28px;height:28px;flex:none;background:#0B1D76;color:#D69F1A;border-radius:8px;font-weight:900;font-size:16px;line-height:1}
-.pillars output{font-weight:900;color:#D69F1A;flex:none}
+.pillars output{font-weight:900;color:var(--gold-ink);flex:none}
 .pillars p{margin:4px 0 8px;color:var(--muted,#5b6275);font-size:15px}
 .pillars input[type=range]{width:100%;accent-color:#0B1D76}
 .small.center,.octa .center{text-align:center}
@@ -56,13 +56,10 @@
 .prop-key b{color:#0B1D76;font-weight:900}
 .prop-key-note{margin:14px 0 0}
 .disclaimer{font-size:14px;color:var(--muted,#5b6275);margin-top:28px;border-top:1px solid var(--line,#e6e8ef);padding-top:18px}
-.octa,.octa .section,.octa .section.soft{background:transparent;color:#fff}
-.octa h1,.octa h2,.octa h3,.octa-total,.prop-key b,.octa .faq summary{color:#fff}
-.octa-hero{background:transparent;padding-top:20px}
-.octa-hero-card,.octa-chart,.pillars li,.step,.octa .faq details{background:#0c1433;color:#fff;border-color:#ffffff18}
-.octa-hero-card p,.pillars p,.step p,.octa-badge small,.octa-total span,.disclaimer,.prop-key-note{color:#9aa0b8}
-.octa-radar .grid,.octa-radar .spoke{stroke:#2a3358}
-.octa-radar .lbl-letter,.octa-radar .lbl-name{stroke:#0c1433}
-.octa-radar .lbl-name{fill:#fff}
+.octa-hero{padding-top:20px}
+.octa h1,.octa h2,.octa h3,.octa-total,.prop-key b,.octa .faq summary{color:var(--ink)}
+.octa-hero-card,.octa-chart,.pillars li,.step,.octa .faq details{background:var(--card);color:var(--ink);border-color:var(--line)}
+.octa-hero-card p,.pillars p,.step p,.octa-badge small,.octa-total span,.disclaimer,.prop-key-note{color:var(--mute)}
+.octa-radar .lbl-letter,.octa-radar .lbl-name{stroke:var(--card)}
 .octa-hero h1{font-size:clamp(40px,12vw,110px);line-height:.9}
 @media(max-width:900px){.octa-hero-grid,.octa-play,.octa-get{grid-template-columns:1fr}.steps3{grid-template-columns:1fr}.octa-chart{position:static}.octa-hero-card{max-width:380px;margin:0 auto}.octa-radar.big{max-width:100%}.prop-heading{font-size:clamp(26px,7vw,36px)}}
