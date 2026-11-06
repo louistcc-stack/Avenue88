@@ -13,6 +13,20 @@ function build(){
   b.addEventListener('click',()=>{if(last){go(null);return}const t=secs()[secs().indexOf(s)+1];go(t)});
   s.classList.add('nx-host');s.appendChild(b)});
 }
-const run=()=>{build();new MutationObserver(m=>{if(m.some(x=>x.attributeName==='hidden'))build()}).observe(document.body,{subtree:true,attributes:true,attributeFilter:['hidden']})};
+function dodge(){
+ const fl=document.querySelector('.wa-float');
+ if(!fl)return;
+ const fb=fl.getBoundingClientRect();
+ document.querySelectorAll('.nx').forEach(btn=>{
+  btn.style.bottom='';
+  const b=btn.getBoundingClientRect();
+  const overlap=!(b.right<fb.left-1||fb.right<b.left-1||b.bottom<fb.top-1||fb.bottom<b.top-1);
+  if(!overlap)return;
+  const lift=Math.ceil(b.bottom-fb.top+12);
+  const base=parseFloat(getComputedStyle(btn).bottom)||20;
+  btn.style.bottom=(base+lift)+'px';
+ });
+}
+const run=()=>{build();dodge();new MutationObserver(m=>{if(m.some(x=>x.attributeName==='hidden')){build();dodge()}}).observe(document.body,{subtree:true,attributes:true,attributeFilter:['hidden']});addEventListener('scroll',dodge,{passive:true});addEventListener('resize',dodge)};
 document.readyState==='loading'?document.addEventListener('DOMContentLoaded',run):run();
 })();
