@@ -12,6 +12,8 @@
 .nl-month h2{font-size:clamp(22px,3vw,32px);letter-spacing:.12em;text-transform:uppercase;margin:34px 0 14px;color:var(--ink)}
 .nl-timeline-note{color:var(--mute);font-size:12px;line-height:1.5;margin:28px 0 0;max-width:640px}
 .nl-ph{display:flex;align-items:flex-end;width:100%;height:100%;min-height:140px;padding:18px;background:linear-gradient(165deg,#8C8378,#3A342C);color:#fff;font-weight:900;font-size:22px;letter-spacing:-.03em;line-height:1.15}
+.nl-card .nl-img{aspect-ratio:4/3;overflow:hidden;min-height:0}
+.nl-card .nl-img img,.nl-card .nl-img .nl-ph{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;min-height:0}
 .nl-earlier{margin-top:36px;border-top:1px solid var(--line)}
 .nl-earlier summary{cursor:pointer;font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:clamp(18px,2vw,22px);padding:22px 0;color:var(--ink)}
 .nl-earlier summary::-webkit-details-marker{display:none}
