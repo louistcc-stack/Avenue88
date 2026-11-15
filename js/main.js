@@ -49,6 +49,43 @@ if(!document.getElementById('contact')){
   foot.parentNode.insertBefore(sec,foot);
  }
 }
+const A88_INTEREST={buy:'Buying a home',sell:'Selling my property',rent:'Renting out / renting',upgrade:'Upgrading from HDB',launch:'New condo launches',launches:'New condo launches'};
+function a88InterestKey(){
+ const q=new URLSearchParams(location.search).get('interest');
+ if(q)return q.toLowerCase();
+ const hash=(location.hash||'').replace(/^#/,'');
+ const cut=hash.indexOf('?');
+ if(cut===-1)return (document.body.dataset.interest||'').toLowerCase();
+ return (new URLSearchParams(hash.slice(cut+1)).get('interest')||'').toLowerCase();
+}
+function a88ScrollContact(){
+ const id=(location.hash||'').replace(/^#/,'').split('?')[0];
+ if(id!=='contact')return;
+ const el=document.getElementById('contact');
+ if(!el)return;
+ const go=()=>{
+  const nav=document.querySelector('header.nav');
+  const y=Math.max(0,el.getBoundingClientRect().top+window.scrollY-((nav&&nav.offsetHeight)||0)-12);
+  const root=document.documentElement;
+  const prev=root.style.scrollBehavior;
+  root.style.scrollBehavior='auto';
+  window.scrollTo(0,y);
+  root.style.scrollBehavior=prev;
+ };
+ go();
+ setTimeout(go,0);
+}
+function a88ApplyInterest(){
+ const label=A88_INTEREST[a88InterestKey()];
+ if(label)document.querySelectorAll('select[name="topic"]').forEach(sel=>{
+  const opt=[...sel.options].find(o=>o.value===label||o.textContent.trim()===label);
+  if(opt)sel.value=opt.value;
+ });
+ a88ScrollContact();
+}
+a88ApplyInterest();
+addEventListener('hashchange',a88ApplyInterest);
+addEventListener('load',a88ApplyInterest);
 const A88_WA='6580830688',A88_MAIL='https://formsubmit.co/ajax/avenue88property@gmail.com';
 const A88_LABELS={goal:'Goal',name:'Name',phone:'Mobile',email:'Email',hdbType:'HDB type',town:'Town',timeline:'Timeline',address:'Property address',unit:'Unit no.',type:'Property type',topic:'Interested in',message:'Message',project:'Project / address',intent:'Buying, selling or upgrading',calc:'Calculator snapshot'};
 document.querySelectorAll('form.a88-lead').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();

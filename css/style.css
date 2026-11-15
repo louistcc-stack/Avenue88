@@ -289,8 +289,8 @@ form.enquiry{background:var(--card);border:1px solid var(--line);padding:22px}
 .ag[href$="#phoebe-goh"] img{object-position:65% 50%;--z:1.00;transform-origin:50% 50%}
 .ag[href$="#louis-tay"] img{object-position:100% 50%;--z:1.00;transform-origin:50% 50%}
 .cap{padding:56px 16px 16px}.cap h3{line-height:1.2}
-.sec.nx-host,.follow.nx-host{padding-bottom:88px}
-@media(max-width:700px){.sec.nx-host,.follow.nx-host{padding-bottom:84px}}
+.sec.nx-host,.section.nx-host,.page-hero.nx-host,.follow.nx-host{padding-bottom:88px}
+@media(max-width:700px){.sec.nx-host,.section.nx-host,.page-hero.nx-host,.follow.nx-host{padding-bottom:84px}}
 /* Hero: keep the headline on the left and the group photo's faces clear of it. */
 .hero .poster{inset:auto 0 auto auto;top:50%;width:60%;height:auto;max-width:none;object-fit:cover;object-position:center 18%;transform:translateY(-50%)}
 .hero .shade{background:linear-gradient(90deg,#1A1612f5 0%,#1A1612ee 32%,#1A16128a 40%,rgba(26,22,18,.2) 46%,rgba(26,22,18,0) 50%)}
@@ -356,7 +356,12 @@ body.has-compare .wa-float{bottom:calc(92px + env(safe-area-inset-bottom))}
 .ask{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding:22px 5vw;background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .ask p{margin:0;font-weight:900;font-size:clamp(18px,2vw,26px);letter-spacing:-.02em}
 .why-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.why-card{background:var(--card);border:1px solid var(--line);padding:22px 18px 20px;min-height:220px}
+a.why-card{display:flex;flex-direction:column;position:relative;color:inherit;text-decoration:none;background:var(--card);border:1px solid var(--line);padding:22px 18px 20px;min-height:220px;transition:transform .2s,border-color .2s,box-shadow .2s}
+a.why-card:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 14px 28px rgba(60,40,10,.08)}
+a.why-card:focus-visible{outline:3px solid var(--gold-ink);outline-offset:3px}
+.why-go{position:absolute;top:18px;right:16px;color:var(--gold-ink);font-size:22px;line-height:1;transition:transform .2s}
+a.why-card:hover .why-go{transform:translateX(6px)}
+@media(prefers-reduced-motion:reduce){a.why-card,a.why-card .why-go{transition:none}a.why-card:hover,a.why-card:hover .why-go{transform:none}}
 .why-ico{display:grid;place-items:center;width:46px;height:46px;border:1px solid var(--gold);border-radius:50%;color:var(--gold-ink);margin-bottom:16px}
 .why-ico svg{width:22px;height:22px}
 .why-card h3{margin:0 0 8px;font-size:22px}
@@ -415,3 +420,14 @@ body.has-compare .wa-float{bottom:calc(92px + env(safe-area-inset-bottom))}
  .ask{align-items:flex-start}
 }
 @media(max-width:700px){.why-grid{grid-template-columns:1fr}}
+.sell-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.sell-tile{background:var(--card);border:1px solid var(--line);padding:22px 18px 20px;min-height:210px}
+.sell-tile h3{margin:0 0 8px;font-size:20px}
+.sell-tile p{margin:0;color:var(--mute);font-size:15px}
+.sell-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;list-style:none;margin:0;padding:0}
+.sell-steps li{background:var(--card);border:1px solid var(--line);padding:20px 18px}
+.sell-steps b{display:block;color:var(--gold-ink);font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.sell-steps h3{margin:0 0 8px;font-size:22px}
+.sell-steps p{margin:0;color:var(--mute);font-size:15px}
+@media(max-width:1000px){.sell-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.sell-grid,.sell-steps{grid-template-columns:1fr}}
