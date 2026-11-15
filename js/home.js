@@ -6,8 +6,6 @@
  json('data/stats.json').then(function(d){
   const team=d.team||{};
   const n=typeof team.since_2017==='number'?team.since_2017:team.total;
-  const agents=(team.included||[]).length;
-  if(agents)text(document.getElementById('stat-agents'),String(agents));
   if(typeof n==='number')text(document.getElementById('stat-tx'),fmt(Math.floor(n/100)*100)+'+');
  }).catch(function(){});
  json('data/google.json').then(function(g){
@@ -15,7 +13,7 @@
   const label=document.getElementById('stat-google-label');
   const link=document.getElementById('stat-google-link');
   if(b&&typeof g.rating==='number')b.innerHTML=g.rating.toFixed(1)+'<i>★</i>';
-  if(label&&typeof g.count==='number')label.textContent='From '+g.count.toLocaleString('en-SG')+' Google reviews';
+  if(label)label.textContent='Positive reviews from our clients';
   if(link&&g.url)link.href=g.url;
  }).catch(function(){});
  json('data/podcasts.json').then(function(d){
@@ -25,7 +23,7 @@
   const row=document.getElementById('watch-row');
   if(!row)return;
   row.replaceChildren();
-  eps.slice(0,12).forEach(function(e){
+  eps.slice(0,6).forEach(function(e){
    if(!/^[A-Za-z0-9_-]{6,20}$/.test(e.id||''))return;
    const a=document.createElement('a');
    a.className='ep';
@@ -87,7 +85,7 @@
   if(!sec||!row||!list.length)return;
   row.replaceChildren();
   let embeds=0;
-  list.forEach(function(post){
+  list.slice(0,9).forEach(function(post){
    const href=igHref(post.url);
    const code=igShort(href);
    if(!href||!code)return;
@@ -118,5 +116,35 @@
   });
   if(row.children.length)sec.hidden=false;
   if(embeds)loadEmbed();
+ }).catch(function(){});
+ function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+ const trackHost=document.getElementById('track-row');
+ if(trackHost&&Array.isArray(window.A88_TRACK)){
+  trackHost.innerHTML=window.A88_TRACK.map(function(card){
+   const photo=card.photo?'<img src="'+esc(card.photo)+'" alt="">':'<div class="tr-ph" aria-hidden="true"></div>';
+   const sample=card.sample?'<span class="tr-sample">Sample, photo coming</span>':'';
+   return '<article class="tr-card">'
+    +'<div class="tr-photo">'+photo+sample+'<div class="tr-shade"></div>'
+    +'<div class="tr-copy"><p class="tr-sold">Sold</p><p class="tr-badge">'+esc(card.soldLine)+'</p>'
+    +'<h3>'+esc(card.project)+'</h3><p class="tr-place">'+esc(card.place)+'</p>'
+    +'<div class="tr-agent"><img src="'+esc(card.headshot)+'" alt=""><span><b>'+esc(card.agent)+'</b><small>CEA '+esc(card.cea)+'</small></span></div>'
+    +'<img class="tr-logo" src="img/logo-avenue88.png" alt="Avenue 88"></div></div></article>';
+  }).join('');
+ }
+ const revTrack=document.getElementById('rev-track');
+ json('data/reviews.json').then(function(d){
+  const list=(d&&d.reviews)||[];
+  if(!revTrack)return;
+  if(!list.length){
+   revTrack.innerHTML='<article class="rev-card"><p>We only show reviews already on file. Read them on Google.</p><a href="https://www.google.com/maps/place/Avenue+88/@1.3497916,103.8492158,17z" target="_blank" rel="noopener">Open our Google reviews</a></article>';
+   return;
+  }
+  revTrack.innerHTML=list.map(function(r){
+   return '<article class="rev-card"><p>'+esc(r.text)+'</p><footer><b>'+esc(r.who||'A client')+'</b><span>'+esc(r.about||'')+'</span><small>'+esc(r.source||'')+'</small></footer></article>';
+  }).join('');
+  const prev=document.getElementById('rev-prev'),next=document.getElementById('rev-next');
+  function step(dir){revTrack.scrollBy({left:dir*(revTrack.clientWidth*0.86),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}
+  if(prev)prev.addEventListener('click',function(){step(-1)});
+  if(next)next.addEventListener('click',function(){step(1)});
  }).catch(function(){});
 })();

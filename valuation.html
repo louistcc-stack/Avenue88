@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#FAF7F2">
 <link rel="icon" href="img/favicon.png">
 <link rel="preload" href="fonts/lato-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=20261105b">
+<link rel="stylesheet" href="css/style.css?v=20261115a">
 </head>
 <body>
 <header class="nav">
@@ -38,9 +38,26 @@
 <button class="vplay" id="val-play" type="button" aria-label="Play">▶</button>
 </div>
 </section>
-<section class="section" id="val-form"><div class="wrap vform">
-<h2>Your details.</h2>
-<p class="lead">Tell us about your home.</p>
+<section class="section" id="calculator"><div class="wrap">
+<h2>A first sketch.</h2>
+<p class="lead">Enter the numbers you already know. We add them up. This is not a valuation and not a bank offer.</p>
+<form class="calc-box" id="afford">
+<div class="field-row">
+<div class="field"><label for="c-sale">Estimated sale price (S$)</label><input id="c-sale" inputmode="numeric" placeholder="650000"></div>
+<div class="field"><label for="c-loan">Outstanding loan (S$)</label><input id="c-loan" inputmode="numeric" placeholder="180000"></div>
+</div>
+<div class="field"><label for="c-cash">Cash you can add (S$)</label><input id="c-cash" inputmode="numeric" placeholder="50000"></div>
+<button class="btn gold" type="submit">Add it up</button>
+<div class="calc-result" id="calc-out" hidden>
+<span>Indicative next-home budget</span>
+<b id="calc-fig"></b>
+<p class="fine">Sale price, minus the loan, plus the cash you typed. It is only that sum. It is not what your home is worth, and it is not what a bank will lend.</p>
+</div>
+</form>
+</div></section>
+<section class="section" id="contact"><div class="wrap vform">
+<h2>Get your exact valuation.</h2>
+<p class="lead">Tell us about your home. We'll come back with a range. The form does not invent a price.</p>
 <form class="enquiry a88-lead" id="valuation" data-form="Home valuation" data-subject="Home valuation" novalidate>
 <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 <div class="vtabs" role="radiogroup" aria-label="What do you need?">
@@ -64,7 +81,20 @@
 <div class="fl"><img src="img/logo-avenue88.png" alt=""><p><a href="https://wa.me/6580830688">+65 8083 0688</a> · <a href="mailto:avenue88property@gmail.com">avenue88property@gmail.com</a></p></div>
 <p class="legal">Huttons Asia Pte Ltd · Licence L3008899K</p>
 </footer>
-<script src="js/main.js?v=20261105b"></script>
+<script src="js/main.js?v=20261115a"></script>
+<script>
+(function(){
+ var f=document.getElementById('afford'),out=document.getElementById('calc-out'),fig=document.getElementById('calc-fig');
+ if(!f)return;
+ function num(id){var n=parseFloat(String(document.getElementById(id).value).replace(/[, ]/g,''));return isFinite(n)&&n>=0?n:0}
+ f.addEventListener('submit',function(e){
+  e.preventDefault();
+  var budget=num('c-sale')-num('c-loan')+num('c-cash');
+  fig.textContent=(budget<0?'−':'')+'S$'+Math.abs(Math.round(budget)).toLocaleString('en-SG');
+  out.hidden=false;
+ });
+})();
+</script>
 <script>
 (function(){
  var v=document.getElementById('val-video'),b=document.getElementById('val-play');
