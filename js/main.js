@@ -1,17 +1,16 @@
 
 const A88_NAV=[
- {label:'Team',page:'about.html'},
- {label:'Watch',page:'index.html',hash:'#watch'},
- {label:'Launches',page:'launches.html'},
- {label:'Transactions',page:'transactions.html'},
- {label:'Upgrade',page:'hdb-upgrading.html'},
- {label:'Octa',page:'octa-score.html'},
- {label:'Tools',page:'index.html',hash:'#tools'},
- {label:'Value',page:'valuation.html'}
+ {label:'About',page:'about.html',also:['transactions.html']},
+ {label:'Buy/Sell',page:'hdb-upgrading.html'},
+ {label:'Projects',page:'launches.html'},
+ {label:'Our Socials',page:'index.html',hash:'#watch'},
+ {label:'Octa Report',page:'octa-score.html'},
+ {label:'Get Valuation',page:'valuation.html'},
+ {label:'News',page:'news.html'}
 ];
 function a88Page(){const file=(location.pathname.split('/').pop()||'index.html');return file||'index.html'}
 function a88Href(item){return a88Page()==='index.html'&&item.hash?item.hash:item.page+(item.hash||'')}
-function a88Current(item){const here=a88Page();return item.hash?here==='index.html'&&location.hash===item.hash:here===item.page}
+function a88Current(item){const here=a88Page();if(item.also&&item.also.indexOf(here)!==-1)return true;return item.hash?here==='index.html'&&location.hash===item.hash:here===item.page}
 function a88Fill(root){
  root.replaceChildren();
  A88_NAV.forEach(item=>{
@@ -40,6 +39,16 @@ addEventListener('scroll',paintNav,{passive:true});
 addEventListener('hashchange',()=>{if(nav)a88Fill(nav);document.querySelectorAll('.foot-links').forEach(a88Fill)});
 btn&&btn.addEventListener('click',()=>{const o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
 nav&&nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('open');btn&&btn.setAttribute('aria-expanded','false')}});
+if(!document.getElementById('contact')){
+ const foot=document.querySelector('footer');
+ if(foot){
+  const sec=document.createElement('section');
+  sec.className='section soft';
+  sec.id='contact';
+  sec.innerHTML='<div class="wrap contact"><div><span class="eyebrow">Contact us</span><h2>Let\'s talk property.</h2><p class="lead">Buying, selling, renting or upgrading? Drop us a message and we\'ll get back to you soon. Prefer to chat now? WhatsApp or call us.</p><p><a class="btn btn-wa" href="https://wa.me/6580830688" target="_blank" rel="noopener">WhatsApp us</a></p></div><form class="enquiry a88-lead" novalidate><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"><h3>Send us an enquiry</h3><div class="field"><label>Name</label><input name="name" autocomplete="name" required placeholder="Your name"></div><div class="field-row"><div class="field"><label>Phone</label><input name="phone" type="tel" autocomplete="tel" required placeholder="+65"></div><div class="field"><label>Email</label><input name="email" type="email" autocomplete="email" placeholder="you@email.com"></div></div><div class="field"><label>I\'m interested in</label><select name="topic"><option>Buying a home</option><option>Selling my property</option><option>Renting out / renting</option><option>Upgrading from HDB</option><option>New condo launches</option><option>Something else</option></select></div><div class="field"><label>Message</label><textarea name="message" rows="4" placeholder="Tell us a little about what you\'re looking for"></textarea></div><label class="consent"><input type="checkbox" name="consent" required> <span>I agree to Avenue 88 Property contacting me about my enquiry, and to my details being used for that purpose in line with the PDPA.</span></label><button class="btn btn-navy" type="submit">Enquire now</button><p class="form-note" hidden aria-live="polite"></p></form></div>';
+  foot.parentNode.insertBefore(sec,foot);
+ }
+}
 const A88_WA='6580830688',A88_MAIL='https://formsubmit.co/ajax/avenue88property@gmail.com';
 const A88_LABELS={goal:'Goal',name:'Name',phone:'Mobile',email:'Email',hdbType:'HDB type',town:'Town',timeline:'Timeline',address:'Property address',unit:'Unit no.',type:'Property type',topic:'Interested in',message:'Message',project:'Project / address',intent:'Buying, selling or upgrading',calc:'Calculator snapshot'};
 document.querySelectorAll('form.a88-lead').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();
