@@ -8,7 +8,9 @@ const go=el=>{const y=el?el.getBoundingClientRect().top+scrollY-headerH()+1:0;sc
 function build(){
  document.querySelectorAll('.nx').forEach(b=>b.remove());
  const S=secs();
- S.forEach((s,i)=>{const last=i===S.length-1,b=document.createElement('button');b.type='button';b.className='nx'+(last?' up':'');b.innerHTML=svg;
+ S.forEach((s,i)=>{
+  if(s.classList.contains('press'))return;
+  const last=i===S.length-1,b=document.createElement('button');b.type='button';b.className='nx'+(last?' up':'');b.innerHTML=svg;
   b.setAttribute('aria-label',last?'Back to top':'Next section');
   b.addEventListener('click',()=>{if(last){go(null);return}const t=secs()[secs().indexOf(s)+1];go(t)});
   s.classList.add('nx-host');s.appendChild(b)});
