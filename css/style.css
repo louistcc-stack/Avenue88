@@ -415,6 +415,8 @@ a.why-card:hover .why-go{transform:translateX(6px)}
 .tr-badge{margin:2px 0 10px;color:#F6F1EA;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .tr-copy h3{margin:0;font-size:20px;color:#fff}
 .tr-place{margin:2px 0 12px;color:#F6F1EA;font-size:13px}
+.tr-place:has(+.tr-extra){margin-bottom:6px}
+.tr-extra{display:inline-block;margin:0 0 12px;padding:3px 8px;background:#D69F1A;color:#1A1612;font-size:12px;font-weight:800;letter-spacing:.04em}
 .tr-agent{display:flex;align-items:center;gap:10px}
 .tr-agent img{width:72px;height:72px;flex:none;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 14px #0008}
 .tr-agent b{display:block;font-size:18px;font-weight:700;line-height:1.15;color:#fff;white-space:nowrap}
