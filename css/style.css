@@ -379,6 +379,9 @@ a.why-card:hover .why-go{transform:translateX(6px)}
 .team-lines span{color:var(--mute);font-size:14px}
 #team .team-photos{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;width:100%}
 #team .team-photos .ag{flex:none;width:auto;aspect-ratio:3/4}
+#team .team-photos .ag img{object-position:center center;transform:none;filter:none}
+#team .team-photos .ag:hover img{transform:none;filter:none}
+.tx-agent img{object-position:center 30%}
 #team .cap h3{font-size:clamp(13px,1.1vw,16px)}
 #team .cap .cea{display:block;margin-top:3px;font-size:10px;font-weight:700;letter-spacing:.03em;color:#F6F1EA}
 #tools .tool{min-height:0;padding:28px;flex-direction:row;align-items:center;justify-content:space-between;gap:18px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
