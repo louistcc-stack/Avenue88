@@ -406,16 +406,17 @@ a.why-card:hover .why-go{transform:translateX(6px)}
 .tr-card{flex:0 0 min(280px,78vw);scroll-snap-align:start}
 .tr-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:#e7dfd2;color:#fff}
 .tr-photo>img,.tr-ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tr-photo>img{filter:saturate(.55) contrast(.78) brightness(.82)}
 .tr-ph{background:repeating-linear-gradient(135deg,#efe6d8,#efe6d8 12px,#e4d9c8 12px,#e4d9c8 24px)}
 .tr-sample{position:absolute;top:14px;left:14px;z-index:2;background:#fff;color:#1C1917;font-size:12px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;padding:6px 8px}
-.tr-shade{position:absolute;inset:0;background:linear-gradient(to top,#1A1612f2 0%,#1A1612b8 34%,transparent 62%)}
+.tr-shade{position:absolute;inset:0;background:linear-gradient(to top,#1A1612f5 0%,#1A1612c4 40%,#1A161259 70%,#1A161233 100%)}
 .tr-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px 16px 16px}
 .tr-sold{margin:0;font-family:Georgia,"Iowan Old Style",Palatino,serif;font-style:italic;font-weight:500;font-size:42px;line-height:1}
 .tr-badge{margin:2px 0 10px;color:#F6F1EA;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .tr-copy h3{margin:0;font-size:20px;color:#fff}
 .tr-place{margin:2px 0 12px;color:#F6F1EA;font-size:13px}
 .tr-agent{display:flex;align-items:center;gap:10px}
-.tr-agent img{width:72px;height:72px;flex:none;border-radius:50%;object-fit:cover}
+.tr-agent img{width:72px;height:72px;flex:none;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 14px #0008}
 .tr-agent b{display:block;font-size:18px;font-weight:700;line-height:1.15;color:#fff;white-space:nowrap}
 .tr-agent small{color:#F6F1EA;font-size:11px;white-space:nowrap}
 .tr-logo{position:absolute;top:14px;right:14px;z-index:2;height:22px;width:auto;filter:brightness(0) invert(1)}

@@ -175,7 +175,7 @@
     +'<div class="tr-photo">'+photo+sample+'<div class="tr-shade"></div>'
     +'<div class="tr-copy"><p class="tr-sold">Sold</p><p class="tr-badge">'+esc(card.soldLine)+'</p>'
     +'<h3>'+esc(card.project)+'</h3><p class="tr-place">'+esc(card.place)+'</p>'
-    +'<div class="tr-agent"><img src="'+esc(card.headshot)+'" alt=""><span><b>'+esc(card.agent)+'</b><small>CEA '+esc(card.cea)+'</small></span></div>'
+    +'<div class="tr-agent"><img src="'+esc(card.headshot)+'" alt=""><span><b>'+esc(card.agent)+'</b></span></div>'
     +'<img class="tr-logo" src="img/logo-avenue88.png" alt="Avenue 88"></div></div></article>';
   }).join('');
  }
