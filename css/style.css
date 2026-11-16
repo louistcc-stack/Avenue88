@@ -415,7 +415,7 @@ a.why-card:hover .why-go{transform:translateX(6px)}
 .tr-copy h3{margin:0;font-size:20px;color:#fff}
 .tr-place{margin:2px 0 12px;color:#F6F1EA;font-size:13px}
 .tr-agent{display:flex;align-items:center;gap:10px}
-.tr-agent img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+.tr-agent img{width:72px;height:72px;flex:none;border-radius:50%;object-fit:cover}
 .tr-agent b{display:block;font-size:14px}
 .tr-agent small{color:#F6F1EA;font-size:11px}
 .tr-logo{position:absolute;top:14px;right:14px;z-index:2;height:22px;width:auto;filter:brightness(0) invert(1)}
@@ -464,6 +464,7 @@ body.home #contact form.enquiry{width:100%;text-align:left}
 @media(max-width:700px){
  .why-grid{grid-template-columns:1fr}
  #team .team-photos{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .tr-agent img{width:60px;height:60px}
 }
 .sell-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .sell-tile{background:var(--card);border:1px solid var(--line);padding:22px 18px 20px;min-height:210px}
