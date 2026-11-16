@@ -421,12 +421,12 @@ a.why-card:hover .why-go{transform:translateX(6px)}
 #watch .th{aspect-ratio:16/10}
 #watch .ep h4{font-size:15px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .rev-wrap{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center}
-.rev-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.rev-track{display:flex;align-items:flex-start;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
 .rev-track::-webkit-scrollbar{display:none}
 .rev-note{margin:8px 0 18px;color:var(--mute);font-size:14px}
 .rev-summary{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:0 0 22px}
 .rev-badge{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-weight:900}
-.rev-card{flex:0 0 min(420px,86%);scroll-snap-align:start;background:var(--card);border:1px solid var(--line);padding:18px 18px 16px;display:flex;flex-direction:column;gap:10px}
+.rev-card{flex:0 0 min(420px,86%);align-self:flex-start;height:auto;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);padding:18px 18px 16px;display:flex;flex-direction:column;gap:10px}
 .rev-card header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px}
 .rev-card header b{font-size:16px}
 .rev-stars{color:var(--gold-ink);letter-spacing:.08em;font-size:14px}
