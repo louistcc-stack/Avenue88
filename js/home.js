@@ -3,19 +3,67 @@
  function json(url){return fetch(url,opt).then(function(r){if(!r.ok)throw 0;return r.json()})}
  function text(el,value){if(el)el.textContent=value}
  function fmt(n){return Number(n).toLocaleString('en-SG')}
+ let statsLeft=2;
+ function armStats(){if(--statsLeft===0)countStats()}
  json('data/stats.json').then(function(d){
   const team=d.team||{};
   const n=typeof team.since_2017==='number'?team.since_2017:team.total;
-  if(typeof n==='number')text(document.getElementById('stat-tx'),fmt(Math.floor(n/100)*100)+'+');
- }).catch(function(){});
+  const el=document.getElementById('stat-tx');
+  if(el&&typeof n==='number'){
+   const rounded=Math.floor(n/100)*100;
+   el.dataset.count=String(rounded);
+   text(el,fmt(rounded)+'+');
+  }
+ }).catch(function(){}).then(armStats);
  json('data/google.json').then(function(g){
   const b=document.getElementById('stat-google');
   const label=document.getElementById('stat-google-label');
   const link=document.getElementById('stat-google-link');
-  if(b&&typeof g.rating==='number')b.innerHTML=g.rating.toFixed(1)+'<i>★</i>';
+  if(b&&typeof g.rating==='number'){
+   b.dataset.count=String(g.rating);
+   b.dataset.decimals='1';
+   b.dataset.star='1';
+   b.innerHTML=g.rating.toFixed(1)+'<i>★</i>';
+  }
   if(label)label.textContent='Positive reviews from our clients';
   if(link&&g.url)link.href=g.url;
- }).catch(function(){});
+ }).catch(function(){}).then(armStats);
+ function countStats(){
+  const band=document.querySelector('.nums');
+  if(!band)return;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finals=new Map();
+  band.querySelectorAll('[data-count]').forEach(function(el){finals.set(el,el.innerHTML)});
+  function play(){
+   finals.forEach(function(finalHTML,el){
+    if(reduce){el.innerHTML=finalHTML;return}
+    const target=parseFloat(el.dataset.count);
+    const prefix=el.dataset.prefix||'';
+    const suffix=el.dataset.suffix||'';
+    const decimals=parseInt(el.dataset.decimals||'0',10)||0;
+    const star=el.dataset.star==='1';
+    const start=performance.now();
+    function frame(now){
+     const t=Math.min(1,(now-start)/1500);
+     const e=1-Math.pow(1-t,3);
+     const val=target*e;
+     const num=decimals?val.toFixed(decimals):Math.round(val).toLocaleString('en-SG');
+     el.innerHTML=prefix+num+suffix+(star?'<i>★</i>':'');
+     if(t<1)requestAnimationFrame(frame);
+     else el.innerHTML=finalHTML;
+    }
+    if(!isFinite(target)){el.innerHTML=finalHTML;return}
+    requestAnimationFrame(frame);
+   });
+  }
+  if(reduce){play();return}
+  const io=new IntersectionObserver(function(entries){
+   if(!entries.some(function(e){return e.isIntersecting}))return;
+   io.disconnect();
+   play();
+  },{threshold:.4});
+  io.observe(band);
+ }
  json('data/podcasts.json').then(function(d){
   const shows={};
   (d.shows||[]).forEach(function(s){shows[s.id]=s.name});
@@ -139,9 +187,24 @@
    revTrack.innerHTML='<article class="rev-card"><p>We only show reviews already on file. Read them on Google.</p><a href="https://www.google.com/maps/place/Avenue+88/@1.3497916,103.8492158,17z" target="_blank" rel="noopener">Open our Google reviews</a></article>';
    return;
   }
+  const stars=function(n){return '★★★★★'.slice(0,Math.max(0,Math.min(5,n||5)))}
   revTrack.innerHTML=list.map(function(r){
-   return '<article class="rev-card"><p>'+esc(r.text)+'</p><footer><b>'+esc(r.who||'A client')+'</b><span>'+esc(r.about||'')+'</span><small>'+esc(r.source||'')+'</small></footer></article>';
+   const paras=String(r.text||'').split(/\n\n/).map(function(p){return '<p>'+esc(p).replace(/\n/g,'<br>')+'</p>'}).join('');
+   const who=r.name||r.who||'';
+   return '<article class="rev-card"><header><b>'+esc(who)+'</b><span class="rev-stars" aria-label="'+stars(r.stars).length+' stars">'+stars(r.stars)+'</span><span class="rev-google">Google</span><time>'+esc(r.when||'')+'</time></header><div class="rev-text">'+paras+'</div><button type="button" class="rev-more" hidden>Read more</button>'+(r.agent?'<span class="rev-agent">Agent: '+esc(r.agent)+'</span>':'')+'</article>';
   }).join('');
+  revTrack.querySelectorAll('.rev-card').forEach(function(card){
+   const body=card.querySelector('.rev-text');
+   const more=card.querySelector('.rev-more');
+   if(!body||!more)return;
+   if(body.scrollHeight>body.clientHeight+2){
+    more.hidden=false;
+    more.addEventListener('click',function(){
+     const open=card.classList.toggle('is-open');
+     more.textContent=open?'Show less':'Read more';
+    });
+   }
+  });
   const prev=document.getElementById('rev-prev'),next=document.getElementById('rev-next');
   function step(dir){revTrack.scrollBy({left:dir*(revTrack.clientWidth*0.86),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}
   if(prev)prev.addEventListener('click',function(){step(-1)});

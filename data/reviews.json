@@ -1,11 +1,77 @@
 {
-  "note": "Only quotes already published by the client. Do not add paraphrases. Leave reviews empty rather than inventing one.",
+  "note": "Verbatim Google reviews copied from the Avenue 88 Maps listing on 16 Nov 2026. Do not edit wording.",
+  "url": "https://maps.google.com/?cid=3748460871875039604",
+  "rating": "5.0",
   "reviews": [
     {
-      "text": "Jason is very prompt, responsible and knowledgeable with the market condition. He crafted an effective strategy to cater to my needs leading to an outstanding sales experience in both transactional and price. He's detailed and leave no room for miss-interpretation and ambiguities. Great job and keep it up, Jason!",
-      "who": "A client",
-      "about": "Jason Ang",
-      "source": "Published on the Avenue 88 website"
+      "name": "Sheshagiri Malliah",
+      "when": "4 weeks ago",
+      "agent": "Jason",
+      "stars": 5,
+      "text": "Jason was a pleasure to deal with during my search for a rental home. He was flexible with viewing times and very accommodating of my schedule. Knowledgeable, transparent and easy to speak with, he made the whole experience smooth and pleasant. Thank you, Jason, for all your help!"
+    },
+    {
+      "name": "Marynel Garcia",
+      "when": "3 weeks ago",
+      "agent": "Jason",
+      "stars": 5,
+      "text": "Highly recommend Mr. Jason Ang! Beyond being super knowledgeable about the unit during our viewing, he truly went above and beyond his duty. He kindly offered his time and expert advice to help us navigate a tricky situation during our process. A genuine, supportive agent who truly looks out for people!"
+    },
+    {
+      "name": "Shermaine Lim",
+      "when": "10 months ago",
+      "agent": "Phoebe",
+      "stars": 5,
+      "text": "Phoebe was attentive, sensitive and helpful throughout the process of helping me with my first home purchase. She carefully selected listings that fit my criteria and was straight with me about the listings that we saw. At every point of this journey, I felt like Phoebe had my interests at heart which was an incredible comfort. When I finally found a place I wanted to make an offer on, Phoebe made the entire offer and purchase process seamless, which was incredibly reassuring for me given my hectic work schedule.\n\nHope that more customers benefit from her attentive service!"
+    },
+    {
+      "name": "L",
+      "when": "8 months ago",
+      "agent": "Jackie",
+      "stars": 5,
+      "text": "We engaged Jackie to assist us with the sale of our property as well as for the purchase of our next. His boundless patience and quiet confidence helped us immensely throughout the entire process - providing us with full guidance from taking photos of our place down to viewing numerous places all over Singapore & the paperwork involved. We couldn't have asked for a more dedicated agent. Thank you Jackie for all your time and effort!"
+    },
+    {
+      "name": "Shiii",
+      "when": "8 months ago",
+      "agent": "Louis",
+      "stars": 5,
+      "text": "Louis was professional from the start in explaining the timeline for selling our flat and transitioning to our new BTO. He consistently kept us updated on the progress and was always responsive whenever we had questions.\n\nHousing matters can be complex with all the figures, procedures, and timelines involved, but Louis was extremely patient and took the time to explain everything clearly and in detail so that we could understand.\n\nThank you for assisting us through this important next stage of our lives!"
+    },
+    {
+      "name": "Zhang Weilong",
+      "when": "a year ago",
+      "agent": "Benny",
+      "stars": 5,
+      "text": "I recently had the pleasure of working with Benny as my property agent, and I cannot recommend him enough! From start to finish, Benny demonstrated professionalism, expertise, and genuine care for my needs. His deep knowledge of the market helped me find the perfect property within my budget, and his attention to detail made the entire process smooth and stress-free.\n\nWhat truly sets Benny apart is his dedication to his clients. He was always responsive, patient, and willing to go the extra mile to answer my questions and address any concerns. Whether it was arranging viewings, negotiating the best deal, or handling paperwork, Benny handled everything with efficiency and transparency. His friendly and approachable nature made me feel valued as a client, and I never felt pressured into making a decision.\n\nI will definitely work with him again in the future and will refer him to anyone looking for exceptional real estate service."
+    },
+    {
+      "name": "Ooi Eric",
+      "when": "a year ago",
+      "agent": "Brent",
+      "stars": 5,
+      "text": "Working with Brent to find my first home was an amazing experience. As a first-time buyer, I had a lot of questions and uncertainties, but Brent was incredibly patient and thorough—he took the time to explain every detail clearly and made sure I felt confident at every step. What impressed me most was how he respected my budget and still managed to find a place that checked all the boxes. His professionalism, responsiveness, and genuine care made the whole process smooth and enjoyable. I'm so grateful for his help and couldn't be happier with my new home. Highly recommend Brent to anyone looking for a trustworthy and dedicated agent!"
+    },
+    {
+      "name": "Jon Phillips",
+      "when": "a year ago",
+      "agent": "Chantel",
+      "stars": 5,
+      "text": "Chantel was brilliant. We exchanged messages prior to my arrival in Singapore and she quickly narrowed down suitable properties and then ran me through various areas to make sure she had my criteria correct. Under two weeks from arriving in Singapore to finding the perfect apartment for my two year contract. She then followed up at the end of the lease, closed out repair costs etc and settled the deposit return from the landlord. Highly recommended."
+    },
+    {
+      "name": "sugi siva",
+      "when": "a year ago",
+      "agent": "Louis",
+      "stars": 5,
+      "text": "Louis Tay was truly exceptional in handling the sale of my house. From start to finish, he went above and beyond what I ever expected from a real estate agent — from arranging and overseeing repairs to even disposing of furniture for me. His dedication, professionalism, and attention to detail made the entire experience stress-free. Louis kept me updated every step of the way, making me feel completely confident that my home was in the best hands. I cannot recommend him highly enough — he is reliable, trustworthy, and genuinely cares about his clients."
+    },
+    {
+      "name": "Alvin YS",
+      "when": "a year ago",
+      "agent": "Jackie",
+      "stars": 5,
+      "text": "Jackie has been extremely efficient and proactive in managing my rental property.\n\nFrom tenant communications to maintenance matters, he consistently demonstrates professionalism, reliability, and attention to detail.\n\nJackie's commitment and dedication truly set him apart, and I would highly recommend him to anyone seeking a trustworthy and dependable property agent."
     }
   ]
 }
