@@ -1,11 +1,11 @@
 {
- "last_updated": "2026-11-09T02:50:53+00:00",
+ "last_updated": "2026-11-16T09:21:39+00:00",
  "source": "CEA via data.gov.sg dataset d_ee7e46d3c57f7865790704632b0aef71",
  "agents": {
   "Louis Tay": {
-   "total": 488,
-   "since_2017": 488,
-   "last_12_months": 18,
+   "total": 493,
+   "since_2017": 493,
+   "last_12_months": 23,
    "last_12_months_from": "2025-12",
    "last_12_months_to": "2026-11",
    "focus": {
@@ -14,13 +14,13 @@
     "count": 71
    },
    "by_property_type": {
-    "HDB": 404,
-    "CONDOMINIUM_APARTMENTS": 83,
+    "HDB": 407,
+    "CONDOMINIUM_APARTMENTS": 85,
     "LANDED": 1
    },
    "by_transaction_type": {
-    "RESALE": 407,
-    "WHOLE RENTAL": 79,
+    "RESALE": 409,
+    "WHOLE RENTAL": 82,
     "ROOM RENTAL": 2
    },
    "top_towns": {
@@ -29,42 +29,42 @@
     "KALLANG/WHAMPOA": 42,
     "TOA PAYOH": 42,
     "CLEMENTI": 35,
-    "GEYLANG": 32
+    "GEYLANG": 33
    },
    "top_districts": {
     "09": 18,
     "10": 8,
     "03": 8,
-    "12": 7,
-    "27": 6,
+    "12": 8,
+    "27": 7,
     "13": 6
    },
    "first": "2017-05",
-   "last": "2026-09",
+   "last": "2026-10",
    "reg_no": "R000567G",
    "included_in_team": true
   },
   "Jackie Mang": {
-   "total": 178,
-   "since_2017": 178,
-   "last_12_months": 15,
+   "total": 187,
+   "since_2017": 187,
+   "last_12_months": 24,
    "last_12_months_from": "2025-12",
    "last_12_months_to": "2026-11",
    "focus": {
     "kind": "district",
     "name": "09",
-    "count": 57
+    "count": 58
    },
    "by_property_type": {
-    "CONDOMINIUM_APARTMENTS": 157,
+    "CONDOMINIUM_APARTMENTS": 166,
     "HDB": 19,
     "EXECUTIVE_CONDOMINIUM": 1,
     "LANDED": 1
    },
    "by_transaction_type": {
-    "WHOLE RENTAL": 120,
+    "WHOLE RENTAL": 121,
     "RESALE": 53,
-    "NEW SALE": 4,
+    "NEW SALE": 12,
     "ROOM RENTAL": 1
    },
    "top_towns": {
@@ -76,22 +76,22 @@
     "BEDOK": 1
    },
    "top_districts": {
-    "09": 57,
+    "09": 58,
     "15": 12,
     "02": 11,
+    "20": 11,
     "16": 10,
-    "21": 8,
-    "03": 8
+    "21": 8
    },
    "first": "2017-11",
-   "last": "2026-10",
+   "last": "2026-11",
    "reg_no": "R008878E",
    "included_in_team": true
   },
   "Benny Poh": {
-   "total": 159,
-   "since_2017": 159,
-   "last_12_months": 17,
+   "total": 161,
+   "since_2017": 161,
+   "last_12_months": 19,
    "last_12_months_from": "2025-12",
    "last_12_months_to": "2026-11",
    "focus": {
@@ -100,20 +100,20 @@
     "count": 26
    },
    "by_property_type": {
-    "CONDOMINIUM_APARTMENTS": 136,
-    "HDB": 22,
+    "CONDOMINIUM_APARTMENTS": 137,
+    "HDB": 23,
     "LANDED": 1
    },
    "by_transaction_type": {
-    "WHOLE RENTAL": 134,
+    "WHOLE RENTAL": 136,
     "RESALE": 24,
     "NEW SALE": 1
    },
    "top_towns": {
     "SENGKANG": 4,
     "QUEENSTOWN": 4,
+    "KALLANG/WHAMPOA": 4,
     "GEYLANG": 3,
-    "KALLANG/WHAMPOA": 3,
     "BUKIT MERAH": 3,
     "BEDOK": 1
    },
@@ -122,18 +122,18 @@
     "10": 16,
     "15": 15,
     "03": 11,
-    "16": 9,
+    "16": 10,
     "04": 9
    },
    "first": "2017-10",
-   "last": "2026-09",
+   "last": "2026-10",
    "reg_no": "R008885H",
    "included_in_team": true
   },
   "Chantel Teo": {
-   "total": 98,
-   "since_2017": 98,
-   "last_12_months": 5,
+   "total": 99,
+   "since_2017": 99,
+   "last_12_months": 6,
    "last_12_months_from": "2025-12",
    "last_12_months_to": "2026-11",
    "focus": {
@@ -142,12 +142,12 @@
     "count": 15
    },
    "by_property_type": {
-    "CONDOMINIUM_APARTMENTS": 74,
+    "CONDOMINIUM_APARTMENTS": 75,
     "HDB": 19,
     "LANDED": 5
    },
    "by_transaction_type": {
-    "WHOLE RENTAL": 68,
+    "WHOLE RENTAL": 69,
     "RESALE": 28,
     "NEW SALE": 2
    },
@@ -161,21 +161,21 @@
    },
    "top_districts": {
     "12": 15,
+    "03": 10,
     "15": 9,
-    "03": 9,
     "11": 6,
     "18": 4,
     "05": 4
    },
    "first": "2020-02",
-   "last": "2026-07",
+   "last": "2026-09",
    "reg_no": "R013641J",
    "included_in_team": true
   },
   "Phoebe Goh": {
-   "total": 30,
-   "since_2017": 30,
-   "last_12_months": 8,
+   "total": 32,
+   "since_2017": 32,
+   "last_12_months": 10,
    "last_12_months_from": "2025-12",
    "last_12_months_to": "2026-11",
    "focus": {
@@ -184,12 +184,12 @@
     "count": 4
    },
    "by_property_type": {
-    "HDB": 15,
-    "CONDOMINIUM_APARTMENTS": 15
+    "CONDOMINIUM_APARTMENTS": 17,
+    "HDB": 15
    },
    "by_transaction_type": {
+    "WHOLE RENTAL": 15,
     "RESALE": 13,
-    "WHOLE RENTAL": 13,
     "ROOM RENTAL": 4
    },
    "top_towns": {
@@ -204,33 +204,33 @@
     "19": 4,
     "10": 3,
     "18": 2,
-    "02": 1,
-    "01": 1,
-    "21": 1
+    "21": 2,
+    "15": 2,
+    "02": 1
    },
    "first": "2018-05",
-   "last": "2026-07",
+   "last": "2026-09",
    "reg_no": "R051932H",
    "included_in_team": true
   },
   "Brent Wang": {
-   "total": 130,
-   "since_2017": 130,
-   "last_12_months": 17,
+   "total": 131,
+   "since_2017": 131,
+   "last_12_months": 18,
    "last_12_months_from": "2025-12",
    "last_12_months_to": "2026-11",
    "focus": {
     "kind": "district",
     "name": "18",
-    "count": 92
+    "count": 93
    },
    "by_property_type": {
-    "CONDOMINIUM_APARTMENTS": 117,
+    "CONDOMINIUM_APARTMENTS": 118,
     "HDB": 10,
     "EXECUTIVE_CONDOMINIUM": 3
    },
    "by_transaction_type": {
-    "WHOLE RENTAL": 99,
+    "WHOLE RENTAL": 100,
     "RESALE": 18,
     "ROOM RENTAL": 10,
     "NEW SALE": 3
@@ -243,7 +243,7 @@
     "GEYLANG": 1
    },
    "top_districts": {
-    "18": 92,
+    "18": 93,
     "16": 10,
     "19": 4,
     "09": 3,
@@ -256,9 +256,9 @@
    "included_in_team": true
   },
   "Jason Ang": {
-   "total": 360,
-   "since_2017": 360,
-   "last_12_months": 37,
+   "total": 361,
+   "since_2017": 361,
+   "last_12_months": 38,
    "last_12_months_from": "2025-12",
    "last_12_months_to": "2026-11",
    "focus": {
@@ -268,14 +268,14 @@
    },
    "by_property_type": {
     "CONDOMINIUM_APARTMENTS": 310,
-    "HDB": 40,
+    "HDB": 41,
     "LANDED": 8,
     "STRATA_LANDED": 1,
     "EXECUTIVE_CONDOMINIUM": 1
    },
    "by_transaction_type": {
     "WHOLE RENTAL": 277,
-    "RESALE": 79,
+    "RESALE": 80,
     "NEW SALE": 4
    },
    "top_towns": {
@@ -295,53 +295,53 @@
     "03": 12
    },
    "first": "2017-01",
-   "last": "2026-07",
+   "last": "2026-10",
    "reg_no": "R008889J",
    "included_in_team": true
   }
  },
  "team": {
-  "total": 1443,
-  "since_2017": 1443,
-  "last_12_months": 117,
+  "total": 1464,
+  "since_2017": 1464,
+  "last_12_months": 138,
   "last_12_months_from": "2025-12",
   "last_12_months_to": "2026-11",
   "focus": {
    "kind": "district",
    "name": "15",
-   "count": 243
+   "count": 244
   },
   "by_property_type": {
-   "CONDOMINIUM_APARTMENTS": 892,
-   "HDB": 529,
+   "CONDOMINIUM_APARTMENTS": 908,
+   "HDB": 534,
    "LANDED": 16,
    "EXECUTIVE_CONDOMINIUM": 5,
    "STRATA_LANDED": 1
   },
   "by_transaction_type": {
-   "WHOLE RENTAL": 790,
-   "RESALE": 622,
-   "ROOM RENTAL": 17,
-   "NEW SALE": 14
+   "WHOLE RENTAL": 800,
+   "RESALE": 625,
+   "NEW SALE": 22,
+   "ROOM RENTAL": 17
   },
   "top_towns": {
    "BUKIT MERAH": 75,
    "QUEENSTOWN": 52,
-   "KALLANG/WHAMPOA": 50,
+   "KALLANG/WHAMPOA": 51,
    "TOA PAYOH": 46,
    "CLEMENTI": 38,
-   "GEYLANG": 37
+   "GEYLANG": 38
   },
   "top_districts": {
-   "15": 243,
-   "18": 127,
-   "09": 121,
-   "03": 48,
+   "15": 244,
+   "18": 128,
+   "09": 122,
+   "03": 49,
    "10": 47,
-   "16": 39
+   "16": 40
   },
   "first": "2017-01",
-  "last": "2026-10",
+  "last": "2026-11",
   "included": [
    "Louis Tay",
    "Jackie Mang",
