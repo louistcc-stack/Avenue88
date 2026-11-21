@@ -85,3 +85,20 @@
  .contact-center form.enquiry{padding:22px 18px}
 }
 @media(prefers-reduced-motion:reduce){.oc-shape{transition:none;transform:none;opacity:1}}
+
+/* Track record cards with real photos */
+.tr-card{flex:0 0 min(300px,80vw)}
+.tr-photo>img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.tr-card:hover .tr-photo>img{transform:scale(1.05)}
+.tr-shade{background:linear-gradient(to top,rgba(20,16,12,.92) 0%,rgba(20,16,12,.6) 32%,rgba(20,16,12,0) 58%),linear-gradient(to bottom,rgba(20,16,12,.5) 0%,rgba(20,16,12,0) 30%)}
+.tr-head{position:absolute;top:16px;right:18px;left:18px;z-index:2;text-align:right;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.tr-head .tr-sold{font-size:50px}
+.tr-head .tr-badge{margin:4px 0 0;color:#fff}
+.tr-copy{padding:18px 18px 18px}
+.tr-copy h3{font-size:21px;line-height:1.2;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.tr-place{margin:4px 0 8px}
+.tr-hl{display:inline-block;margin:2px 0 12px;padding:4px 9px;background:var(--gold);color:#1C1917;font-size:12.5px;font-weight:900;letter-spacing:.01em}
+.tr-agent{gap:14px;margin-top:6px}
+.tr-agent img{width:68px;height:68px;border:3px solid #fff;object-position:50% 22%;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.tr-agent b{font-size:17px}
+.tr-agent small{display:block;margin-top:2px;font-size:11px;letter-spacing:.04em}
