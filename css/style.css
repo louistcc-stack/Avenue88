@@ -85,7 +85,7 @@ h2.nm,h3.nm{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px}
 .tool small{position:absolute;top:32px;left:36px;font-weight:900;letter-spacing:.2em;opacity:.6}
 .tool h3{font-size:clamp(32px,4vw,56px);font-weight:900;letter-spacing:-.03em;margin:0}
 .tool p{margin:10px 0 0;font-size:17px;opacity:.8}
-.tool>span{position:absolute;top:24px;right:32px;font-size:36px;transition:.3s}.tool:hover>span{transform:translateX(8px)}
+.tool>span:not(.btn){position:absolute;top:24px;right:32px;font-size:36px;transition:.3s}.tool:hover>span:not(.btn){transform:translateX(8px)}
 .follow{margin-top:80px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .follow a{display:flex;align-items:center;gap:12px;min-width:0;padding:22px 16px;font-weight:700;font-size:15px;border-right:1px solid var(--line);background:transparent;transition:background .2s}
 .follow a:last-child{border-right:0}
@@ -431,3 +431,37 @@ a.why-card:hover .why-go{transform:translateX(6px)}
 .sell-steps p{margin:0;color:var(--mute);font-size:15px}
 @media(max-width:1000px){.sell-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.sell-grid,.sell-steps{grid-template-columns:1fr}}
+
+/* ---- Header menu: five links, gold underline, Tools dropdown (Nov 2026) ---- */
+.nav nav{gap:26px;font-size:12.5px;letter-spacing:.12em}
+.nav nav>a,.nav-drop-btn{position:relative;padding:8px 0}
+.nav nav>a::after,.nav-drop-btn::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.77,0,.18,1)}
+.nav nav>a:hover::after,.nav nav>a:focus-visible::after,.nav nav>a[aria-current]::after,.nav-drop-btn:hover::after,.nav-drop.open .nav-drop-btn::after,.nav-drop-btn.current::after{transform:scaleX(1)}
+.nav-drop{position:relative}
+.nav-drop-btn{display:flex;align-items:center;gap:6px;background:none;border:0;cursor:pointer;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit}
+.nav-drop-btn svg{width:11px;height:11px;transition:transform .3s}
+.nav-drop.open .nav-drop-btn svg{transform:rotate(180deg)}
+.nav-drop-btn.current{color:var(--gold-ink)}
+body.home .nav:not(.scrolled) .nav-drop-btn.current{color:var(--gold)}
+.nav-drop-menu{position:absolute;top:calc(100% + 14px);left:50%;min-width:280px;padding:10px;background:#FFFCF7;border:1px solid var(--line);box-shadow:0 18px 40px rgba(28,25,23,.14);display:grid;gap:2px;opacity:0;visibility:hidden;transform:translate(-50%,-6px);transition:opacity .25s,transform .25s,visibility .25s;text-transform:none;letter-spacing:0}
+.nav-drop-menu::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.nav-drop.open .nav-drop-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
+@media(hover:hover) and (min-width:1101px){.nav-drop:hover .nav-drop-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}}
+.nav-drop-menu a{display:block;padding:12px 14px;color:var(--ink)!important;font-size:14px;font-weight:900;letter-spacing:.02em}
+.nav-drop-menu a small{display:block;margin-top:3px;color:var(--mute);font-weight:400;font-size:12.5px}
+.nav-drop-menu a:hover,.nav-drop-menu a:focus-visible{background:var(--bg-alt)}
+.nav-drop-menu a[aria-current]{box-shadow:inset 2px 0 0 var(--gold)}
+@media(max-width:1100px){
+ .nav nav{gap:4px;padding:10px 6vw 22px}
+ .nav nav>a,.nav-drop-btn{padding:12px 0;width:100%;font-size:14px;color:var(--ink)}
+ .nav nav>a::after,.nav-drop-btn::after{display:none}
+ .nav-drop{width:100%}
+ .nav-drop-btn{justify-content:space-between}
+ .nav-drop-menu{position:static;transform:none;opacity:1;visibility:visible;display:none;min-width:0;box-shadow:none;border:0;border-left:2px solid var(--gold);padding:0 0 6px 12px;background:none}
+ .nav-drop.open .nav-drop-menu{display:grid;transform:none}
+ .nav-drop-menu::before{display:none}
+}
+
+/* ---- Footer: full agency statement on every page ---- */
+footer .legal{flex:1 1 420px;max-width:640px;margin:0;text-align:right;line-height:1.7}
+@media(max-width:900px){footer .legal{text-align:left}}
