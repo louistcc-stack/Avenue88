@@ -364,5 +364,13 @@ function boot(api) {
     tab.addEventListener('click', function () { showStep(tab.getAttribute('data-ascend')); });
   });
   showStep('a');
+  /* Numbers carried over from the homepage calculator (?sale=&loan=&savings=) */
+  try {
+    const q = new URLSearchParams(location.search);
+    ['sale', 'loan', 'savings'].forEach(function (k) {
+      const v = q.get(k);
+      if (v && /^\d{1,9}$/.test(v) && field(k)) field(k).value = v;
+    });
+  } catch (e) {}
   render();
 }

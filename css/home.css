@@ -1,0 +1,87 @@
+/* Homepage refinements (Nov 2026 feedback). Loaded after style.css and arrival.css. */
+
+/* Key figures: no jump while they count up */
+.nums b{font-variant-numeric:tabular-nums}
+
+/* "Thinking of buying..." strip now closes the Why section */
+.ask.ask-in{margin-top:28px;padding:22px 26px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold)}
+
+/* Team: photos across the full width, CEA no. and specialty under each name */
+.team-photos.team-full{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:28px}
+.team-full .ag{flex:0 0 calc((100% - 42px)/4);width:auto;aspect-ratio:3/4}
+.team-full .cap{padding:70px 18px 18px}
+.team-full .cap h3{font-size:21px}
+.team-full .cap .cea{display:block;margin-top:2px;font-size:12px;letter-spacing:.06em;color:var(--champagne,#E9D3A0);font-weight:700}
+.team-full .cap p{margin-top:6px;font-size:13px;line-height:1.4}
+
+/* Tools: try the tool right on the card */
+#tools .tools-v2{grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+#tools .tools-v2 .tool{min-height:0;padding:34px 34px 30px;justify-content:flex-start;gap:0}
+#tools .tools-v2 .tool .btn{pointer-events:auto;align-self:flex-start;margin-top:auto}
+.tool-calc{background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:0 12px 32px rgba(60,40,10,.06)}
+.tool-octa{background:var(--hero);color:#fff}
+.tool-meta{margin:0 0 14px;font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink);opacity:1}
+.tool-meta b{display:inline-block;margin-right:10px;padding-right:10px;border-right:1px solid currentColor}
+.tool-octa .tool-meta{color:var(--gold)}
+#tools .tools-v2 h3{font-size:clamp(32px,3.6vw,50px);line-height:1}
+.tool-octa h3{color:#fff}
+#tools .tool-lede{margin:10px 0 20px;font-size:17px;opacity:.85}
+
+.mini-calc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 12px}
+.mini-calc label{display:flex;flex-direction:column;gap:6px;font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.mini-calc input{width:100%;padding:13px 12px;font:700 17px/1.2 Lato,sans-serif;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:2px;letter-spacing:0;text-transform:none}
+.mini-calc input:focus{outline:2px solid var(--gold);outline-offset:0;border-color:var(--gold)}
+.mini-out{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:16px 18px;background:var(--bg-alt);border-left:3px solid var(--gold)}
+.mini-out span{font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-ink)}
+.mini-out output{font-size:clamp(28px,3vw,40px);font-weight:900;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.mini-out.live output{color:var(--ink)}
+.mini-out:not(.live) output{color:#b9ad9b}
+.tool-fine{margin:0 0 22px!important;font-size:13px!important;color:var(--mute);opacity:1!important}
+
+.octa-demo{display:flex;align-items:center;gap:22px;margin:0 0 24px}
+.octa-mini{width:min(220px,48%);height:auto;flex:none;overflow:visible}
+.oc-ring{fill:none;stroke:rgba(255,255,255,.16);stroke-width:1}
+.oc-shape{fill:rgba(214,159,26,.32);stroke:var(--gold);stroke-width:2;stroke-linejoin:round;transform-origin:110px 110px;transform:scale(.2);opacity:0;transition:transform 1.2s cubic-bezier(.34,1.4,.64,1),opacity .6s}
+.octa-demo.in .oc-shape{transform:scale(1);opacity:1}
+.oc-l{fill:var(--gold);font:900 13px Lato,sans-serif;text-anchor:middle;dominant-baseline:middle}
+.octa-total b{display:inline;font-size:clamp(64px,6vw,92px);font-weight:900;letter-spacing:-.05em;line-height:1;color:#fff}
+.octa-total span{font-size:20px;font-weight:700;color:#ffffff99;margin-left:4px}
+.octa-total small{position:static;display:block;margin-top:8px;font-size:12px;font-weight:400;letter-spacing:0;opacity:1;color:#ffffffa6;max-width:16em}
+
+/* Track record and client stories: titles on one line on wider screens */
+#track>h2,#reviews>h2{font-size:clamp(40px,6.2vw,96px)}
+@media(min-width:901px){#track>h2,#reviews>h2{white-space:nowrap}}
+.tr-agent{gap:12px}
+.tr-agent img{width:52px;height:52px;border:2px solid rgba(255,255,255,.85)}
+.tr-agent b{font-size:15px}
+
+/* Review card: its footer line was picking up the page footer's padding */
+.rev-card footer{display:flex;flex-wrap:wrap;gap:6px 14px;padding:14px 0 0;margin:0;background:none;border-top:1px solid var(--line);font-size:13px;line-height:1.5;color:var(--mute)}
+.rev-card footer b{color:var(--ink)}
+.rev-card .stars{color:var(--gold);letter-spacing:2px;font-size:15px;margin:0 0 10px}
+.rev-card footer a{color:var(--gold-ink);font-weight:700}
+
+/* Contact: heading above, form in the middle */
+.contact.contact-center{display:block;max-width:720px;margin:0 auto;text-align:center}
+.contact-center>div:first-child{margin-bottom:26px}
+.contact-center>div:first-child .lead{margin-left:auto;margin-right:auto;max-width:36em}
+.contact-center form.enquiry{text-align:left;padding:30px}
+
+@media(max-width:900px){
+ .team-photos.team-full{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+ .team-full .ag{flex:0 0 64vw;aspect-ratio:4/5;scroll-snap-align:start}
+ #tools .tools-v2{grid-template-columns:1fr}
+ #tools .tools-v2 .tool{padding:26px 22px 24px}
+ #tools .tools-v2 .tool .btn{margin-top:4px;align-self:stretch}
+ .ask.ask-in{padding:20px}
+}
+@media(max-width:600px){
+ .tool-meta{font-size:10.5px;letter-spacing:.1em}
+ .tool-meta b{margin-right:8px;padding-right:8px}
+ .mini-calc{grid-template-columns:1fr}
+ .mini-calc label{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:10px}
+ .octa-demo{gap:14px}
+ .octa-mini{width:52%}
+ .contact-center form.enquiry{padding:22px 18px}
+}
+@media(prefers-reduced-motion:reduce){.oc-shape{transition:none;transform:none;opacity:1}}
