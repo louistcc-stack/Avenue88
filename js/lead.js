@@ -90,7 +90,7 @@ f.addEventListener('submit',e=>{
  };
  Object.keys(fields).forEach(k=>{if(!fields[k])delete fields[k]});
  const body=Object.assign({
-  _subject:'['+temp+'] '+g.label+' · '+(val('town')?val('town')+' · ':'')+val('timeline')+' · '+name,
+  _subject:'['+temp+'] '+g.label+' · '+(val('type')?val('type')+' · ':'')+(val('town')?val('town')+' · ':'')+val('timeline')+' · '+name,
   _template:'table',_captcha:'false'
  },fields);
  if(val('email')){
