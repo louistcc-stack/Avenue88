@@ -458,3 +458,27 @@ body.home .nav:not(.scrolled) .nav-drop-btn.current{color:var(--gold)}
 /* ---- Footer: full agency statement on every page ---- */
 footer .legal{flex:1 1 420px;max-width:640px;margin:0;text-align:right;line-height:1.7}
 @media(max-width:900px){footer .legal{text-align:left}}
+/* About: CEA 24-month figures on agent cards */
+.ag-big{display:flex;align-items:baseline;gap:10px;margin:10px 0 12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.ag-big b{font-size:44px;font-weight:900;letter-spacing:-.04em;line-height:1;color:var(--ink)}
+.ag-big span{font-size:13px;color:var(--mute);line-height:1.3}
+.tx-cea-note{margin:14px 0 0;font-size:13px;color:var(--mute)}
+/* About: "Who's handled what" agent cards */
+.ag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:24px}
+.ag-grid .ag-card{display:flex;flex-direction:column;margin:0;padding:0;overflow:hidden}
+.ag-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--bg-deep)}
+.ag-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block}
+.ag-regions{position:absolute;left:10px;bottom:10px;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.ag-regions li{padding:4px 9px;background:rgba(255,252,247,.92);color:var(--ink);font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+.ag-photo .tx-sample{position:absolute;top:10px;left:10px;padding:4px 8px;background:#F8EFD2;color:#6E520C;font-size:11px;font-weight:900;text-transform:uppercase}
+.ag-body{display:flex;flex-direction:column;flex:1;padding:16px 18px 18px}
+.ag-body h3.nm{margin:0;font-size:20px;font-weight:900}
+.ag-body .cea{font-size:11px;font-weight:700;color:var(--mute);letter-spacing:.04em}
+.ag-title{margin:4px 0 0;font-size:13.5px;color:var(--mute);line-height:1.45}
+.ag-stats{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:7px}
+.ag-stats li{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;line-height:1.35}
+.ag-stats li span{color:var(--mute);flex:none}
+.ag-stats li b{text-align:right;font-weight:700}
+.ag-stats li.none{color:var(--mute)}
+.ag-view{margin-top:auto;align-self:stretch;padding:12px 14px;background:transparent;border:1px solid var(--ink);color:var(--ink);font:900 12px/1 Lato,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.2s}
+.ag-view:hover,.ag-view[aria-pressed="true"]{background:var(--ink);color:#fff}

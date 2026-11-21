@@ -24,7 +24,24 @@
 
   const el = { q: $('#tx-q'), agent: $('#tx-agent'), ptype: $('#tx-ptype'), ttype: $('#tx-ttype'), year: $('#tx-year'),
     count: $('#tx-count'), list: $('#tx-results'), stats: $('#tx-agents'), reset: $('#tx-reset'), banner: $('#tx-banner'), form: $('#tx-form') };
-  let rows = [], example = true;
+  let rows = [], example = true, loaded = false, cea = null;
+  /* CEA public records, last 24 months (data/stats.json, rebuilt weekly by scripts/update_team_stats.py) */
+  const PT = { HDB: 'HDB', CONDOMINIUM_APARTMENTS: 'Condo', EXECUTIVE_CONDOMINIUM: 'EC', LANDED: 'Landed', STRATA_LANDED: 'Landed' };
+  const SALE = ['RESALE', 'NEW SALE', 'SUB-SALE'];
+  const title = t => String(t).toLowerCase().replace(/(^|[\s/-])\w/g, c => c.toUpperCase());
+  const c24 = a => cea && cea.agents && cea.agents[a.name] && cea.agents[a.name].last_24_months;
+  function ceaBody(t) {
+    const tt = t.by_transaction_type || {}, pt = {};
+    Object.entries(t.by_property_type || {}).forEach(([k, v]) => { const n = PT[k] || title(k); pt[n] = (pt[n] || 0) + v; });
+    const sales = SALE.reduce((n, k) => n + (tt[k] || 0), 0);
+    const tally = Object.entries(t.top_towns || {}).concat(Object.entries(t.top_districts || {}).map(([d, v]) => ['D' + d, v]))
+      .sort((x, y) => y[1] - x[1]).slice(0, 2).map(([k]) => k.startsWith('D') ? k : title(k));
+    return `<p class="ag-big"><b>${t.total}</b><span>transactions in the last 24 months</span></p>` + (t.total ? `
+        <li><span>Sales / rentals</span><b>${sales} / ${t.total - sales}</b></li>
+        <li><span>Property types</span><b>${esc(Object.entries(pt).map(([k, v]) => k + ' ' + v).join(' · '))}</b></li>
+        <li><span>Most active in</span><b>${esc(tally.join(', ') || '–')}</b></li>
+        <li><span>Most recent</span><b>${esc(t.latest ? fmtMonth(t.latest) : '–')}</b></li>` : '');
+  }
 
   function agentCards() {
     el.stats.innerHTML = agents.map(a => {
@@ -33,16 +50,17 @@
       const types = [...new Set(mine.map(r => r.property_type))];
       const sales = mine.filter(r => r.transaction_type === 'Sale').length;
       const latest = mine.map(r => r.month).sort().pop();
-      const stats = mine.length ? `
+      const t = c24(a);
+      const stats = t ? ceaBody(t) : mine.length ? `
         <li><span>Transactions listed</span><b>${mine.length}</b></li>
         <li><span>Property types</span><b>${esc(types.join(', '))}</b></li>
         <li><span>Sales / rentals</span><b>${sales} / ${mine.length - sales}</b></li>
         <li><span>Most recent</span><b>${esc(fmtMonth(latest))}</b></li>` : '<li class="none">No transactions listed yet</li>';
       return `<article class="ag-card" data-agent="${a.slug}">
         <div class="ag-photo"><img src="img/team-${a.slug}.webp?v=20261121b" alt="${esc(a.name)}" loading="lazy" width="480" height="632">
-          <ul class="ag-regions">${regions.map(r => `<li>${esc(r)}</li>`).join('')}</ul>${example ? '<span class="tx-sample">Sample</span>' : ''}</div>
+          <ul class="ag-regions">${(t ? [...new Set(Object.keys(t.top_districts || {}).map(d => region('D' + d)).filter(Boolean))] : regions).map(r => `<li>${esc(r)}</li>`).join('')}</ul>${example && !t ? '<span class="tx-sample">Sample</span>' : ''}</div>
         <div class="ag-body"><h3 class="nm">${esc(a.name)} <span class="cea">CEA ${CEA[a.slug]||""}</span></h3><p class="ag-title">${a.tag}</p>
-          <ul class="ag-stats">${stats}</ul>
+          ${t ? stats.replace(/^(<p class="ag-big">.*?<\/p>)/s, '$1<ul class="ag-stats">') + '</ul>' : `<ul class="ag-stats">${stats}</ul>`}
           <button class="ag-view" type="button" aria-pressed="false" data-agent="${a.slug}">See ${esc(a.first)}'s transactions</button></div>
       </article>`;
     }).join('');
@@ -100,6 +118,16 @@
     set(el.agent, p.get('agent')); set(el.ptype, p.get('type')); set(el.ttype, p.get('txn')); set(el.year, p.get('year'));
   }
 
+  fetch('data/stats.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).then(d => {
+    const any = d && d.agents && Object.values(d.agents).find(v => v.last_24_months);
+    if (!any) return;
+    cea = d;
+    const w = any.last_24_months, note = document.getElementById('tx-cea-note');
+    if (note) { note.textContent = 'Counted from CEA\u2019s public transaction records, ' + fmtMonth(w.from) + ' to ' + fmtMonth(w.to) + '. Updated weekly; CEA can take a month or two to publish new deals.'; note.hidden = false; }
+    const lead = document.getElementById('tx-team-lead');
+    if (lead) lead.textContent = 'Each agent\u2019s deals in the last 24 months, from CEA\u2019s public records. Tap an agent to see their deals.';
+    if (loaded) agentCards();
+  }).catch(() => {});
   fetch('data/transactions.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(d => {
     rows = (d.transactions || []).slice().sort((a, b) => b.month.localeCompare(a.month));
     example = d.example !== false;
@@ -107,7 +135,7 @@
     document.querySelectorAll('[data-example-only]').forEach(n => n.hidden = !example);
     const years = [...new Set(rows.map(r => r.month.slice(0, 4)))].sort().reverse();
     el.year.insertAdjacentHTML('beforeend', years.map(y => `<option value="${y}">${y}</option>`).join(''));
-    agentCards(); fromUrl(); render(false);
+    loaded = true; agentCards(); fromUrl(); render(false);
     [el.agent, el.ptype, el.ttype, el.year].forEach(s => s.addEventListener('change', () => render(true)));
     el.q.addEventListener('input', () => render(true));
     el.form.addEventListener('submit', e => { e.preventDefault(); render(true); });
