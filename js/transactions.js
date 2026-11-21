@@ -38,7 +38,7 @@
       .sort((x, y) => y[1] - x[1]).slice(0, 2).map(([k]) => k.startsWith('D') ? k : title(k));
     return `<p class="ag-big"><b>${t.total}</b><span>transactions in the last 24 months</span></p>` + (t.total ? `
         <li><span>Sales / rentals</span><b>${sales} / ${t.total - sales}</b></li>
-        <li><span>Property types</span><b>${esc(Object.entries(pt).map(([k, v]) => k + ' ' + v).join(' · '))}</b></li>
+        <li><span>Property types</span><b>${esc(Object.entries(pt).map(([k, v]) => k + '\u00a0' + v).join(' · '))}</b></li>
         <li><span>Most active in</span><b>${esc(tally.join(', ') || '–')}</b></li>
         <li><span>Most recent</span><b>${esc(t.latest ? fmtMonth(t.latest) : '–')}</b></li>` : '');
   }
