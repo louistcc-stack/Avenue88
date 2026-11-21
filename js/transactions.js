@@ -30,7 +30,8 @@
 
   const el = { q: $('#tx-q'), agent: $('#tx-agent'), ptype: $('#tx-ptype'), ttype: $('#tx-ttype'), year: $('#tx-year'),
     count: $('#tx-count'), list: $('#tx-results'), stats: $('#tx-agents'), reset: $('#tx-reset'), banner: $('.tx-banner'), form: $('#tx-form') };
-  let rows = [], example = true, loaded = false, cea = null;
+  let rows = [], example = true, loaded = false, cea = null, shown = 12;
+  const PAGE = 12;
   /* CEA public records, last 24 months (data/stats.json, rebuilt weekly by scripts/update_team_stats.py) */
   const PT = { HDB: 'HDB', CONDOMINIUM_APARTMENTS: 'Condo', EXECUTIVE_CONDOMINIUM: 'EC', LANDED: 'Landed', STRATA_LANDED: 'Landed' };
   const SALE = ['RESALE', 'NEW SALE', 'SUB-SALE'];
@@ -71,7 +72,7 @@
       </article>`;
     }).join('');
     el.stats.querySelectorAll('.ag-view').forEach(b => b.addEventListener('click', () => {
-      el.agent.value = el.agent.value === b.dataset.agent ? '' : b.dataset.agent;
+      el.agent.value = el.agent.value === b.dataset.agent ? '' : b.dataset.agent; shown = PAGE;
       render(true);
       if (el.agent.value) document.getElementById('tx-search').scrollIntoView({ behavior: 'smooth' });
     }));
@@ -109,8 +110,10 @@
       && (!f.txn || r.transaction_type === f.txn) && (!f.year || r.month.startsWith(f.year)));
     const noun = rows.length === 1 ? 'transaction' : 'transactions';
     el.count.textContent = `Showing ${out.length} of ${rows.length} ${example ? 'example ' : ''}${noun}` + (f.agent && A[f.agent] ? ` for ${A[f.agent].name}` : '') + (rows.some(r => r.cea) ? ' (last 24 months)' : '');
-    el.list.innerHTML = out.length ? out.map(card).join('') : `<div class="tx-empty"><h3>Nothing matches those filters yet.</h3><p>Try clearing a filter, or WhatsApp us and we'll check our records for you.</p><button type="button" class="btn btn-ghost" data-reset>Clear filters</button></div>`;
+    const more = out.length > shown ? `<div class="tx-more-wrap"><button type="button" class="btn btn-ghost tx-more">Show more (${out.length - shown} left)</button></div>` : '';
+    el.list.innerHTML = out.length ? out.slice(0, shown).map(card).join('') + more : `<div class="tx-empty"><h3>Nothing matches those filters yet.</h3><p>Try clearing a filter, or WhatsApp us and we'll check our records for you.</p><button type="button" class="btn btn-ghost" data-reset>Clear filters</button></div>`;
     const rb = el.list.querySelector('[data-reset]'); rb && rb.addEventListener('click', reset);
+    const mb = el.list.querySelector('.tx-more'); mb && mb.addEventListener('click', () => { shown += PAGE; render(false); });
     el.stats.querySelectorAll('.ag-card').forEach(c => { const on = c.dataset.agent === f.agent; c.classList.toggle('active', on); c.querySelector('.ag-view').setAttribute('aria-pressed', on); });
     if (updateUrl) {
       const p = new URLSearchParams();
@@ -119,7 +122,7 @@
     }
   }
 
-  function reset() { el.form.reset(); render(true); }
+  function reset() { el.form.reset(); shown = PAGE; render(true); }
 
   function fromUrl() {
     const p = new URLSearchParams(location.search);
@@ -150,8 +153,8 @@
     const years = [...new Set(rows.map(r => r.month.slice(0, 4)))].sort().reverse();
     el.year.insertAdjacentHTML('beforeend', years.map(y => `<option value="${y}">${y}</option>`).join(''));
     loaded = true; agentCards(); fromUrl(); render(false);
-    [el.agent, el.ptype, el.ttype, el.year].forEach(s => s.addEventListener('change', () => render(true)));
-    el.q.addEventListener('input', () => render(true));
+    [el.agent, el.ptype, el.ttype, el.year].forEach(s => s.addEventListener('change', () => { shown = PAGE; render(true); }));
+    el.q.addEventListener('input', () => { shown = PAGE; render(true); });
     el.form.addEventListener('submit', e => { e.preventDefault(); render(true); });
     el.reset.addEventListener('click', reset);
   }).catch(() => {

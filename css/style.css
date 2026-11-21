@@ -495,3 +495,5 @@ footer .legal{flex:1 1 420px;max-width:640px;margin:0;text-align:right;line-heig
  .tx-card.has-photo>:not(.tx-photo){grid-column:2}
 }
 .tx-card.has-photo>.tx-hl{justify-self:start}
+.tx-more-wrap{grid-column:1/-1;display:flex;justify-content:center;margin-top:8px}
+.tx-more{min-width:240px}
