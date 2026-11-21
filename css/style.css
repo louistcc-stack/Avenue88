@@ -85,7 +85,7 @@ h2.nm,h3.nm{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px}
 .tool small{position:absolute;top:32px;left:36px;font-weight:900;letter-spacing:.2em;opacity:.6}
 .tool h3{font-size:clamp(32px,4vw,56px);font-weight:900;letter-spacing:-.03em;margin:0}
 .tool p{margin:10px 0 0;font-size:17px;opacity:.8}
-.tool>span{position:absolute;top:24px;right:32px;font-size:36px;transition:.3s}.tool:hover>span{transform:translateX(8px)}
+.tool>span:not(.btn){position:absolute;top:24px;right:32px;font-size:36px;transition:.3s}.tool:hover>span:not(.btn){transform:translateX(8px)}
 .follow{margin-top:80px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .follow a{display:flex;align-items:center;gap:12px;min-width:0;padding:22px 16px;font-weight:700;font-size:15px;border-right:1px solid var(--line);background:transparent;transition:background .2s}
 .follow a:last-child{border-right:0}
@@ -281,13 +281,6 @@ form.enquiry{background:var(--card);border:1px solid var(--line);padding:22px}
 /* Team cards: consistent head height/size per portrait (zoom from source, no new pixels) */
 .ag img{transform:scale(var(--z,1));transform-origin:50% 30%}
 .ag:hover img{transform:scale(calc(var(--z,1) * 1.04))}
-.ag[href$="#jason-ang"] img{object-position:50% 50%;--z:1.37;transform-origin:92% 57%}
-.ag[href$="#jackie-mang"] img{object-position:50% 50%;--z:1.21;transform-origin:7% 32%}
-.ag[href$="#benny-poh"] img{object-position:50% 50%;--z:1.09;transform-origin:100% 24%}
-.ag[href$="#brent-wang"] img{object-position:50% 50%;--z:1.50;transform-origin:99% 100%}
-.ag[href$="#chantel-teo"] img{object-position:50% 50%;--z:1.41;transform-origin:23% 90%}
-.ag[href$="#phoebe-goh"] img{object-position:65% 50%;--z:1.00;transform-origin:50% 50%}
-.ag[href$="#louis-tay"] img{object-position:100% 50%;--z:1.00;transform-origin:50% 50%}
 .cap{padding:56px 16px 16px}.cap h3{line-height:1.2}
 .sec.nx-host,.section.nx-host,.page-hero.nx-host,.follow.nx-host{padding-bottom:88px}
 @media(max-width:700px){.sec.nx-host,.section.nx-host,.page-hero.nx-host,.follow.nx-host{padding-bottom:84px}}
@@ -431,3 +424,76 @@ a.why-card:hover .why-go{transform:translateX(6px)}
 .sell-steps p{margin:0;color:var(--mute);font-size:15px}
 @media(max-width:1000px){.sell-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.sell-grid,.sell-steps{grid-template-columns:1fr}}
+
+/* ---- Header menu: five links, gold underline, Tools dropdown (Nov 2026) ---- */
+.nav nav{gap:26px;font-size:12.5px;letter-spacing:.12em}
+.nav nav>a,.nav-drop-btn{position:relative;padding:8px 0}
+.nav nav>a::after,.nav-drop-btn::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.77,0,.18,1)}
+.nav nav>a:hover::after,.nav nav>a:focus-visible::after,.nav nav>a[aria-current]::after,.nav-drop-btn:hover::after,.nav-drop.open .nav-drop-btn::after,.nav-drop-btn.current::after{transform:scaleX(1)}
+.nav-drop{position:relative}
+.nav-drop-btn{display:flex;align-items:center;gap:6px;background:none;border:0;cursor:pointer;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit}
+.nav-drop-btn svg{width:11px;height:11px;transition:transform .3s}
+.nav-drop.open .nav-drop-btn svg{transform:rotate(180deg)}
+.nav-drop-btn.current{color:var(--gold-ink)}
+body.home .nav:not(.scrolled) .nav-drop-btn.current{color:var(--gold)}
+.nav-drop-menu{position:absolute;top:calc(100% + 14px);left:50%;min-width:280px;padding:10px;background:#FFFCF7;border:1px solid var(--line);box-shadow:0 18px 40px rgba(28,25,23,.14);display:grid;gap:2px;opacity:0;visibility:hidden;transform:translate(-50%,-6px);transition:opacity .25s,transform .25s,visibility .25s;text-transform:none;letter-spacing:0}
+.nav-drop-menu::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.nav-drop.open .nav-drop-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}
+@media(hover:hover) and (min-width:1101px){.nav-drop:hover .nav-drop-menu{opacity:1;visibility:visible;transform:translate(-50%,0)}}
+.nav-drop-menu a{display:block;padding:12px 14px;color:var(--ink)!important;font-size:14px;font-weight:900;letter-spacing:.02em}
+.nav-drop-menu a small{display:block;margin-top:3px;color:var(--mute);font-weight:400;font-size:12.5px}
+.nav-drop-menu a:hover,.nav-drop-menu a:focus-visible{background:var(--bg-alt)}
+.nav-drop-menu a[aria-current]{box-shadow:inset 2px 0 0 var(--gold)}
+@media(max-width:1100px){
+ .nav nav{gap:4px;padding:10px 6vw 22px}
+ .nav nav>a,.nav-drop-btn{padding:12px 0;width:100%;font-size:14px;color:var(--ink)}
+ .nav nav>a::after,.nav-drop-btn::after{display:none}
+ .nav-drop{width:100%}
+ .nav-drop-btn{justify-content:space-between}
+ .nav-drop-menu{position:static;transform:none;opacity:1;visibility:visible;display:none;min-width:0;box-shadow:none;border:0;border-left:2px solid var(--gold);padding:0 0 6px 12px;background:none}
+ .nav-drop.open .nav-drop-menu{display:grid;transform:none}
+ .nav-drop-menu::before{display:none}
+}
+
+/* ---- Footer: full agency statement on every page ---- */
+footer .legal{flex:1 1 420px;max-width:640px;margin:0;text-align:right;line-height:1.7}
+@media(max-width:900px){footer .legal{text-align:left}}
+/* About: CEA 24-month figures on agent cards */
+.ag-big{display:flex;align-items:baseline;gap:10px;margin:10px 0 12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.ag-big b{font-size:44px;font-weight:900;letter-spacing:-.04em;line-height:1;color:var(--ink)}
+.ag-big span{font-size:13px;color:var(--mute);line-height:1.3}
+.tx-cea-note{margin:14px 0 0;font-size:13px;color:var(--mute)}
+/* About: "Who's handled what" agent cards */
+.ag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:24px}
+.ag-grid .ag-card{display:flex;flex-direction:column;margin:0;padding:0;overflow:hidden}
+.ag-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--bg-deep)}
+.ag-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 15%;display:block}
+.ag-regions{position:absolute;left:10px;bottom:10px;display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.ag-regions li{padding:4px 9px;background:rgba(255,252,247,.92);color:var(--ink);font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+.ag-photo .tx-sample{position:absolute;top:10px;left:10px;padding:4px 8px;background:#F8EFD2;color:#6E520C;font-size:11px;font-weight:900;text-transform:uppercase}
+.ag-body{display:flex;flex-direction:column;flex:1;padding:16px 18px 18px}
+.ag-body h3.nm{margin:0;font-size:20px;font-weight:900}
+.ag-body .cea{font-size:11px;font-weight:700;color:var(--mute);letter-spacing:.04em}
+.ag-title{margin:4px 0 0;font-size:13.5px;color:var(--mute);line-height:1.45}
+.ag-stats{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:7px}
+.ag-stats li{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;line-height:1.35}
+.ag-stats li span{color:var(--mute);flex:none}
+.ag-stats li b{text-align:right;font-weight:700}
+.ag-stats li.none{color:var(--mute)}
+.ag-view{margin-top:auto;align-self:stretch;padding:12px 14px;background:transparent;border:1px solid var(--ink);color:var(--ink);font:900 12px/1 Lato,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.2s}
+.ag-view:hover,.ag-view[aria-pressed="true"]{background:var(--ink);color:#fff}
+/* About: featured deals and CEA records in the transaction search */
+.tx-meta .tx-feat{background:var(--gold);color:#1C1917;border-color:var(--gold)}
+.tx-meta .tx-cea{background:var(--bg-alt);color:var(--mute);border-color:var(--line)}
+.tx-card.is-feat{border-color:var(--gold);box-shadow:0 14px 32px rgba(110,82,12,.10)}
+.tx-photo{margin:-16px -18px 14px;aspect-ratio:16/10;overflow:hidden;background:var(--bg-deep)}
+.tx-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.tx-hl{display:inline-block;margin:8px 0 0;padding:3px 8px;background:#F8EFD2;color:#6E520C;font-size:12.5px;font-weight:900}
+@media(min-width:700px){
+ .tx-card.has-photo{display:grid;grid-template-columns:minmax(220px,300px) 1fr;column-gap:22px;align-items:start}
+ .tx-card.has-photo>.tx-photo{grid-row:1 / span 6;margin:-16px 0 -16px -18px;aspect-ratio:4/3;height:calc(100% + 32px)}
+ .tx-card.has-photo>:not(.tx-photo){grid-column:2}
+}
+.tx-card.has-photo>.tx-hl{justify-self:start}
+.tx-more-wrap{grid-column:1/-1;display:flex;justify-content:center;margin-top:8px}
+.tx-more{min-width:240px}

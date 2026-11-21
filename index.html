@@ -9,8 +9,9 @@
 <meta name="theme-color" content="#FAF7F2">
 <link rel="icon" href="img/favicon.png">
 <link rel="preload" href="fonts/lato-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=20261115b">
-<link rel="stylesheet" href="css/arrival.css">
+<link rel="stylesheet" href="css/style.css?v=20261121i">
+<link rel="stylesheet" href="css/arrival.css?v=20261121c">
+<link rel="stylesheet" href="css/home.css?v=20261121c">
 <script>try{if(!sessionStorage.getItem("a88-arrived")&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("arriving")}catch(e){}</script>
 </head>
 <body class="home arrival-page">
@@ -31,7 +32,7 @@
 </div>
 <button class="arrival-skip" type="button" tabindex="-1">Skip</button>
 </div>
-<section class="lobby" id="lobby" aria-label="Welcome">
+<section class="lobby" id="lobby" aria-label="Welcome" data-nx>
 <div class="lobby-stage">
 <video class="lobby-video" id="lobby-video" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.webp" aria-label="An Avenue 88 agent opens the door and welcomes you into a Singapore home">
 <source src="assets/video/hero-540.mp4" type="video/mp4" media="(max-width: 900px)">
@@ -87,13 +88,6 @@
 </div>
 </div>
 </section>
-<section class="ask" id="ask">
-<p>Thinking of buying, selling or upgrading? Talk to us.</p>
-<div class="cta">
-<a class="btn btn-wa" href="https://wa.me/6580830688" target="_blank" rel="noopener">WhatsApp</a>
-<a class="btn gold" href="#contact">Enquire</a>
-</div>
-</section>
 <section id="why" class="sec">
 <h2>WHY WORK WITH US<span>.</span></h2>
 <p class="lead">Four things we actually sit down and do with you.</p>
@@ -103,45 +97,56 @@
 <a class="why-card" href="hdb-upgrading.html#calculator"><span class="why-go" aria-hidden="true">→</span><span class="why-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 19V9l7-4 7 4v10"/><path d="M9 19v-4h6v4"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg></span><h3>HDB to condo</h3><p>Upgrading is a plan, not a leap. We sketch the budget with the numbers you bring.</p></a>
 <a class="why-card" href="launches.html"><span class="why-go" aria-hidden="true">→</span><span class="why-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span><h3>New launches</h3><p>A new project on your mind? We read the site and the price, and whether it fits your plan.</p></a>
 </div>
-<div class="cta" style="margin-top:28px"><a class="btn gold" href="#contact">Talk to us</a><a class="btn ghost" href="https://wa.me/6580830688" target="_blank" rel="noopener">WhatsApp</a></div>
+<div class="ask ask-in" id="ask">
+<p>Thinking of buying, selling or upgrading? Talk to us.</p>
+<div class="cta">
+<a class="btn btn-wa" href="https://wa.me/6580830688" target="_blank" rel="noopener">WhatsApp</a>
+<a class="btn gold" href="#contact">Enquire</a>
+</div>
+</div>
 </section>
 <section id="team" class="sec">
-<div class="team-split">
-<div class="team-copy">
 <h2>THE TEAM<span>.</span></h2>
-<p class="lead">Seven agents. One standard. Tap a name for the full profile.</p>
-<ul class="team-lines">
-<li><a href="about.html#jason-ang"><b>Jason Ang</b><span>District 15 East Coast, sale &amp; rental</span></a></li>
-<li><a href="about.html#jackie-mang"><b>Jackie Mang</b><span>Private sales, Districts 9, 10 &amp; 11</span></a></li>
-<li><a href="about.html#benny-poh"><b>Benny Poh</b><span>Prime districts &amp; East Coast</span></a></li>
-<li><a href="about.html#brent-wang"><b>Brent Wang</b><span>Honest, clear guidance</span></a></li>
-<li><a href="about.html#chantel-teo"><b>Chantel Teo</b><span>Walk-ups and pre-90s homes</span></a></li>
-<li><a href="about.html#phoebe-goh"><b>Phoebe Goh</b><span>An artistic eye for every home</span></a></li>
-<li><a href="about.html#louis-tay"><b>Louis Tay</b><span>HDB &amp; private, asset planning</span></a></li>
-</ul>
-</div>
-<div class="team-photos" tabindex="0">
-<a class="ag" href="about.html#jason-ang"><img src="images/agents/jason-ang.jpg" alt="Jason Ang"><div class="cap"><h3 class="nm">Jason Ang</h3></div></a>
-<a class="ag" href="about.html#jackie-mang"><img src="images/agents/jackie-mang.jpg" alt="Jackie Mang"><div class="cap"><h3 class="nm">Jackie Mang</h3></div></a>
-<a class="ag" href="about.html#benny-poh"><img src="images/agents/benny-poh.jpg" alt="Benny Poh"><div class="cap"><h3 class="nm">Benny Poh</h3></div></a>
-<a class="ag" href="about.html#brent-wang"><img src="images/agents/brent-wang.jpg" alt="Brent Wang"><div class="cap"><h3 class="nm">Brent Wang</h3></div></a>
-<a class="ag" href="about.html#chantel-teo"><img src="images/agents/chantel-teo.jpg" alt="Chantel Teo"><div class="cap"><h3 class="nm">Chantel Teo</h3></div></a>
-<a class="ag" href="about.html#phoebe-goh"><img src="images/agents/phoebe-goh.jpg" alt="Phoebe Goh"><div class="cap"><h3 class="nm">Phoebe Goh</h3></div></a>
-<a class="ag" href="about.html#louis-tay"><img src="images/agents/louis-tay.jpg" alt="Louis Tay"><div class="cap"><h3 class="nm">Louis Tay</h3></div></a>
-</div>
+<p class="lead">Seven agents. One standard. Tap a photo for the full profile.</p>
+<div class="team-photos team-full" tabindex="0">
+<a class="ag" href="about.html#jason-ang"><img src="images/agents/jason-ang.jpg?v=20261121" alt="Jason Ang" loading="lazy"><div class="cap"><h3 class="nm">Jason Ang</h3><span class="cea">CEA R008889J</span><p>District 15 East Coast, sale &amp; rental</p></div></a>
+<a class="ag" href="about.html#jackie-mang"><img src="images/agents/jackie-mang.jpg?v=20261121" alt="Jackie Mang" loading="lazy"><div class="cap"><h3 class="nm">Jackie Mang</h3><span class="cea">CEA R008878E</span><p>Private sales, Districts 9, 10 &amp; 11</p></div></a>
+<a class="ag" href="about.html#benny-poh"><img src="images/agents/benny-poh.jpg?v=20261121" alt="Benny Poh" loading="lazy"><div class="cap"><h3 class="nm">Benny Poh</h3><span class="cea">CEA R008885H</span><p>Prime districts &amp; East Coast</p></div></a>
+<a class="ag" href="about.html#brent-wang"><img src="images/agents/brent-wang.jpg?v=20261121" alt="Brent Wang" loading="lazy"><div class="cap"><h3 class="nm">Brent Wang</h3><span class="cea">CEA R057382I</span><p>Honest, clear guidance</p></div></a>
+<a class="ag" href="about.html#chantel-teo"><img src="images/agents/chantel-teo.jpg?v=20261121" alt="Chantel Teo" loading="lazy"><div class="cap"><h3 class="nm">Chantel Teo</h3><span class="cea">CEA R013641J</span><p>Walk-ups and pre-90s homes</p></div></a>
+<a class="ag" href="about.html#phoebe-goh"><img src="images/agents/phoebe-goh.jpg?v=20261121b" alt="Phoebe Goh" loading="lazy"><div class="cap"><h3 class="nm">Phoebe Goh</h3><span class="cea">CEA R051932H</span><p>An artistic eye for every home</p></div></a>
+<a class="ag" href="about.html#louis-tay"><img src="images/agents/louis-tay.jpg?v=20261121b" alt="Louis Tay" loading="lazy"><div class="cap"><h3 class="nm">Louis Tay</h3><span class="cea">CEA R000567G</span><p>HDB &amp; private, asset planning</p></div></a>
 </div>
 </section>
-<section id="tools" class="sec">
+<section id="tools" class="sec" data-nx>
 <h2>TOOLS<span>.</span></h2>
-<p class="lead">Two checks worth doing before you commit.</p>
-<div class="tools">
-<a href="valuation.html#calculator" class="tool t1"><small>01</small><h3>Can I upgrade?</h3><p>Put in your sale price, loan and cash. See the budget those numbers add up to. Not a bank offer.</p><span class="btn gold">Try the calculator</span></a>
-<a href="octa-score.html" class="tool t2"><small>02</small><h3>Octa Score</h3><p>Eight checks on a launch, in one score, before you decide it is the one.</p><span class="btn btn-navy">See the score</span></a>
+<p class="lead">Two checks worth doing before you commit. Free, and you can start right here.</p>
+<div class="tools tools-v2">
+<article class="tool tool-calc">
+<p class="tool-meta"><b>01</b> Free · 60&nbsp;seconds · No&nbsp;sign&#8209;up</p>
+<h3>Can I upgrade?</h3>
+<p class="tool-lede">Type three numbers. See the cash you could bring to your next home.</p>
+<form class="mini-calc" id="mini-calc" novalidate>
+<label><span>Your home's sale price</span><input name="sale" inputmode="numeric" autocomplete="off" placeholder="S$ 650,000"></label>
+<label><span>Loan still owed</span><input name="loan" inputmode="numeric" autocomplete="off" placeholder="S$ 180,000"></label>
+<label><span>Cash you can add</span><input name="savings" inputmode="numeric" autocomplete="off" placeholder="S$ 50,000"></label>
+<div class="mini-out" aria-live="polite"><span>Cash towards your next home</span><output id="mini-fig">S$ —</output></div>
+</form>
+<p class="tool-fine">Sale price, minus the loan, plus your cash. The full plan adds your CPF refund and what a bank may lend. Not a valuation or a bank offer.</p>
+<a class="btn gold" id="mini-go" href="hdb-upgrading.html#calculator">See the full plan <span aria-hidden="true">→</span></a>
+</article>
+<article class="tool tool-octa">
+<p class="tool-meta"><b>02</b> Free · Eight&nbsp;checks · One&nbsp;score</p>
+<h3>Octa Score</h3>
+<p class="tool-lede">Is that new launch really the one? We rate it on MRT access, lease, schools, growth, land supply, size and yield.</p>
+<div class="octa-demo"><svg class="octa-mini" viewBox="0 0 220 220" role="img" aria-label="Example Octa Score for fictional Sample Residences: 78 out of 100"><polygon class="oc-ring" points="110.0,32.0 165.2,54.8 188.0,110.0 165.2,165.2 110.0,188.0 54.8,165.2 32.0,110.0 54.8,54.8"/><polygon class="oc-ring" points="110.0,58.5 146.4,73.6 161.5,110.0 146.4,146.4 110.0,161.5 73.6,146.4 58.5,110.0 73.6,73.6"/><polygon class="oc-ring" points="110.0,84.3 128.2,91.8 135.7,110.0 128.2,128.2 110.0,135.7 91.8,128.2 84.3,110.0 91.8,91.8"/><line class="oc-ring" x1="110" y1="110" x2="110.0" y2="32.0"/><line class="oc-ring" x1="110" y1="110" x2="165.2" y2="54.8"/><line class="oc-ring" x1="110" y1="110" x2="188.0" y2="110.0"/><line class="oc-ring" x1="110" y1="110" x2="165.2" y2="165.2"/><line class="oc-ring" x1="110" y1="110" x2="110.0" y2="188.0"/><line class="oc-ring" x1="110" y1="110" x2="54.8" y2="165.2"/><line class="oc-ring" x1="110" y1="110" x2="32.0" y2="110.0"/><line class="oc-ring" x1="110" y1="110" x2="54.8" y2="54.8"/><polygon class="oc-shape" points="110.0,42.9 151.9,68.1 174.0,110.0 148.6,148.6 110.0,170.8 74.7,145.3 39.8,110.0 67.0,67.0"/><text class="oc-l" x="110.0" y="15.0">P</text><text class="oc-l" x="177.2" y="42.8">R</text><text class="oc-l" x="205.0" y="110.0">O</text><text class="oc-l" x="177.2" y="177.2">P</text><text class="oc-l" x="110.0" y="205.0">E</text><text class="oc-l" x="42.8" y="177.2">R</text><text class="oc-l" x="15.0" y="110.0">T</text><text class="oc-l" x="42.8" y="42.8">Y</text></svg><div class="octa-total"><b>78</b><span>/100</span><small>Example only: fictional "Sample Residences"</small></div></div>
+<a class="btn btn-navy" href="octa-score.html">Score a launch <span aria-hidden="true">→</span></a>
+</article>
 </div>
 </section>
 <section id="track" class="sec">
 <h2>PROVEN TRACK RECORD<span>.</span></h2>
-<p class="lead">Sample cards for now. Photos and confirmed details come later.</p>
+<p class="lead">How we sold our clients’ homes.</p>
 <div class="track-row" id="track-row"></div>
 </section>
 <section id="instagram" class="sec" hidden>
@@ -155,7 +160,7 @@
 <div class="row" id="watch-row"></div>
 </section>
 <section id="reviews" class="sec">
-<h2>REVIEWS<span>.</span></h2>
+<h2>HEAR FROM OUR CLIENTS<span>.</span></h2>
 <p class="lead">What clients have already shared with us. We don't write these.</p>
 <div class="rev-wrap">
 <button class="rev-arrow" type="button" id="rev-prev" aria-label="Previous review">‹</button>
@@ -164,26 +169,78 @@
 </div>
 </section>
 <section id="contact" class="section soft">
-<div class="wrap contact">
+<div class="wrap contact contact-center">
 <div>
 <span class="eyebrow">Contact us</span>
 <h2>Let's talk property.</h2>
 <p class="lead">Buying, selling, renting or upgrading? Drop us a message and we'll get back to you soon.</p>
 <p><a class="btn btn-wa" href="https://wa.me/6580830688" target="_blank" rel="noopener">WhatsApp us</a></p>
 </div>
-<form class="enquiry a88-lead" id="enquiry" novalidate>
-<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-<h3>Send us an enquiry</h3>
-<div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required placeholder="Your name"></div>
-<div class="field-row">
-<div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+65"></div>
-<div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@email.com"></div>
+<form class="enquiry lead-flow" id="enquiry" novalidate>
+<input type="text" name="_honey" class="lf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="lf-top">
+<p class="lf-step-label" aria-live="polite">Step <b data-step-n>1</b> of 3</p>
+<div class="lf-bar" aria-hidden="true"><i></i></div>
 </div>
-<div class="field"><label for="f-topic">I'm interested in</label><select id="f-topic" name="topic"><option>Buying a home</option><option>Selling my property</option><option>Renting out / renting</option><option>Upgrading from HDB</option><option>New condo launches</option><option>Something else</option></select></div>
-<div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="4" placeholder="Tell us a little about what you're looking for"></textarea></div>
-<label class="consent"><input type="checkbox" name="consent" required> <span>I agree to Avenue 88 Property contacting me about my enquiry, and to my details being used for that purpose in line with the PDPA.</span></label>
-<button class="btn btn-navy" type="submit">Enquire now</button>
-<p class="form-note" hidden aria-live="polite"></p>
+
+<fieldset class="lf-step is-on" data-step="1">
+<legend>What can we help you with?</legend>
+<div class="lf-tiles lf-goal"><label class="lf-tile"><input type="radio" name="goal" value="buy" required><span><b>Buy a home</b><small>HDB, condo or landed</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="sell"><span><b>Sell my home</b><small>HDB, condo or landed</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="upgrade"><span><b>HDB to condo</b><small>Plan the upgrade, step by step</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="launch"><span><b>New launch</b><small>Is this project the one?</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="rent"><span><b>Rent out / rent</b><small>Tenants or a place to stay</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="other"><span><b>Something else</b><small>Ask us anything</small></span></label></div>
+</fieldset>
+
+<fieldset class="lf-step" data-step="2" hidden>
+<legend>A little about your plans</legend>
+<p class="lf-q">When are you hoping to move?</p>
+<div class="lf-tiles lf-when"><label class="lf-tile"><input type="radio" name="timeline" value="Within 3 months" required><span>Within 3 months</span></label><label class="lf-tile"><input type="radio" name="timeline" value="3 to 6 months"><span>3 to 6 months</span></label><label class="lf-tile"><input type="radio" name="timeline" value="6 to 12 months"><span>6 to 12 months</span></label><label class="lf-tile"><input type="radio" name="timeline" value="Just exploring"><span>Just exploring</span></label></div>
+<div class="lf-ctx" data-for="sell rent">
+<p class="lf-q">What type of property is it?</p>
+<div class="lf-tiles lf-type"><label class="lf-tile lf-tile-sm"><input type="radio" name="type" value="HDB"><span>HDB</span></label><label class="lf-tile lf-tile-sm"><input type="radio" name="type" value="Condo / EC"><span>Condo / EC</span></label><label class="lf-tile lf-tile-sm"><input type="radio" name="type" value="Landed"><span>Landed</span></label></div>
+</div>
+<div class="lf-ctx" data-for="buy">
+<p class="lf-q">What are you looking for?</p>
+<div class="lf-tiles lf-type"><label class="lf-tile lf-tile-sm"><input type="radio" name="type" value="HDB"><span>HDB</span></label><label class="lf-tile lf-tile-sm"><input type="radio" name="type" value="Condo / EC"><span>Condo / EC</span></label><label class="lf-tile lf-tile-sm"><input type="radio" name="type" value="Landed"><span>Landed</span></label><label class="lf-tile lf-tile-sm"><input type="radio" name="type" value="Not sure yet"><span>Not sure yet</span></label></div>
+</div>
+<div class="lf-ctx" data-for="sell rent buy upgrade">
+<div class="field"><label for="lf-town">Town or estate <span class="opt">(optional)</span></label><input id="lf-town" name="town" placeholder="e.g. Bishan, Serangoon Gardens" autocomplete="address-level2"></div>
+</div>
+<div class="lf-ctx" data-for="buy launch upgrade">
+<div class="field"><label for="lf-budget">Budget for the next home</label><select id="lf-budget" name="budget"><option value="">Not sure yet</option><option>Under S$1M</option><option>S$1M to S$1.5M</option><option>S$1.5M to S$2.5M</option><option>Above S$2.5M</option></select></div>
+</div>
+<div class="field"><label for="lf-msg">Anything we should know? <span class="opt">(optional)</span></label><textarea id="lf-msg" name="message" rows="3" placeholder="e.g. Two kids, want to stay near Rosyth School"></textarea></div>
+</fieldset>
+
+<fieldset class="lf-step" data-step="3" hidden>
+<legend>How should we reach you?</legend>
+<div class="field"><label for="lf-name">Name</label><input id="lf-name" name="name" autocomplete="name" required placeholder="Your name"></div>
+<div class="field-row">
+<div class="field"><label for="lf-phone">Mobile</label><input id="lf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="8xxx xxxx"></div>
+<div class="field"><label for="lf-email">Email <span class="opt">(for a copy)</span></label><input id="lf-email" name="email" type="email" autocomplete="email" placeholder="you@email.com"></div>
+</div>
+<p class="lf-q">Best way to reach you</p>
+<div class="lf-chips"><label class="lf-chip"><input type="radio" name="contactVia" value="WhatsApp" checked><span>WhatsApp</span></label><label class="lf-chip"><input type="radio" name="contactVia" value="Call"><span>Call</span></label><label class="lf-chip"><input type="radio" name="contactVia" value="Email"><span>Email</span></label></div>
+<p class="lf-q">Best time</p>
+<div class="lf-chips"><label class="lf-chip"><input type="radio" name="bestTime" value="Anytime" checked><span>Anytime</span></label><label class="lf-chip"><input type="radio" name="bestTime" value="Morning"><span>Morning</span></label><label class="lf-chip"><input type="radio" name="bestTime" value="Afternoon"><span>Afternoon</span></label><label class="lf-chip"><input type="radio" name="bestTime" value="Evening"><span>Evening</span></label></div>
+<label class="consent"><input type="checkbox" name="consent" required> <span>I agree to Avenue 88 Property (Huttons Asia Pte Ltd) contacting me about my enquiry, and to my details being used for that purpose in line with the PDPA.</span></label>
+</fieldset>
+
+<p class="lf-err" role="alert" hidden></p>
+<div class="lf-nav">
+<button type="button" class="btn btn-light lf-back" hidden>Back</button>
+<button type="button" class="btn btn-navy lf-next">Continue</button>
+<button type="submit" class="btn btn-navy lf-send" hidden>Send my enquiry</button>
+</div>
+
+<div class="lf-done" hidden tabindex="-1">
+<p class="lf-done-eyebrow">Enquiry received</p>
+<h3 class="lf-done-h">Thank you<span data-done-name></span>.</h3>
+<p class="lf-done-lede" data-done-lede></p>
+<ol class="lf-timeline" data-done-steps></ol>
+<div class="lf-done-cta">
+<a class="btn btn-wa" data-done-wa target="_blank" rel="noopener">Start on WhatsApp now</a>
+<a class="btn btn-light" data-done-tool></a>
+</div>
+<p class="lf-done-fine" data-done-fine></p>
+</div>
 </form>
 </div>
 </section>
@@ -195,12 +252,14 @@
 </section>
 <footer>
 <div class="fl"><img src="img/logo-avenue88.png" alt=""><p><a href="https://wa.me/6580830688">+65 8083 0688</a> · <a href="mailto:avenue88property@gmail.com">avenue88property@gmail.com</a></p></div>
-<p class="legal">Huttons Asia Pte Ltd · Licence L3008899K</p>
+<p class="legal">AVENUE 88 PROPERTY is an independent team under the umbrella of HUTTONS ASIA PTE LTD (CEA Licence No. L3008899K) 3 Bishan Place #05-01 CPF Bishan Building Singapore 579838</p>
 </footer>
-<script src="js/main.js?v=20261115b"></script>
-<script src="js/arrival.js" defer></script>
-<script src="js/track.js?v=20261115a" defer></script>
-<script src="js/home.js?v=20261115a" defer></script>
-<script src="js/next-section.js?v=20261115c" defer></script>
+<script src="js/main.js?v=20261121c"></script>
+<script src="js/arrival.js?v=20261121c" defer></script>
+<script src="js/home-extras.js?v=20261121c" defer></script>
+<script src="js/lead.js?v=20261121c" defer></script>
+<script src="js/track.js?v=20261121d" defer></script>
+<script src="js/home.js?v=20261121c" defer></script>
+<script src="js/next-section.js?v=20261121" defer></script>
 </body>
 </html>

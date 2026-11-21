@@ -1,0 +1,167 @@
+/* Homepage refinements (Nov 2026 feedback). Loaded after style.css and arrival.css. */
+
+/* Key figures: no jump while they count up */
+.nums b{font-variant-numeric:tabular-nums}
+
+/* "Thinking of buying..." strip now closes the Why section */
+.ask.ask-in{margin-top:28px;padding:22px 26px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold)}
+
+/* Team: photos across the full width, CEA no. and specialty under each name */
+.team-photos.team-full{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:28px}
+.team-full .ag{flex:0 0 calc((100% - 42px)/4);width:auto;aspect-ratio:3/4}
+.team-full .cap{padding:70px 18px 18px}
+.team-full .cap h3{font-size:21px}
+.team-full .cap .cea{display:block;margin-top:2px;font-size:12px;letter-spacing:.06em;color:var(--champagne,#E9D3A0);font-weight:700}
+.team-full .cap p{margin-top:6px;font-size:13px;line-height:1.4}
+
+/* Tools: try the tool right on the card */
+#tools .tools-v2{grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+#tools .tools-v2 .tool{min-height:0;padding:34px 34px 30px;justify-content:flex-start;gap:0}
+#tools .tools-v2 .tool .btn{pointer-events:auto;align-self:flex-start;margin-top:auto}
+.tool-calc{background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:0 12px 32px rgba(60,40,10,.06)}
+.tool-octa{background:var(--hero);color:#fff}
+.tool-meta{margin:0 0 14px;font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink);opacity:1}
+.tool-meta b{display:inline-block;margin-right:10px;padding-right:10px;border-right:1px solid currentColor}
+.tool-octa .tool-meta{color:var(--gold)}
+#tools .tools-v2 h3{font-size:clamp(32px,3.6vw,50px);line-height:1}
+.tool-octa h3{color:#fff}
+#tools .tool-lede{margin:10px 0 20px;font-size:17px;opacity:.85}
+
+.mini-calc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 12px}
+.mini-calc label{display:flex;flex-direction:column;gap:6px;font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.mini-calc input{width:100%;padding:13px 12px;font:700 17px/1.2 Lato,sans-serif;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:2px;letter-spacing:0;text-transform:none}
+.mini-calc input:focus{outline:2px solid var(--gold);outline-offset:0;border-color:var(--gold)}
+.mini-out{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:16px 18px;background:var(--bg-alt);border-left:3px solid var(--gold)}
+.mini-out span{font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-ink)}
+.mini-out output{font-size:clamp(28px,3vw,40px);font-weight:900;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.mini-out.live output{color:var(--ink)}
+.mini-out:not(.live) output{color:#b9ad9b}
+.tool-fine{margin:0 0 22px!important;font-size:13px!important;color:var(--mute);opacity:1!important}
+
+.octa-demo{display:flex;align-items:center;gap:22px;margin:0 0 24px}
+.octa-mini{width:min(220px,48%);height:auto;flex:none;overflow:visible}
+.oc-ring{fill:none;stroke:rgba(255,255,255,.16);stroke-width:1}
+.oc-shape{fill:rgba(214,159,26,.32);stroke:var(--gold);stroke-width:2;stroke-linejoin:round;transform-origin:110px 110px;transform:scale(.2);opacity:0;transition:transform 1.2s cubic-bezier(.34,1.4,.64,1),opacity .6s}
+.octa-demo.in .oc-shape{transform:scale(1);opacity:1}
+.oc-l{fill:var(--gold);font:900 13px Lato,sans-serif;text-anchor:middle;dominant-baseline:middle}
+.octa-total b{display:inline;font-size:clamp(64px,6vw,92px);font-weight:900;letter-spacing:-.05em;line-height:1;color:#fff}
+.octa-total span{font-size:20px;font-weight:700;color:#ffffff99;margin-left:4px}
+.octa-total small{position:static;display:block;margin-top:8px;font-size:12px;font-weight:400;letter-spacing:0;opacity:1;color:#ffffffa6;max-width:16em}
+
+/* Track record and client stories: titles on one line on wider screens */
+#track>h2,#reviews>h2{font-size:clamp(40px,6.2vw,96px)}
+@media(min-width:901px){#track>h2,#reviews>h2{white-space:nowrap}}
+.tr-agent{gap:12px}
+.tr-agent img{width:52px;height:52px;border:2px solid rgba(255,255,255,.85)}
+.tr-agent b{font-size:15px}
+
+/* Review card: its footer line was picking up the page footer's padding */
+.rev-card footer{display:flex;flex-wrap:wrap;gap:6px 14px;padding:14px 0 0;margin:0;background:none;border-top:1px solid var(--line);font-size:13px;line-height:1.5;color:var(--mute)}
+.rev-card footer b{color:var(--ink)}
+.rev-card .stars{color:var(--gold);letter-spacing:2px;font-size:15px;margin:0 0 10px}
+.rev-card footer a{color:var(--gold-ink);font-weight:700}
+
+/* Contact: heading above, form in the middle */
+.contact.contact-center{display:block;max-width:720px;margin:0 auto;text-align:center}
+.contact-center>div:first-child{margin-bottom:26px}
+.contact-center>div:first-child .lead{margin-left:auto;margin-right:auto;max-width:36em}
+.contact-center form.enquiry{text-align:left;padding:30px}
+
+@media(max-width:900px){
+ .team-photos.team-full{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+ .team-full .ag{flex:0 0 64vw;aspect-ratio:4/5;scroll-snap-align:start}
+ #tools .tools-v2{grid-template-columns:1fr}
+ #tools .tools-v2 .tool{padding:26px 22px 24px}
+ #tools .tools-v2 .tool .btn{margin-top:4px;align-self:stretch}
+ .ask.ask-in{padding:20px}
+}
+@media(max-width:600px){
+ .tool-meta{font-size:10.5px;letter-spacing:.1em}
+ .tool-meta b{margin-right:8px;padding-right:8px}
+ .mini-calc{grid-template-columns:1fr}
+ .mini-calc label{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:10px}
+ .octa-demo{gap:14px}
+ .octa-mini{width:52%}
+ .contact-center form.enquiry{padding:22px 18px}
+}
+@media(prefers-reduced-motion:reduce){.oc-shape{transition:none;transform:none;opacity:1}}
+
+/* Track record cards with real photos */
+.tr-card{flex:0 0 min(300px,80vw)}
+.tr-photo>img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.tr-card:hover .tr-photo>img{transform:scale(1.05)}
+.tr-shade{background:linear-gradient(to top,rgba(20,16,12,.92) 0%,rgba(20,16,12,.6) 32%,rgba(20,16,12,0) 58%),linear-gradient(to bottom,rgba(20,16,12,.5) 0%,rgba(20,16,12,0) 30%)}
+.tr-head{position:absolute;top:16px;right:18px;left:18px;z-index:2;text-align:right;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.tr-head .tr-sold{font-size:50px}
+.tr-head .tr-badge{margin:4px 0 0;color:#fff}
+.tr-copy{padding:18px 18px 18px}
+.tr-copy h3{font-size:21px;line-height:1.2;text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.tr-place{margin:4px 0 8px}
+.tr-hl{display:inline-block;margin:2px 0 12px;padding:4px 9px;background:var(--gold);color:#1C1917;font-size:12.5px;font-weight:900;letter-spacing:.01em}
+.tr-agent{gap:14px;margin-top:6px}
+.tr-agent img{width:68px;height:68px;border:3px solid #fff;object-position:50% 22%;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.tr-agent b{font-size:17px}
+.tr-agent small{display:block;margin-top:2px;font-size:11px;letter-spacing:.04em}
+
+/* ---- Lead form: three steps and a thank-you screen ---- */
+.lead-flow{position:relative}
+.lead-flow [hidden]{display:none!important}
+.lead-flow .lf-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.lf-top{margin:0 0 22px}
+.lf-step-label{margin:0 0 8px;font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink)}
+.lf-bar{height:3px;background:var(--line);overflow:hidden}
+.lf-bar i{display:block;height:100%;width:33.3%;background:var(--gold);transition:width .5s cubic-bezier(.77,0,.18,1)}
+.lf-step{border:0;margin:0;padding:0;min-width:0}
+.lf-step.is-on{animation:lfIn .45s ease both}
+@keyframes lfIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+.lf-step legend{padding:0;margin:0 0 16px;font-size:clamp(22px,2.4vw,28px);font-weight:900;letter-spacing:-.02em;line-height:1.15;color:var(--ink)}
+.lf-q{margin:4px 0 10px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.lf-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:18px}
+.lf-when{grid-template-columns:repeat(4,minmax(0,1fr))}
+.lf-tile{position:relative;display:block;cursor:pointer}
+.lf-tile input,.lf-chip input{position:absolute;opacity:0;pointer-events:none}
+.lf-tile span{display:flex;flex-direction:column;justify-content:center;gap:3px;min-height:56px;height:100%;padding:14px 16px;background:#fff;border:1px solid #D9CDBB;transition:border-color .2s,box-shadow .2s,background .2s;font-size:15px;font-weight:700;color:var(--ink)}
+.lf-tile b{font-size:16px}
+.lf-tile small{font-weight:400;font-size:13px;color:var(--mute)}
+.lf-tile:hover span{border-color:var(--gold)}
+.lf-tile input:checked+span{border-color:var(--gold);background:#FFF8E8;box-shadow:inset 0 0 0 1px var(--gold)}
+.lf-tile input:focus-visible+span,.lf-chip input:focus-visible+span{outline:3px solid var(--gold-ink);outline-offset:2px}
+.lf-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.lf-chip span{display:inline-block;padding:9px 16px;border:1px solid #D9CDBB;border-radius:40px;background:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:.2s}
+.lf-chip input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
+.lead-flow .opt{text-transform:none;letter-spacing:0;font-weight:400}
+.lf-err{margin:12px 0 0;padding:10px 12px;background:#FDECEA;color:#9A1C12;font-size:14px;border-left:3px solid #C0392B}
+.lf-nav{display:flex;justify-content:space-between;gap:12px;margin-top:20px}
+.lf-nav .lf-next,.lf-nav .lf-send{margin-left:auto}
+.lf-send[disabled]{opacity:.7;cursor:progress}
+
+.lf-done{outline:none;animation:lfIn .5s ease both}
+.lf-done-eyebrow{margin:0 0 6px;font-size:11px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#168a45}
+.lf-done-eyebrow::before{content:"✓";display:inline-grid;place-items:center;width:20px;height:20px;margin-right:8px;border-radius:50%;background:#168a45;color:#fff;font-size:11px;letter-spacing:0}
+.lf-done-h{margin:0;font-size:clamp(28px,3vw,38px);font-weight:900;letter-spacing:-.03em}
+.lf-done-lede{margin:8px 0 20px;color:var(--mute)}
+.lf-timeline{list-style:none;margin:0 0 22px;padding:0;border-left:2px solid var(--line)}
+.lf-timeline li{position:relative;padding:0 0 16px 22px}
+.lf-timeline li::before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--gold)}
+.lf-timeline li:first-child::before{background:var(--gold)}
+.lf-timeline b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink)}
+.lf-timeline span{display:block;margin-top:2px;font-size:15px}
+.lf-done-cta{display:flex;flex-wrap:wrap;gap:10px}
+.lf-done-fine{margin:16px 0 0;font-size:12px;color:var(--mute)}
+@media(max-width:600px){
+ .lf-tiles{grid-template-columns:1fr}
+ .lf-when{grid-template-columns:1fr 1fr}
+ .lf-nav .btn{flex:1}
+ .lf-done-cta .btn{flex:1 1 100%}
+}
+@media(prefers-reduced-motion:reduce){.lf-step.is-on,.lf-done{animation:none}.lf-bar i{transition:none}}
+.lf-type{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+.lf-tile-sm span{min-height:48px;padding:12px 14px;text-align:center;align-items:center}
+@media(max-width:600px){
+ .lf-type{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .lf-type:has(> :nth-child(4)){grid-template-columns:1fr 1fr}
+ .lf-tile-sm span{padding:12px 8px;font-size:14px}
+}
+.tr-agent img{object-position:50% 50%}
+/* Team photos are pre-cropped: no per-photo zoom, keep the head in frame */
+.team-full .ag img{--z:1!important;transform-origin:50% 30%!important;object-position:50% 20%!important}

@@ -5,14 +5,24 @@ const secs=()=>[...document.querySelectorAll('body > section, main > section')].
 const svg='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
 const headerH=()=>{const n=document.querySelector('.nav');return n?n.getBoundingClientRect().height:0};
 const go=el=>{const y=el?el.getBoundingClientRect().top+scrollY-headerH()+1:0;scrollTo({top:Math.max(0,y),behavior:RM.matches?'auto':'smooth'})};
+/* At most three arrows per page: the opening section, one mid-page, and back to top.
+   A page can choose its two "next" arrows by adding data-nx to those sections. */
+function picks(S){
+ const ok=S.filter(s=>!s.classList.contains('press'));
+ if(!ok.length)return [];
+ const last=ok[ok.length-1];
+ const marked=ok.filter(s=>s.hasAttribute('data-nx')&&s!==last);
+ const two=marked.length?marked.slice(0,2):[ok[0],ok[Math.floor((ok.length-1)/2)]];
+ return [...new Set([...two.filter(s=>s!==last),last])];
+}
 function build(){
  document.querySelectorAll('.nx').forEach(b=>b.remove());
- const S=secs();
- S.forEach((s,i)=>{
-  if(s.classList.contains('press'))return;
-  const last=i===S.length-1,b=document.createElement('button');b.type='button';b.className='nx'+(last?' up':'');b.innerHTML=svg;
+ document.querySelectorAll('.nx-host').forEach(s=>s.classList.remove('nx-host'));
+ const S=secs(),P=picks(S),lastSec=P[P.length-1];
+ P.forEach(s=>{
+  const last=s===lastSec,b=document.createElement('button');b.type='button';b.className='nx'+(last?' up':'');b.innerHTML=svg;
   b.setAttribute('aria-label',last?'Back to top':'Next section');
-  b.addEventListener('click',()=>{if(last){go(null);return}const t=secs()[secs().indexOf(s)+1];go(t)});
+  b.addEventListener('click',()=>{if(last){go(null);return}const all=secs();go(all[all.indexOf(s)+1])});
   s.classList.add('nx-host');s.appendChild(b)});
 }
 function dodge(){
