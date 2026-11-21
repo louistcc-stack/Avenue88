@@ -90,7 +90,7 @@ function a88ApplyInterest(){
 a88ApplyInterest();
 addEventListener('hashchange',a88ApplyInterest);
 addEventListener('load',a88ApplyInterest);
-const A88_WA='6580830688',A88_MAIL='https://formsubmit.co/ajax/avenue88property@gmail.com';
+const A88_WA=(window.A88_CONFIG&&A88_CONFIG.WA)||'6580830688',A88_MAIL='https://formsubmit.co/ajax/avenue88property@gmail.com';
 const A88_LABELS={goal:'Goal',name:'Name',phone:'Mobile',email:'Email',hdbType:'HDB type',town:'Town',timeline:'Timeline',address:'Property address',unit:'Unit no.',type:'Property type',topic:'Interested in',message:'Message',project:'Project / address',intent:'Buying, selling or upgrading',calc:'Calculator snapshot'};
 document.querySelectorAll('form.a88-lead').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();
  const d=new FormData(f),note=f.querySelector('.form-note');const say=(t,c)=>{note.hidden=false;note.textContent=t;note.style.color=c};
@@ -115,8 +115,8 @@ document.querySelectorAll('form.a88-lead').forEach(f=>f.addEventListener('submit
  a.href='https://wa.me/'+A88_WA;
  a.target='_blank';
  a.rel='noopener';
- a.setAttribute('aria-label','WhatsApp us');
- a.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg><span>WhatsApp us</span>';
+ a.setAttribute('aria-label','Chat with us');
+ a.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg><span>Chat with us</span>';
  document.body.append(a);
  const place=()=>{
   const nums=document.querySelector('.nums');

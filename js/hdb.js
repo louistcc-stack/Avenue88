@@ -328,8 +328,10 @@ function boot(api) {
     const box = document.getElementById('u-calc');
     box.value = text;
     const wa = document.getElementById('wa-roadmap');
-    const msg = 'Hi Avenue 88! I would like a free HDB upgrade roadmap.\n\n' + text;
-    wa.href = 'https://wa.me/6580830688?text=' + encodeURIComponent(msg);
+    const msg = "Hi Avenue 88, I'm an HDB owner thinking of upgrading.\n\n" + text;
+    wa.dataset.wa = msg;
+    wa.dataset.ref = 'hdb-upgrading';
+    wa.href = window.A88_WA_URL ? window.A88_WA_URL(msg, 'hdb-upgrading') : ('https://wa.me/6580830688?text=' + encodeURIComponent(msg));
     document.getElementById('roadmap').scrollIntoView({ behavior: 'smooth', block: 'start' });
     const name = document.getElementById('u-name');
     if (name && !name.value) name.focus({ preventScroll: true });
