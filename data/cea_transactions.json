@@ -1,0 +1,3138 @@
+{
+"last_updated": "2026-11-21T14:11:16+00:00",
+"source": "CEA via data.gov.sg dataset d_ee7e46d3c57f7865790704632b0aef71",
+"from": "2024-12",
+"to": "2026-11",
+"transactions": [
+{
+"agent": "jackie-mang",
+"month": "2026-11",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "New sale",
+"represented": "seller",
+"town": "",
+"district": "D20"
+},
+{
+"agent": "jackie-mang",
+"month": "2026-11",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "New sale",
+"represented": "seller",
+"town": "",
+"district": "D20"
+},
+{
+"agent": "louis-tay",
+"month": "2026-10",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Ang Mo Kio",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2026-10",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D12"
+},
+{
+"agent": "louis-tay",
+"month": "2026-10",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D27"
+},
+{
+"agent": "jason-ang",
+"month": "2026-10",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Sembawang",
+"district": ""
+},
+{
+"agent": "jackie-mang",
+"month": "2026-10",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Clementi",
+"district": ""
+},
+{
+"agent": "jackie-mang",
+"month": "2026-10",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "New sale",
+"represented": "buyer",
+"town": "",
+"district": "D20"
+},
+{
+"agent": "jackie-mang",
+"month": "2026-10",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "New sale",
+"represented": "seller",
+"town": "",
+"district": "D20"
+},
+{
+"agent": "jackie-mang",
+"month": "2026-10",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "New sale",
+"represented": "seller",
+"town": "",
+"district": "D20"
+},
+{
+"agent": "jackie-mang",
+"month": "2026-10",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "New sale",
+"represented": "seller",
+"town": "",
+"district": "D20"
+},
+{
+"agent": "jackie-mang",
+"month": "2026-10",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "New sale",
+"represented": "seller",
+"town": "",
+"district": "D20"
+},
+{
+"agent": "jackie-mang",
+"month": "2026-10",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "New sale",
+"represented": "seller",
+"town": "",
+"district": "D20"
+},
+{
+"agent": "benny-poh",
+"month": "2026-10",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Kallang/Whampoa",
+"district": ""
+},
+{
+"agent": "benny-poh",
+"month": "2026-10",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D16"
+},
+{
+"agent": "phoebe-goh",
+"month": "2026-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "tenant",
+"town": "",
+"district": "D21"
+},
+{
+"agent": "phoebe-goh",
+"month": "2026-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "louis-tay",
+"month": "2026-09",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Bukit Merah",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2026-09",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Toa Payoh",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2026-09",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Bishan",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2026-09",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Geylang",
+"district": ""
+},
+{
+"agent": "chantel-teo",
+"month": "2026-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D03"
+},
+{
+"agent": "benny-poh",
+"month": "2026-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "benny-poh",
+"month": "2026-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D11"
+},
+{
+"agent": "louis-tay",
+"month": "2026-08",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "louis-tay",
+"month": "2026-08",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D23"
+},
+{
+"agent": "louis-tay",
+"month": "2026-08",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D10"
+},
+{
+"agent": "jackie-mang",
+"month": "2026-08",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "benny-poh",
+"month": "2026-08",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D02"
+},
+{
+"agent": "benny-poh",
+"month": "2026-08",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "phoebe-goh",
+"month": "2026-07",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D20"
+},
+{
+"agent": "louis-tay",
+"month": "2026-07",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Sengkang",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2026-07",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "jason-ang",
+"month": "2026-07",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "tenant",
+"town": "",
+"district": "D04"
+},
+{
+"agent": "jason-ang",
+"month": "2026-07",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "chantel-teo",
+"month": "2026-07",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Sengkang",
+"district": ""
+},
+{
+"agent": "benny-poh",
+"month": "2026-07",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "tenant",
+"town": "",
+"district": "D22"
+},
+{
+"agent": "benny-poh",
+"month": "2026-07",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D11"
+},
+{
+"agent": "phoebe-goh",
+"month": "2026-06",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Room rental",
+"represented": "landlord",
+"town": "Hougang",
+"district": ""
+},
+{
+"agent": "phoebe-goh",
+"month": "2026-06",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D10"
+},
+{
+"agent": "louis-tay",
+"month": "2026-06",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Bukit Merah",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2026-06",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Central Area",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2026-06",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D03"
+},
+{
+"agent": "jason-ang",
+"month": "2026-06",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2026-06",
+"property_type": "EC",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2026-06",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D12"
+},
+{
+"agent": "jason-ang",
+"month": "2026-06",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "tenant",
+"town": "",
+"district": "D08"
+},
+{
+"agent": "jason-ang",
+"month": "2026-06",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2026-06",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "chantel-teo",
+"month": "2026-06",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Pasir Ris",
+"district": ""
+},
+{
+"agent": "brent-wang",
+"month": "2026-06",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "benny-poh",
+"month": "2026-06",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D04"
+},
+{
+"agent": "phoebe-goh",
+"month": "2026-05",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Sengkang",
+"district": ""
+},
+{
+"agent": "jason-ang",
+"month": "2026-05",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2026-05",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2026-05",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D19"
+},
+{
+"agent": "jason-ang",
+"month": "2026-05",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2026-05",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2026-05",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D03"
+},
+{
+"agent": "jackie-mang",
+"month": "2026-05",
+"property_type": "Landed",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D14"
+},
+{
+"agent": "brent-wang",
+"month": "2026-05",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "phoebe-goh",
+"month": "2026-04",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Toa Payoh",
+"district": ""
+},
+{
+"agent": "phoebe-goh",
+"month": "2026-04",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Room rental",
+"represented": "landlord",
+"town": "Serangoon",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2026-04",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Bukit Panjang",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2026-04",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Sembawang",
+"district": ""
+},
+{
+"agent": "jason-ang",
+"month": "2026-04",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "tenant",
+"town": "Marine Parade",
+"district": ""
+},
+{
+"agent": "jason-ang",
+"month": "2026-04",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2026-04",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "brent-wang",
+"month": "2026-04",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "benny-poh",
+"month": "2026-04",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D10"
+},
+{
+"agent": "phoebe-goh",
+"month": "2026-03",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Kallang/Whampoa",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2026-03",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Punggol",
+"district": ""
+},
+{
+"agent": "jason-ang",
+"month": "2026-03",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Hougang",
+"district": ""
+},
+{
+"agent": "jason-ang",
+"month": "2026-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2026-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "jason-ang",
+"month": "2026-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2026-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D11"
+},
+{
+"agent": "jason-ang",
+"month": "2026-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jackie-mang",
+"month": "2026-03",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Ang Mo Kio",
+"district": ""
+},
+{
+"agent": "jackie-mang",
+"month": "2026-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D11"
+},
+{
+"agent": "chantel-teo",
+"month": "2026-03",
+"property_type": "Landed",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "brent-wang",
+"month": "2026-03",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Yishun",
+"district": ""
+},
+{
+"agent": "brent-wang",
+"month": "2026-03",
+"property_type": "EC",
+"transaction_type": "Sale",
+"kind": "New sale",
+"represented": "buyer",
+"town": "",
+"district": "D17"
+},
+{
+"agent": "brent-wang",
+"month": "2026-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2026-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "tenant",
+"town": "",
+"district": "D04"
+},
+{
+"agent": "brent-wang",
+"month": "2026-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Room rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2026-03",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "brent-wang",
+"month": "2026-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "louis-tay",
+"month": "2026-02",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Punggol",
+"district": ""
+},
+{
+"agent": "jason-ang",
+"month": "2026-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2026-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D12"
+},
+{
+"agent": "jason-ang",
+"month": "2026-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D23"
+},
+{
+"agent": "jason-ang",
+"month": "2026-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2026-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2026-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jackie-mang",
+"month": "2026-02",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Tampines",
+"district": ""
+},
+{
+"agent": "jackie-mang",
+"month": "2026-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D20"
+},
+{
+"agent": "jackie-mang",
+"month": "2026-02",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "jackie-mang",
+"month": "2026-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D02"
+},
+{
+"agent": "benny-poh",
+"month": "2026-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "tenant",
+"town": "",
+"district": "D03"
+},
+{
+"agent": "benny-poh",
+"month": "2026-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D04"
+},
+{
+"agent": "benny-poh",
+"month": "2026-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D10"
+},
+{
+"agent": "benny-poh",
+"month": "2026-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D01"
+},
+{
+"agent": "benny-poh",
+"month": "2026-02",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D19"
+},
+{
+"agent": "louis-tay",
+"month": "2026-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "jason-ang",
+"month": "2026-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2026-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "tenant",
+"town": "",
+"district": "D10"
+},
+{
+"agent": "jackie-mang",
+"month": "2026-01",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Tampines",
+"district": ""
+},
+{
+"agent": "jackie-mang",
+"month": "2026-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "jackie-mang",
+"month": "2026-01",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D19"
+},
+{
+"agent": "chantel-teo",
+"month": "2026-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "tenant",
+"town": "",
+"district": "D21"
+},
+{
+"agent": "brent-wang",
+"month": "2026-01",
+"property_type": "EC",
+"transaction_type": "Sale",
+"kind": "New sale",
+"represented": "buyer",
+"town": "",
+"district": "D17"
+},
+{
+"agent": "brent-wang",
+"month": "2026-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2026-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2026-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2026-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2026-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D16"
+},
+{
+"agent": "brent-wang",
+"month": "2026-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "benny-poh",
+"month": "2026-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D14"
+},
+{
+"agent": "benny-poh",
+"month": "2026-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D19"
+},
+{
+"agent": "benny-poh",
+"month": "2026-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "phoebe-goh",
+"month": "2025-12",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Room rental",
+"represented": "landlord",
+"town": "Bukit Batok",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-12",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Toa Payoh",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-12",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Toa Payoh",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-12",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Toa Payoh",
+"district": ""
+},
+{
+"agent": "jason-ang",
+"month": "2025-12",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Bukit Batok",
+"district": ""
+},
+{
+"agent": "jason-ang",
+"month": "2025-12",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Ang Mo Kio",
+"district": ""
+},
+{
+"agent": "jason-ang",
+"month": "2025-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "tenant",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "jason-ang",
+"month": "2025-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-12",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D10"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D02"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D01"
+},
+{
+"agent": "chantel-teo",
+"month": "2025-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D19"
+},
+{
+"agent": "brent-wang",
+"month": "2025-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "benny-poh",
+"month": "2025-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D03"
+},
+{
+"agent": "louis-tay",
+"month": "2025-11",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D12"
+},
+{
+"agent": "louis-tay",
+"month": "2025-11",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "jason-ang",
+"month": "2025-11",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D02"
+},
+{
+"agent": "jason-ang",
+"month": "2025-11",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D19"
+},
+{
+"agent": "jason-ang",
+"month": "2025-11",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-11",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D10"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-11",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Sembawang",
+"district": ""
+},
+{
+"agent": "jackie-mang",
+"month": "2025-11",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D12"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-11",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D02"
+},
+{
+"agent": "chantel-teo",
+"month": "2025-11",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Bukit Panjang",
+"district": ""
+},
+{
+"agent": "brent-wang",
+"month": "2025-11",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Geylang",
+"district": ""
+},
+{
+"agent": "brent-wang",
+"month": "2025-11",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D16"
+},
+{
+"agent": "benny-poh",
+"month": "2025-11",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Bukit Merah",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-10",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "tenant",
+"town": "",
+"district": "D23"
+},
+{
+"agent": "jason-ang",
+"month": "2025-10",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-10",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "jason-ang",
+"month": "2025-10",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-10",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D03"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-10",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D21"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-10",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D19"
+},
+{
+"agent": "chantel-teo",
+"month": "2025-10",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Marine Parade",
+"district": ""
+},
+{
+"agent": "chantel-teo",
+"month": "2025-10",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D20"
+},
+{
+"agent": "chantel-teo",
+"month": "2025-10",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D03"
+},
+{
+"agent": "brent-wang",
+"month": "2025-10",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2025-10",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "benny-poh",
+"month": "2025-10",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D04"
+},
+{
+"agent": "louis-tay",
+"month": "2025-09",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Kallang/Whampoa",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "tenant",
+"town": "",
+"district": "D03"
+},
+{
+"agent": "louis-tay",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D14"
+},
+{
+"agent": "jason-ang",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D11"
+},
+{
+"agent": "jason-ang",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D12"
+},
+{
+"agent": "jason-ang",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "tenant",
+"town": "",
+"district": "D08"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D19"
+},
+{
+"agent": "chantel-teo",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D12"
+},
+{
+"agent": "chantel-teo",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D08"
+},
+{
+"agent": "chantel-teo",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D12"
+},
+{
+"agent": "brent-wang",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "tenant",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "benny-poh",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D10"
+},
+{
+"agent": "benny-poh",
+"month": "2025-09",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D02"
+},
+{
+"agent": "phoebe-goh",
+"month": "2025-08",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Sengkang",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-08",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Tampines",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-08",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D27"
+},
+{
+"agent": "jason-ang",
+"month": "2025-08",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Toa Payoh",
+"district": ""
+},
+{
+"agent": "jason-ang",
+"month": "2025-08",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "jason-ang",
+"month": "2025-08",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D03"
+},
+{
+"agent": "jason-ang",
+"month": "2025-08",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "chantel-teo",
+"month": "2025-08",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Punggol",
+"district": ""
+},
+{
+"agent": "brent-wang",
+"month": "2025-08",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "New sale",
+"represented": "buyer",
+"town": "",
+"district": "D26"
+},
+{
+"agent": "benny-poh",
+"month": "2025-08",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Sengkang",
+"district": ""
+},
+{
+"agent": "benny-poh",
+"month": "2025-08",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D03"
+},
+{
+"agent": "phoebe-goh",
+"month": "2025-07",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D10"
+},
+{
+"agent": "louis-tay",
+"month": "2025-07",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Queenstown",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-07",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Sengkang",
+"district": ""
+},
+{
+"agent": "jason-ang",
+"month": "2025-07",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-07",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-07",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-07",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-07",
+"property_type": "Landed",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D26"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-07",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D27"
+},
+{
+"agent": "chantel-teo",
+"month": "2025-07",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D23"
+},
+{
+"agent": "brent-wang",
+"month": "2025-07",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "benny-poh",
+"month": "2025-07",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "benny-poh",
+"month": "2025-07",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D05"
+},
+{
+"agent": "benny-poh",
+"month": "2025-07",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D21"
+},
+{
+"agent": "louis-tay",
+"month": "2025-06",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Kallang/Whampoa",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-06",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "jason-ang",
+"month": "2025-06",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D03"
+},
+{
+"agent": "jason-ang",
+"month": "2025-06",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "brent-wang",
+"month": "2025-06",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D21"
+},
+{
+"agent": "brent-wang",
+"month": "2025-06",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D19"
+},
+{
+"agent": "benny-poh",
+"month": "2025-06",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D19"
+},
+{
+"agent": "phoebe-goh",
+"month": "2025-05",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Central Area",
+"district": ""
+},
+{
+"agent": "phoebe-goh",
+"month": "2025-05",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Sengkang",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-05",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Woodlands",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-05",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Toa Payoh",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-05",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Queenstown",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-05",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D12"
+},
+{
+"agent": "louis-tay",
+"month": "2025-05",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "jason-ang",
+"month": "2025-05",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "chantel-teo",
+"month": "2025-05",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D12"
+},
+{
+"agent": "chantel-teo",
+"month": "2025-05",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D12"
+},
+{
+"agent": "brent-wang",
+"month": "2025-05",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Clementi",
+"district": ""
+},
+{
+"agent": "benny-poh",
+"month": "2025-05",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "benny-poh",
+"month": "2025-05",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D10"
+},
+{
+"agent": "louis-tay",
+"month": "2025-04",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Jurong East",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-04",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Kallang/Whampoa",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-04",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D05"
+},
+{
+"agent": "jason-ang",
+"month": "2025-04",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D10"
+},
+{
+"agent": "jason-ang",
+"month": "2025-04",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-04",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D14"
+},
+{
+"agent": "jason-ang",
+"month": "2025-04",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "brent-wang",
+"month": "2025-04",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2025-04",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2025-04",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "benny-poh",
+"month": "2025-04",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "benny-poh",
+"month": "2025-04",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "benny-poh",
+"month": "2025-04",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "louis-tay",
+"month": "2025-03",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Yishun",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-03",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Bukit Merah",
+"district": ""
+},
+{
+"agent": "jason-ang",
+"month": "2025-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D07"
+},
+{
+"agent": "jason-ang",
+"month": "2025-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-03",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D04"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-03",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D16"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-03",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-03",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D12"
+},
+{
+"agent": "brent-wang",
+"month": "2025-03",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Room rental",
+"represented": "landlord",
+"town": "Yishun",
+"district": ""
+},
+{
+"agent": "brent-wang",
+"month": "2025-03",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2025-03",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2025-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Room rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2025-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D16"
+},
+{
+"agent": "benny-poh",
+"month": "2025-03",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D01"
+},
+{
+"agent": "phoebe-goh",
+"month": "2025-02",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "",
+"district": "D10"
+},
+{
+"agent": "louis-tay",
+"month": "2025-02",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Ang Mo Kio",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-02",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Ang Mo Kio",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-02",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Bishan",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-02",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D13"
+},
+{
+"agent": "jason-ang",
+"month": "2025-02",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "jason-ang",
+"month": "2025-02",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D11"
+},
+{
+"agent": "chantel-teo",
+"month": "2025-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D16"
+},
+{
+"agent": "chantel-teo",
+"month": "2025-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D11"
+},
+{
+"agent": "brent-wang",
+"month": "2025-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "benny-poh",
+"month": "2025-02",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Queenstown",
+"district": ""
+},
+{
+"agent": "benny-poh",
+"month": "2025-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "benny-poh",
+"month": "2025-02",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D10"
+},
+{
+"agent": "phoebe-goh",
+"month": "2025-01",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "louis-tay",
+"month": "2025-01",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Hougang",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-01",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Yishun",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-01",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Choa Chu Kang",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-01",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Central Area",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-01",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Serangoon",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2025-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "jason-ang",
+"month": "2025-01",
+"property_type": "HDB",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "Marine Parade",
+"district": ""
+},
+{
+"agent": "jason-ang",
+"month": "2025-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "jason-ang",
+"month": "2025-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "tenant",
+"town": "",
+"district": "D10"
+},
+{
+"agent": "jason-ang",
+"month": "2025-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2025-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jackie-mang",
+"month": "2025-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "brent-wang",
+"month": "2025-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2025-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2025-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2025-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2025-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "brent-wang",
+"month": "2025-01",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "phoebe-goh",
+"month": "2024-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "louis-tay",
+"month": "2024-12",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Kallang/Whampoa",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2024-12",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "Bukit Merah",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2024-12",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Choa Chu Kang",
+"district": ""
+},
+{
+"agent": "louis-tay",
+"month": "2024-12",
+"property_type": "HDB",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "buyer",
+"town": "Ang Mo Kio",
+"district": ""
+},
+{
+"agent": "jason-ang",
+"month": "2024-12",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D07"
+},
+{
+"agent": "jason-ang",
+"month": "2024-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D10"
+},
+{
+"agent": "jason-ang",
+"month": "2024-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2024-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2024-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2024-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2024-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D15"
+},
+{
+"agent": "jason-ang",
+"month": "2024-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D11"
+},
+{
+"agent": "jackie-mang",
+"month": "2024-12",
+"property_type": "Condo",
+"transaction_type": "Sale",
+"kind": "Resale",
+"represented": "seller",
+"town": "",
+"district": "D09"
+},
+{
+"agent": "chantel-teo",
+"month": "2024-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D14"
+},
+{
+"agent": "brent-wang",
+"month": "2024-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D18"
+},
+{
+"agent": "benny-poh",
+"month": "2024-12",
+"property_type": "Condo",
+"transaction_type": "Rental",
+"kind": "Whole unit rental",
+"represented": "landlord",
+"town": "",
+"district": "D09"
+}
+]
+}
