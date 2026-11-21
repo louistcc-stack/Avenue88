@@ -281,7 +281,6 @@ form.enquiry{background:var(--card);border:1px solid var(--line);padding:22px}
 /* Team cards: consistent head height/size per portrait (zoom from source, no new pixels) */
 .ag img{transform:scale(var(--z,1));transform-origin:50% 30%}
 .ag:hover img{transform:scale(calc(var(--z,1) * 1.04))}
-.ag[href$="#louis-tay"] img{object-position:100% 50%;--z:1.00;transform-origin:50% 50%}
 .cap{padding:56px 16px 16px}.cap h3{line-height:1.2}
 .sec.nx-host,.section.nx-host,.page-hero.nx-host,.follow.nx-host{padding-bottom:88px}
 @media(max-width:700px){.sec.nx-host,.section.nx-host,.page-hero.nx-host,.follow.nx-host{padding-bottom:84px}}
