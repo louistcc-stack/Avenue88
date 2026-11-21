@@ -163,3 +163,5 @@
  .lf-tile-sm span{padding:12px 8px;font-size:14px}
 }
 .tr-agent img{object-position:50% 50%}
+/* Team photos are pre-cropped: no per-photo zoom, keep the head in frame */
+.team-full .ag img{--z:1!important;transform-origin:50% 30%!important;object-position:50% 20%!important}
