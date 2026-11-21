@@ -12,8 +12,9 @@
    - headshot: small round photo URL.
 */
 window.A88_TRACK=[
+ {photo:'images/track/bartley-residences.webp',sample:false,soldLine:'at Record Price',project:'Bartley Residences',place:'District 19 · 2-Bedroom · 807 sqft',extra:'$1.56M · Sold in under 3 months',agent:'Chantel Teo',cea:'R013641J',headshot:'images/agents/chantel-teo-face.webp?v=20261116e'},
  {photo:'images/track/d28-corner-terrace.webp',sample:false,soldLine:'in 3 Weeks',project:'3-Storey Corner Terrace',place:'District 28',agent:'Benny Poh',cea:'R008885H',headshot:'images/agents/benny-poh-face.webp?v=20261116e'},
  {photo:'images/track/kim-tian-127d.webp',sample:false,soldLine:'in 4 Weeks',project:'127D Kim Tian Road',place:'5-Room HDB · 1,216 sqft · Above 30th floor',extra:'COV $30,000',agent:'Louis Tay',cea:'R000567G',headshot:'images/agents/louis-tay-face.webp?v=20261116e'},
- {photo:'',sample:true,soldLine:'at Record Price',project:'Sample project',place:'District / town',agent:'Jason Ang',cea:'R008889J',headshot:'images/agents/jason-ang-face.webp?v=20261116e'},
- {photo:'',sample:true,soldLine:'in 7 Days',project:'Sample project',place:'District / town',agent:'Jackie Mang',cea:'R008878E',headshot:'images/agents/jackie-mang-face.webp?v=20261116e'}
+ {photo:'images/track/clementi-312a.webp',sample:false,soldLine:'within 2 Weeks',project:'Blk 312A Clementi Ave 4',place:'3-Room HDB',agent:'Jackie Mang',cea:'R008878E',headshot:'images/agents/jackie-mang-face.webp?v=20261116e'},
+ {photo:'images/track/one-amber.webp',sample:false,soldLine:'in 2 Months',project:'One Amber',place:'District 15',agent:'Jason Ang',cea:'R008889J',headshot:'images/agents/jason-ang-face.webp?v=20261116e'}
 ];
