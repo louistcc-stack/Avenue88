@@ -130,6 +130,12 @@
  }
  ensureSlots();
  document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(paintLink);
+ const PDPA='By submitting, you agree to Avenue 88 / Huttons Asia Pte Ltd contacting you about your enquiry and handling your data in line with the PDPA.';
+ document.querySelectorAll('form .consent span').forEach(function(s){s.textContent=PDPA});
+ document.querySelectorAll('form .consent input[type="checkbox"]').forEach(function(c){
+  c.required=true;
+  if(c.hasAttribute('checked')){c.checked=false;c.removeAttribute('checked')}
+ });
  document.querySelectorAll('.js-book').forEach(function(a){
   const url=((cfg.BOOKING_URL)||'').trim();
   if(!url){a.hidden=true;return}
