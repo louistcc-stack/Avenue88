@@ -315,7 +315,8 @@ function boot(api) {
         'CPF refund: ' + money(r.cpfRefund),
         'Max tenure: ' + r.years + ' years',
         'Max loan (TDSR 55%, 4% stress test): ' + money(r.tdsrLoan),
-        'Indicative budget for next private home: ' + money(r.budget),
+        'Indicative range for next private home: ' + money(r.budget),
+        'Indicative only, based on recent transactions. Not a formal valuation.',
         'BSD at that budget: ' + money(r.bsdAtBudget),
         'Downpayment at that budget: ' + money(r.down)
       );
