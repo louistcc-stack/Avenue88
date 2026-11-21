@@ -130,4 +130,12 @@
  }
  ensureSlots();
  document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(paintLink);
+ document.querySelectorAll('.js-book').forEach(function(a){
+  const url=((cfg.BOOKING_URL)||'').trim();
+  if(!url){a.hidden=true;return}
+  a.hidden=false;
+  a.href=url;
+  a.target='_blank';
+  a.rel='noopener';
+ });
 })();

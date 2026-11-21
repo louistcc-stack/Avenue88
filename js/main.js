@@ -91,17 +91,26 @@ a88ApplyInterest();
 addEventListener('hashchange',a88ApplyInterest);
 addEventListener('load',a88ApplyInterest);
 const A88_WA=(window.A88_CONFIG&&A88_CONFIG.WA)||'6580830688',A88_MAIL='https://formsubmit.co/ajax/avenue88property@gmail.com';
-const A88_LABELS={goal:'Goal',name:'Name',phone:'Mobile',email:'Email',hdbType:'HDB type',town:'Town',timeline:'Timeline',address:'Property address',unit:'Unit no.',type:'Property type',topic:'Interested in',message:'Message',project:'Project / address',intent:'Buying, selling or upgrading',calc:'Calculator snapshot'};
+const A88_LABELS={goal:'Goal',name:'Name',phone:'Mobile',email:'Email',hdbType:'HDB type',town:'Town',timeline:'When do you plan to move',sellFirst:'Sell before you buy',address:'Property address',unit:'Unit no.',type:'Property type',topic:'Interested in',message:'Message',project:'Project / address',intent:'Buying, selling or upgrading',calc:'Calculator snapshot'};
 document.querySelectorAll('form.a88-lead').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();
+ if(!f.checkValidity()){f.reportValidity();return}
  const d=new FormData(f),note=f.querySelector('.form-note');const say=(t,c)=>{note.hidden=false;note.textContent=t;note.style.color=c};
  const name=(d.get('name')||'').trim(),phone=(d.get('phone')||'').trim();
  if(!name||!/^[+\d][\d\s-]{6,}$/.test(phone)){say('Please add your name and a valid mobile number.','#b42318');return}
  if(!d.get('consent')){say('Please tick the consent box so we can contact you.','#b42318');return}
  if(d.get('_honey'))return;
  const fields={};for(const k in A88_LABELS){const v=(d.get(k)||'').toString().trim();if(v)fields[A88_LABELS[k]]=k==='goal'?(v==='sell'?"What's my home worth?":'Planning an HDB upgrade'):v}
- fields['Form']=f.dataset.form||(f.id==='valuation'?'Hero lead form':'Enquiry form');fields['Page']=location.pathname;
- const msg='Hi Avenue 88!\n'+Object.entries(fields).map(([k,v])=>k+': '+v).join('\n');
- window.open('https://wa.me/'+A88_WA+'?text='+encodeURIComponent(msg),'_blank');
+ const pageName=(location.pathname.split('/').pop()||'index.html')||'index.html';
+ const ref=f.dataset.ref||document.body.dataset.ref||'';
+ fields['Form']=f.dataset.form||(f.id==='valuation'?'Hero lead form':'Enquiry form');fields['Page']=pageName;
+ if(ref)fields['Ref']=ref;
+ const utm=window.A88_UTM?window.A88_UTM():{};
+ if(!utm.utm_source){const live=new URLSearchParams(location.search).get('utm_source');if(live)utm.utm_source=live}
+ if(utm.utm_source)fields['UTM source']=utm.utm_source;
+ const intro=(f.dataset.wa)||(window.A88_PAGE&&A88_PAGE.msg)||"Hi Avenue 88, I'd like to chat about my property plans";
+ const msg=intro+'\n'+Object.entries(fields).map(([k,v])=>k+': '+v).join('\n');
+ const url=window.A88_WA_URL?window.A88_WA_URL(msg,ref):('https://wa.me/'+A88_WA+'?text='+encodeURIComponent(msg));
+ window.open(url,'_blank');
  const body=Object.assign({_subject:f.dataset.subject||'New Avenue 88 website lead',_template:'table',_captcha:'false',_honey:''},fields);
  say('Sending...','#555');
  fetch(A88_MAIL,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(body)})
