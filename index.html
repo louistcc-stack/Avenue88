@@ -176,19 +176,66 @@
 <p class="lead">Buying, selling, renting or upgrading? Drop us a message and we'll get back to you soon.</p>
 <p><a class="btn btn-wa" href="https://wa.me/6580830688" target="_blank" rel="noopener">WhatsApp us</a></p>
 </div>
-<form class="enquiry a88-lead" id="enquiry" novalidate>
-<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-<h3>Send us an enquiry</h3>
-<div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required placeholder="Your name"></div>
-<div class="field-row">
-<div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+65"></div>
-<div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@email.com"></div>
+<form class="enquiry lead-flow" id="enquiry" novalidate>
+<input type="text" name="_honey" class="lf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="lf-top">
+<p class="lf-step-label" aria-live="polite">Step <b data-step-n>1</b> of 3</p>
+<div class="lf-bar" aria-hidden="true"><i></i></div>
 </div>
-<div class="field"><label for="f-topic">I'm interested in</label><select id="f-topic" name="topic"><option>Buying a home</option><option>Selling my property</option><option>Renting out / renting</option><option>Upgrading from HDB</option><option>New condo launches</option><option>Something else</option></select></div>
-<div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="4" placeholder="Tell us a little about what you're looking for"></textarea></div>
-<label class="consent"><input type="checkbox" name="consent" required> <span>I agree to Avenue 88 Property contacting me about my enquiry, and to my details being used for that purpose in line with the PDPA.</span></label>
-<button class="btn btn-navy" type="submit">Enquire now</button>
-<p class="form-note" hidden aria-live="polite"></p>
+
+<fieldset class="lf-step is-on" data-step="1">
+<legend>What can we help you with?</legend>
+<div class="lf-tiles lf-goal"><label class="lf-tile"><input type="radio" name="goal" value="buy" required><span><b>Buy a home</b><small>Find and secure the right one</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="sell"><span><b>Sell my home</b><small>Price it right, sell it well</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="upgrade"><span><b>HDB to condo</b><small>Plan the upgrade, step by step</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="launch"><span><b>New launch</b><small>Is this project the one?</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="rent"><span><b>Rent out / rent</b><small>Tenants or a place to stay</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="other"><span><b>Something else</b><small>Ask us anything</small></span></label></div>
+</fieldset>
+
+<fieldset class="lf-step" data-step="2" hidden>
+<legend>A little about your plans</legend>
+<p class="lf-q">When are you hoping to move?</p>
+<div class="lf-tiles lf-when"><label class="lf-tile"><input type="radio" name="timeline" value="Within 3 months" required><span>Within 3 months</span></label><label class="lf-tile"><input type="radio" name="timeline" value="3 to 6 months"><span>3 to 6 months</span></label><label class="lf-tile"><input type="radio" name="timeline" value="6 to 12 months"><span>6 to 12 months</span></label><label class="lf-tile"><input type="radio" name="timeline" value="Just exploring"><span>Just exploring</span></label></div>
+<div class="lf-ctx" data-for="sell upgrade rent">
+<div class="field-row">
+<div class="field"><label for="lf-type">Property type</label><select id="lf-type" name="type"><option value="">Choose one</option><option>HDB</option><option>Condo / EC</option><option>Landed</option></select></div>
+<div class="field"><label for="lf-town">Town or estate</label><input id="lf-town" name="town" placeholder="e.g. Bishan, Clementi" autocomplete="address-level2"></div>
+</div>
+</div>
+<div class="lf-ctx" data-for="buy launch upgrade">
+<div class="field"><label for="lf-budget">Budget for the next home</label><select id="lf-budget" name="budget"><option value="">Not sure yet</option><option>Under S$1M</option><option>S$1M to S$1.5M</option><option>S$1.5M to S$2.5M</option><option>Above S$2.5M</option></select></div>
+</div>
+<div class="field"><label for="lf-msg">Anything we should know? <span class="opt">(optional)</span></label><textarea id="lf-msg" name="message" rows="3" placeholder="e.g. Two kids, want to stay near Rosyth School"></textarea></div>
+</fieldset>
+
+<fieldset class="lf-step" data-step="3" hidden>
+<legend>How should we reach you?</legend>
+<div class="field"><label for="lf-name">Name</label><input id="lf-name" name="name" autocomplete="name" required placeholder="Your name"></div>
+<div class="field-row">
+<div class="field"><label for="lf-phone">Mobile</label><input id="lf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="8xxx xxxx"></div>
+<div class="field"><label for="lf-email">Email <span class="opt">(for a copy)</span></label><input id="lf-email" name="email" type="email" autocomplete="email" placeholder="you@email.com"></div>
+</div>
+<p class="lf-q">Best way to reach you</p>
+<div class="lf-chips"><label class="lf-chip"><input type="radio" name="contactVia" value="WhatsApp" checked><span>WhatsApp</span></label><label class="lf-chip"><input type="radio" name="contactVia" value="Call"><span>Call</span></label><label class="lf-chip"><input type="radio" name="contactVia" value="Email"><span>Email</span></label></div>
+<p class="lf-q">Best time</p>
+<div class="lf-chips"><label class="lf-chip"><input type="radio" name="bestTime" value="Anytime" checked><span>Anytime</span></label><label class="lf-chip"><input type="radio" name="bestTime" value="Morning"><span>Morning</span></label><label class="lf-chip"><input type="radio" name="bestTime" value="Afternoon"><span>Afternoon</span></label><label class="lf-chip"><input type="radio" name="bestTime" value="Evening"><span>Evening</span></label></div>
+<label class="consent"><input type="checkbox" name="consent" required> <span>I agree to Avenue 88 Property (Huttons Asia Pte Ltd) contacting me about my enquiry, and to my details being used for that purpose in line with the PDPA.</span></label>
+</fieldset>
+
+<p class="lf-err" role="alert" hidden></p>
+<div class="lf-nav">
+<button type="button" class="btn btn-light lf-back" hidden>Back</button>
+<button type="button" class="btn btn-navy lf-next">Continue</button>
+<button type="submit" class="btn btn-navy lf-send" hidden>Send my enquiry</button>
+</div>
+
+<div class="lf-done" hidden tabindex="-1">
+<p class="lf-done-eyebrow">Enquiry received</p>
+<h3 class="lf-done-h">Thank you<span data-done-name></span>.</h3>
+<p class="lf-done-lede" data-done-lede></p>
+<ol class="lf-timeline" data-done-steps></ol>
+<div class="lf-done-cta">
+<a class="btn btn-wa" data-done-wa target="_blank" rel="noopener">Start on WhatsApp now</a>
+<a class="btn btn-light" data-done-tool></a>
+</div>
+<p class="lf-done-fine" data-done-fine></p>
+</div>
 </form>
 </div>
 </section>
@@ -205,6 +252,7 @@
 <script src="js/main.js?v=20261121"></script>
 <script src="js/arrival.js" defer></script>
 <script src="js/home-extras.js" defer></script>
+<script src="js/lead.js" defer></script>
 <script src="js/track.js?v=20261121" defer></script>
 <script src="js/home.js?v=20261121b" defer></script>
 <script src="js/next-section.js?v=20261115c" defer></script>
