@@ -68,9 +68,21 @@ def last24(recs):
       "top_towns": dict(C(r["town"] for r in r24 if r.get("town") not in ("-", "", None)).most_common(4)),
       "top_districts": dict(C(r["district"] for r in r24 if r.get("district") not in ("-", "", None)).most_common(4)),
       "latest": max((ym(r["transaction_date"]) for r in r24), default=None) and max(ym(r["transaction_date"]) for r in r24).strftime("%Y-%m")}
-res, team = {}, []
+# Individual deals for the About page search: last 24 months, no names or prices (CEA does not publish them).
+PT = {"HDB": "HDB", "CONDOMINIUM_APARTMENTS": "Condo", "EXECUTIVE_CONDOMINIUM": "EC", "LANDED": "Landed", "STRATA_LANDED": "Landed"}
+KIND = {"RESALE": ("Sale", "Resale"), "NEW SALE": ("Sale", "New sale"), "SUB-SALE": ("Sale", "Sub-sale"),
+        "WHOLE RENTAL": ("Rental", "Whole unit rental"), "ROOM RENTAL": ("Rental", "Room rental")}
+def deal(n, r):
+    t, kind = KIND.get(r["transaction_type"], ("Sale" if "SALE" in r["transaction_type"] else "Rental", r["transaction_type"].title()))
+    town = r.get("town") if r.get("town") not in ("-", "", None) else ""
+    dist = r.get("district") if r.get("district") not in ("-", "", None) else ""
+    return {"agent": n.lower().replace(" ", "-"), "month": ym(r["transaction_date"]).strftime("%Y-%m"),
+            "property_type": PT.get(r["property_type"], r["property_type"].title()), "transaction_type": t, "kind": kind,
+            "represented": (r.get("represented") or "").lower(), "town": town.title(), "district": ("D" + dist) if dist else ""}
+res, team, deals = {}, [], []
 for n, (reg, inc) in AGENTS.items():
     recs = fetch(reg); s = summ(recs); s.update(reg_no=reg, included_in_team=inc); res[n] = s
+    deals += [deal(n, r) for r in recs if WIN24_START <= ym(r["transaction_date"]) <= WIN_END]
     if inc: team += recs
     time.sleep(3)
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
@@ -81,4 +93,10 @@ with open(OUT, "w") as f:
         note="Simple sum; two team agents on the same deal would be counted twice (records carry no deal ID).")},
       f, indent=1)
 print(json.dumps({n: (v["total"], v["since_2017"], v["last_12_months"], v["last_24_months"]["total"], v.get("focus")) for n, v in res.items()}))
-print("wrote", OUT)
+DEALS = os.path.join(os.path.dirname(OUT), "cea_transactions.json")
+deals.sort(key=lambda d: (d["month"], d["agent"]), reverse=True)
+with open(DEALS, "w") as f:
+    json.dump({"last_updated": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
+      "source": "CEA via data.gov.sg dataset " + RES, "from": WIN24_START.strftime("%Y-%m"), "to": WIN_END.strftime("%Y-%m"),
+      "transactions": deals}, f, indent=0)
+print("wrote", OUT, "and", DEALS, len(deals), "deals")

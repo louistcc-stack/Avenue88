@@ -11,6 +11,12 @@
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const dnum = d => parseInt(String(d || '').replace(/\D/g, ''), 10) || 0;
   const region = d => { const n = dnum(d); if (!n) return ''; if (n <= 13 || n === 20) return 'Central'; if (n <= 18) return 'East'; if (n === 19 || n === 28) return 'North-East'; if (n <= 24) return 'West'; return 'North'; };
+  const TOWN_REGION = {'Ang Mo Kio':'North-East','Hougang':'North-East','Punggol':'North-East','Sengkang':'North-East','Serangoon':'North-East',
+    'Bedok':'East','Pasir Ris':'East','Tampines':'East','Bishan':'Central','Bukit Merah':'Central','Bukit Timah':'Central','Central Area':'Central',
+    'Geylang':'Central','Kallang/Whampoa':'Central','Marine Parade':'Central','Queenstown':'Central','Toa Payoh':'Central',
+    'Bukit Batok':'West','Bukit Panjang':'West','Choa Chu Kang':'West','Clementi':'West','Jurong East':'West','Jurong West':'West','Tengah':'West',
+    'Sembawang':'North','Woodlands':'North','Yishun':'North','Lim Chu Kang':'West'};
+  const where = r => region(r.district) || TOWN_REGION[r.town] || '';
   const fmtMonth = m => { const [y, mm] = String(m).split('-'); return (MON[+mm - 1] || '') + ' ' + y; };
   const waLink = a => `${WA}?text=${encodeURIComponent(`Hi, I'd like to speak with ${a.first} from Avenue 88.`)}`;
   const ICON = {
@@ -23,7 +29,7 @@
   const WAI = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm5.5-5.8c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>';
 
   const el = { q: $('#tx-q'), agent: $('#tx-agent'), ptype: $('#tx-ptype'), ttype: $('#tx-ttype'), year: $('#tx-year'),
-    count: $('#tx-count'), list: $('#tx-results'), stats: $('#tx-agents'), reset: $('#tx-reset'), banner: $('#tx-banner'), form: $('#tx-form') };
+    count: $('#tx-count'), list: $('#tx-results'), stats: $('#tx-agents'), reset: $('#tx-reset'), banner: $('.tx-banner'), form: $('#tx-form') };
   let rows = [], example = true, loaded = false, cea = null;
   /* CEA public records, last 24 months (data/stats.json, rebuilt weekly by scripts/update_team_stats.py) */
   const PT = { HDB: 'HDB', CONDOMINIUM_APARTMENTS: 'Condo', EXECUTIVE_CONDOMINIUM: 'EC', LANDED: 'Landed', STRATA_LANDED: 'Landed' };
@@ -75,20 +81,24 @@
     if (!q) return true;
     const m = q.match(/^(?:d|district)\s*(\d{1,2})$/i) || q.match(/^(\d{1,2})$/);
     if (m) return dnum(r.district) === +m[1];
-    const hay = [r.project, r.district, 'district ' + dnum(r.district), region(r.district), r.notes].join(' ').toLowerCase();
+    const hay = [r.project, r.town, r.district, r.district ? 'district ' + dnum(r.district) : '', where(r), r.property_type, r.notes].join(' ').toLowerCase();
     return q.toLowerCase().split(/\s+/).every(w => hay.includes(w));
   }
 
   function card(r) {
     const a = A[r.agent] || { slug: r.agent, name: r.agent, first: r.agent };
-    const chips = [r.property_type, r.district, region(r.district)].filter(Boolean).map(c => `<span>${esc(c)}</span>`).join('');
+    const chips = [r.property_type, r.district, where(r)].filter(Boolean).map(c => `<span>${esc(c)}</span>`).join('');
+    const tag = r.featured ? '<span class="tx-feat">Featured</span>' : r.cea ? '<span class="tx-cea" title="From CEA public records">CEA record</span>' : (example ? '<span class="tx-sample">Sample</span>' : '');
     const price = r.price ? ` · S$${Number(r.price).toLocaleString('en-SG')}` : '';
-    return `<article class="tx-card">
-      <div class="tx-meta">${example ? '<span class="tx-sample">Sample</span>' : ''}${chips}</div>
+    const what = r.kind || r.transaction_type;
+    return `<article class="tx-card${r.featured ? ' is-feat' : ''}${r.featured && r.photo ? ' has-photo' : ''}">
+      ${r.featured && r.photo ? `<div class="tx-photo"><img src="${esc(r.photo)}" alt="${esc(r.project)}" loading="lazy"></div>` : ''}
+      <div class="tx-meta">${tag}${chips}</div>
       <h3>${esc(r.project)}</h3>
-      <p class="tx-line">${esc(fmtMonth(r.month))} · Represented the ${esc(r.represented)}${price}</p>
+      <p class="tx-line">${esc(fmtMonth(r.month))} · ${esc(what)}${r.represented ? ' · Represented the ' + esc(r.represented) : ''}${price}</p>
+      ${r.highlight ? `<p class="tx-hl">${esc(r.highlight)}</p>` : ''}
       ${r.notes ? `<p class="tx-notes">${esc(r.notes)}</p>` : ''}
-      <div class="tx-foot"><span class="tx-agent"><img src="img/team-${esc(a.slug)}.webp?v=20261121b" alt="" width="40" height="40" loading="lazy"><span>${esc(a.name)}</span></span>
+      <div class="tx-foot"><span class="tx-agent"><img src="images/agents/face/${esc(a.slug)}.webp?v=20261121b" alt="" width="40" height="40" loading="lazy"><span>${esc(a.name)}</span></span>
         <a class="btn btn-wa" href="${waLink(a)}" target="_blank" rel="noopener">${WAI}Talk to ${esc(a.first)}</a></div>
     </article>`;
   }
@@ -98,7 +108,7 @@
     const out = rows.filter(r => matchQ(r, f.q) && (!f.agent || r.agent === f.agent) && (!f.type || r.property_type === f.type)
       && (!f.txn || r.transaction_type === f.txn) && (!f.year || r.month.startsWith(f.year)));
     const noun = rows.length === 1 ? 'transaction' : 'transactions';
-    el.count.textContent = `Showing ${out.length} of ${rows.length} ${example ? 'example ' : ''}${noun}` + (f.agent && A[f.agent] ? ` for ${A[f.agent].name}` : '');
+    el.count.textContent = `Showing ${out.length} of ${rows.length} ${example ? 'example ' : ''}${noun}` + (f.agent && A[f.agent] ? ` for ${A[f.agent].name}` : '') + (rows.some(r => r.cea) ? ' (last 24 months)' : '');
     el.list.innerHTML = out.length ? out.map(card).join('') : `<div class="tx-empty"><h3>Nothing matches those filters yet.</h3><p>Try clearing a filter, or WhatsApp us and we'll check our records for you.</p><button type="button" class="btn btn-ghost" data-reset>Clear filters</button></div>`;
     const rb = el.list.querySelector('[data-reset]'); rb && rb.addEventListener('click', reset);
     el.stats.querySelectorAll('.ag-card').forEach(c => { const on = c.dataset.agent === f.agent; c.classList.toggle('active', on); c.querySelector('.ag-view').setAttribute('aria-pressed', on); });
@@ -128,9 +138,13 @@
     if (lead) lead.textContent = 'Each agent\u2019s deals in the last 24 months, from CEA\u2019s public records. Tap an agent to see their deals.';
     if (loaded) agentCards();
   }).catch(() => {});
-  fetch('data/transactions.json', { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(d => {
-    rows = (d.transactions || []).slice().sort((a, b) => b.month.localeCompare(a.month));
+  const getJSON = u => fetch(u, { cache: 'no-cache' }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+  Promise.all([getJSON('data/transactions.json'), getJSON('data/cea_transactions.json').catch(() => null)]).then(([d, c]) => {
     example = d.example !== false;
+    const feat = (d.transactions || []).map(r => example ? r : Object.assign({}, r, { featured: true }));
+    const ceaRows = example ? [] : ((c && c.transactions) || []).filter(r => A[r.agent])
+      .map(r => Object.assign({}, r, { cea: true, project: r.town || (r.district ? 'District ' + dnum(r.district) : 'Singapore') }));
+    rows = feat.sort((a, b) => b.month.localeCompare(a.month)).concat(ceaRows.sort((a, b) => b.month.localeCompare(a.month)));
     if (!example && el.banner) el.banner.hidden = true;
     document.querySelectorAll('[data-example-only]').forEach(n => n.hidden = !example);
     const years = [...new Set(rows.map(r => r.month.slice(0, 4)))].sort().reverse();
