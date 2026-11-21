@@ -10,8 +10,10 @@
 <link rel="icon" href="img/favicon.png">
 <link rel="preload" href="fonts/lato-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css?v=20261115b">
+<link rel="stylesheet" href="css/arrival.css">
+<script>try{if(!sessionStorage.getItem("a88-arrived")&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("arriving")}catch(e){}</script>
 </head>
-<body class="home">
+<body class="home arrival-page">
 <header class="nav">
 <a class="brand" href="index.html"><img src="img/logo-avenue88.png" alt="Avenue 88" width="180" height="40"></a>
 <div class="nav-right">
@@ -20,14 +22,40 @@
 <a class="pill" href="https://wa.me/6580830688" target="_blank" rel="noopener">WhatsApp</a>
 </div>
 </header>
-<section class="hero">
-<img class="poster" src="img/cover-01.webp" alt="" width="1600" height="820">
-<div class="shade"></div>
-<div class="hc">
-<h1>AVENUE<br>88<span>.</span></h1>
-<p>Singapore homes, done right.</p>
-<div class="cta"><a class="btn gold" href="https://wa.me/6580830688" target="_blank" rel="noopener">WhatsApp us</a><a class="btn ghost" href="#team">Meet the team</a></div>
+<div class="arrival" id="arrival" aria-hidden="true">
+<div class="door door-l"></div><div class="door door-r"></div>
+<div class="arrival-in">
+<img class="arrival-logo" src="img/logo-avenue88.png" alt="" width="180" height="40">
+<i class="arrival-line"></i>
+<p class="arrival-greet"><span data-greet>Welcome</span>. Please, come in.</p>
 </div>
+<button class="arrival-skip" type="button" tabindex="-1">Skip</button>
+</div>
+<section class="lobby" id="lobby" aria-label="Welcome">
+<div class="lobby-stage">
+<video class="lobby-video" id="lobby-video" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.webp" aria-label="An Avenue 88 agent opens the door and welcomes you into a Singapore home">
+<source src="assets/video/hero-540.mp4" type="video/mp4" media="(max-width: 900px)">
+<source src="assets/video/hero-1080.mp4" type="video/mp4">
+</video>
+</div>
+<div class="lobby-grade"></div>
+<div class="lobby-frame" aria-hidden="true"></div>
+<div class="lobby-copy">
+<p class="lobby-eyebrow"><span><span data-greet>Welcome</span> · Singapore</span></p>
+<h1>Welcome<br>home<span>.</span></h1>
+<p class="lobby-sub">Seven agents. One standard. Avenue 88.</p>
+</div>
+<div class="concierge" role="group" aria-labelledby="concierge-q">
+<p class="concierge-q" id="concierge-q">How may we help you today?</p>
+<ol class="concierge-list">
+<li><a href="#contact?interest=buy"><small>01</small><b>I'm looking to buy</b><em aria-hidden="true">→</em></a></li>
+<li><a href="sell.html"><small>02</small><b>I'm thinking of selling</b><em aria-hidden="true">→</em></a></li>
+<li><a href="hdb-upgrading.html#calculator"><small>03</small><b>Upgrading from HDB</b><em aria-hidden="true">→</em></a></li>
+<li><a href="launches.html"><small>04</small><b>Exploring new launches</b><em aria-hidden="true">→</em></a></li>
+</ol>
+<a class="concierge-direct" href="https://wa.me/6580830688" target="_blank" rel="noopener">Or speak with us directly <span>WhatsApp +65 8083 0688</span></a>
+</div>
+<button class="lobby-play" id="lobby-play" type="button" aria-pressed="false"><span class="ico" aria-hidden="true"></span><span class="lbl">Pause video</span></button>
 </section>
 <section class="nums">
 <div><b id="stat-value">$500M+</b><span>Value transacted by our agents</span></div>
@@ -170,6 +198,7 @@
 <p class="legal">Huttons Asia Pte Ltd · Licence L3008899K</p>
 </footer>
 <script src="js/main.js?v=20261115b"></script>
+<script src="js/arrival.js" defer></script>
 <script src="js/track.js?v=20261115a" defer></script>
 <script src="js/home.js?v=20261115a" defer></script>
 <script src="js/next-section.js?v=20261115c" defer></script>
