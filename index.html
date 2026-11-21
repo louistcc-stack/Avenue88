@@ -185,18 +185,23 @@
 
 <fieldset class="lf-step is-on" data-step="1">
 <legend>What can we help you with?</legend>
-<div class="lf-tiles lf-goal"><label class="lf-tile"><input type="radio" name="goal" value="buy" required><span><b>Buy a home</b><small>Find and secure the right one</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="sell"><span><b>Sell my home</b><small>Price it right, sell it well</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="upgrade"><span><b>HDB to condo</b><small>Plan the upgrade, step by step</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="launch"><span><b>New launch</b><small>Is this project the one?</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="rent"><span><b>Rent out / rent</b><small>Tenants or a place to stay</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="other"><span><b>Something else</b><small>Ask us anything</small></span></label></div>
+<div class="lf-tiles lf-goal"><label class="lf-tile"><input type="radio" name="goal" value="buy" required><span><b>Buy a home</b><small>HDB, condo or landed</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="sell"><span><b>Sell my home</b><small>HDB, condo or landed</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="upgrade"><span><b>HDB to condo</b><small>Plan the upgrade, step by step</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="launch"><span><b>New launch</b><small>Is this project the one?</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="rent"><span><b>Rent out / rent</b><small>Tenants or a place to stay</small></span></label><label class="lf-tile"><input type="radio" name="goal" value="other"><span><b>Something else</b><small>Ask us anything</small></span></label></div>
 </fieldset>
 
 <fieldset class="lf-step" data-step="2" hidden>
 <legend>A little about your plans</legend>
 <p class="lf-q">When are you hoping to move?</p>
 <div class="lf-tiles lf-when"><label class="lf-tile"><input type="radio" name="timeline" value="Within 3 months" required><span>Within 3 months</span></label><label class="lf-tile"><input type="radio" name="timeline" value="3 to 6 months"><span>3 to 6 months</span></label><label class="lf-tile"><input type="radio" name="timeline" value="6 to 12 months"><span>6 to 12 months</span></label><label class="lf-tile"><input type="radio" name="timeline" value="Just exploring"><span>Just exploring</span></label></div>
-<div class="lf-ctx" data-for="sell upgrade rent">
-<div class="field-row">
-<div class="field"><label for="lf-type">Property type</label><select id="lf-type" name="type"><option value="">Choose one</option><option>HDB</option><option>Condo / EC</option><option>Landed</option></select></div>
-<div class="field"><label for="lf-town">Town or estate</label><input id="lf-town" name="town" placeholder="e.g. Bishan, Clementi" autocomplete="address-level2"></div>
+<div class="lf-ctx" data-for="sell rent">
+<p class="lf-q">What type of property is it?</p>
+<div class="lf-tiles lf-type"><label class="lf-tile lf-tile-sm"><input type="radio" name="type" value="HDB"><span>HDB</span></label><label class="lf-tile lf-tile-sm"><input type="radio" name="type" value="Condo / EC"><span>Condo / EC</span></label><label class="lf-tile lf-tile-sm"><input type="radio" name="type" value="Landed"><span>Landed</span></label></div>
 </div>
+<div class="lf-ctx" data-for="buy">
+<p class="lf-q">What are you looking for?</p>
+<div class="lf-tiles lf-type"><label class="lf-tile lf-tile-sm"><input type="radio" name="type" value="HDB"><span>HDB</span></label><label class="lf-tile lf-tile-sm"><input type="radio" name="type" value="Condo / EC"><span>Condo / EC</span></label><label class="lf-tile lf-tile-sm"><input type="radio" name="type" value="Landed"><span>Landed</span></label><label class="lf-tile lf-tile-sm"><input type="radio" name="type" value="Not sure yet"><span>Not sure yet</span></label></div>
+</div>
+<div class="lf-ctx" data-for="sell rent buy upgrade">
+<div class="field"><label for="lf-town">Town or estate <span class="opt">(optional)</span></label><input id="lf-town" name="town" placeholder="e.g. Bishan, Serangoon Gardens" autocomplete="address-level2"></div>
 </div>
 <div class="lf-ctx" data-for="buy launch upgrade">
 <div class="field"><label for="lf-budget">Budget for the next home</label><select id="lf-budget" name="budget"><option value="">Not sure yet</option><option>Under S$1M</option><option>S$1M to S$1.5M</option><option>S$1.5M to S$2.5M</option><option>Above S$2.5M</option></select></div>
