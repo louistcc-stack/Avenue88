@@ -121,14 +121,16 @@
  const trackHost=document.getElementById('track-row');
  if(trackHost&&Array.isArray(window.A88_TRACK)){
   trackHost.innerHTML=window.A88_TRACK.map(function(card){
-   const photo=card.photo?'<img src="'+esc(card.photo)+'" alt="">':'<div class="tr-ph" aria-hidden="true"></div>';
+   const photo=card.photo?'<img src="'+esc(card.photo)+'" alt="'+esc(card.project)+'" loading="lazy" style="object-position:'+esc(card.focus||'50% 50%')+'">':'<div class="tr-ph" aria-hidden="true"></div>';
    const sample=card.sample?'<span class="tr-sample">Sample, photo coming</span>':'';
    return '<article class="tr-card">'
     +'<div class="tr-photo">'+photo+sample+'<div class="tr-shade"></div>'
-    +'<div class="tr-copy"><p class="tr-sold">Sold</p><p class="tr-badge">'+esc(card.soldLine)+'</p>'
-    +'<h3>'+esc(card.project)+'</h3><p class="tr-place">'+esc(card.place)+'</p>'
+    +'<div class="tr-head"><p class="tr-sold">Sold</p><p class="tr-badge">'+esc(card.soldLine)+'</p></div>'
+    +'<div class="tr-copy"><h3>'+esc(card.project)+'</h3>'
+    +(card.details?'<p class="tr-place">'+esc(card.details)+'</p>':'')
+    +(card.highlight?'<p class="tr-hl">'+esc(card.highlight)+'</p>':'')
     +'<div class="tr-agent"><img src="'+esc(card.headshot)+'" alt=""><span><b>'+esc(card.agent)+'</b><small>CEA '+esc(card.cea)+'</small></span></div>'
-    +'<img class="tr-logo" src="img/logo-avenue88.png" alt="Avenue 88"></div></div></article>';
+    +'</div></div></article>';
   }).join('');
  }
  const revTrack=document.getElementById('rev-track');
