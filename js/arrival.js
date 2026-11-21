@@ -1,4 +1,4 @@
-/* The Arrival: greeting, opening doors, lobby slideshow, parallax and scroll depth. */
+/* The Arrival: greeting, opening doors, lobby film, parallax and scroll depth. */
 (()=>{
 const root=document.documentElement;
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -21,6 +21,7 @@ function finish(){
  if(!root.classList.contains('arriving'))return;
  try{sessionStorage.setItem('a88-arrived','1')}catch(e){}
  arrival.classList.add('open');
+ setTimeout(play,350);
  setTimeout(()=>{root.classList.remove('arriving');arrival.remove()},2000);
 }
 if(root.classList.contains('arriving')&&arrival){
@@ -30,18 +31,20 @@ if(root.classList.contains('arriving')&&arrival){
  addEventListener('keydown',skip,{once:true});
 }else if(arrival){arrival.remove()}
 
-/* Lobby slideshow: slow crossfade between the team photos */
-const imgs=[...lobby.querySelectorAll('.lobby-img')];
-const dots=[...lobby.querySelectorAll('.lobby-dots i')];
-let i=0;
-if(!RM&&imgs.length>1){
- setInterval(()=>{
-  if(document.hidden)return;
-  const prev=imgs[i];i=(i+1)%imgs.length;const next=imgs[i];
-  next.style.animation='none';void next.offsetWidth;next.style.animation='';
-  next.classList.add('is-on');prev.classList.remove('is-on');
-  dots.forEach((d,k)=>d.classList.toggle('on',k===i));
- },8000);
+/* Lobby film: waits for the doors, respects reduced motion, can be paused */
+const video=document.getElementById('lobby-video');
+const playBtn=document.getElementById('lobby-play');
+const setBtn=paused=>{if(!playBtn)return;playBtn.setAttribute('aria-pressed',String(paused));playBtn.querySelector('.lbl').textContent=paused?'Play video':'Pause video'};
+let userPaused=RM;
+function play(){if(!video||userPaused)return;const p=video.play();if(p&&p.catch)p.catch(()=>setBtn(true))}
+if(video){
+ if(RM||root.classList.contains('arriving')){video.removeAttribute('autoplay');video.pause();video.currentTime=0}
+ setBtn(RM);
+ playBtn&&playBtn.addEventListener('click',()=>{
+  if(video.paused){userPaused=false;setBtn(false);play()}else{userPaused=true;video.pause();setBtn(true)}
+ });
+ document.addEventListener('visibilitychange',()=>{document.hidden?video.pause():play()});
+ if(!root.classList.contains('arriving'))play();
 }
 
 if(RM)return;

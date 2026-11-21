@@ -33,9 +33,10 @@
 </div>
 <section class="lobby" id="lobby" aria-label="Welcome">
 <div class="lobby-stage">
-<img class="lobby-img is-on" src="img/cover-03.webp" alt="The Avenue 88 team walking together" width="1600" height="820">
-<img class="lobby-img" src="img/cover-02.webp" alt="" width="1600" height="820" loading="lazy">
-<img class="lobby-img" src="img/cover-01.webp" alt="" width="1600" height="820" loading="lazy">
+<video class="lobby-video" id="lobby-video" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.webp" aria-label="An Avenue 88 agent opens the door and welcomes you into a Singapore home">
+<source src="assets/video/hero-540.mp4" type="video/mp4" media="(max-width: 900px)">
+<source src="assets/video/hero-1080.mp4" type="video/mp4">
+</video>
 </div>
 <div class="lobby-grade"></div>
 <div class="lobby-frame" aria-hidden="true"></div>
@@ -54,7 +55,7 @@
 </ol>
 <a class="concierge-direct" href="https://wa.me/6580830688" target="_blank" rel="noopener">Or speak with us directly <span>WhatsApp +65 8083 0688</span></a>
 </div>
-<div class="lobby-dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+<button class="lobby-play" id="lobby-play" type="button" aria-pressed="false"><span class="ico" aria-hidden="true"></span><span class="lbl">Pause video</span></button>
 </section>
 <section class="nums">
 <div><b id="stat-value">$500M+</b><span>Value transacted by our agents</span></div>
