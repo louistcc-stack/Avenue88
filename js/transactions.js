@@ -39,7 +39,7 @@
         <li><span>Sales / rentals</span><b>${sales} / ${mine.length - sales}</b></li>
         <li><span>Most recent</span><b>${esc(fmtMonth(latest))}</b></li>` : '<li class="none">No transactions listed yet</li>';
       return `<article class="ag-card" data-agent="${a.slug}">
-        <div class="ag-photo"><img src="img/team-${a.slug}.webp" alt="${esc(a.name)}" loading="lazy" width="480" height="632">
+        <div class="ag-photo"><img src="img/team-${a.slug}.webp?v=20261121" alt="${esc(a.name)}" loading="lazy" width="480" height="632">
           <ul class="ag-regions">${regions.map(r => `<li>${esc(r)}</li>`).join('')}</ul>${example ? '<span class="tx-sample">Sample</span>' : ''}</div>
         <div class="ag-body"><h3 class="nm">${esc(a.name)} <span class="cea">CEA ${CEA[a.slug]||""}</span></h3><p class="ag-title">${a.tag}</p>
           <ul class="ag-stats">${stats}</ul>
@@ -70,7 +70,7 @@
       <h3>${esc(r.project)}</h3>
       <p class="tx-line">${esc(fmtMonth(r.month))} · Represented the ${esc(r.represented)}${price}</p>
       ${r.notes ? `<p class="tx-notes">${esc(r.notes)}</p>` : ''}
-      <div class="tx-foot"><span class="tx-agent"><img src="img/team-${esc(a.slug)}.webp" alt="" width="40" height="40" loading="lazy"><span>${esc(a.name)}</span></span>
+      <div class="tx-foot"><span class="tx-agent"><img src="img/team-${esc(a.slug)}.webp?v=20261121" alt="" width="40" height="40" loading="lazy"><span>${esc(a.name)}</span></span>
         <a class="btn btn-wa" href="${waLink(a)}" target="_blank" rel="noopener">${WAI}Talk to ${esc(a.first)}</a></div>
     </article>`;
   }
