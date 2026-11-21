@@ -5,8 +5,8 @@ const A88_NAV=[
  {label:'Projects',page:'launches.html'},
  {label:'Our Socials',page:'index.html',hash:'#watch'},
  {label:'Octa Report',page:'octa-score.html'},
- {label:'Get Valuation',page:'valuation.html'},
- {label:'News',page:'news.html'}
+ {label:'News',page:'news.html'},
+ {label:'Get Valuation',page:'valuation.html'}
 ];
 function a88Page(){const file=(location.pathname.split('/').pop()||'index.html');return file||'index.html'}
 function a88Href(item){return a88Page()==='index.html'&&item.hash?item.hash:item.page+(item.hash||'')}
@@ -17,6 +17,7 @@ function a88Fill(root){
   const a=document.createElement('a');
   a.href=a88Href(item);
   a.textContent=item.label;
+  if(item.page==='valuation.html')a.classList.add('nav-val');
   if(a88Current(item))a.setAttribute('aria-current','page');
   root.append(a);
  });
@@ -24,13 +25,16 @@ function a88Fill(root){
 const btn=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
 const bar=document.querySelector('header.nav');
 if(nav)a88Fill(nav);
+const A88_LICENCE='AVENUE 88 PROPERTY is an independent team under the umbrella of HUTTONS ASIA PTE LTD (CEA Licence No. L3008899K) 3 Bishan Place #05-01 CPF Bishan Building Singapore 579838';
 document.querySelectorAll('footer').forEach(footer=>{
+ let legal=footer.querySelector('.legal');
+ if(!legal){legal=document.createElement('p');legal.className='legal';footer.append(legal)}
+ legal.textContent=A88_LICENCE;
  if(footer.querySelector('.foot-links'))return;
  const links=document.createElement('nav');
  links.className='foot-links';
  links.setAttribute('aria-label','Pages');
  a88Fill(links);
- const legal=footer.querySelector('.legal');
  footer.insertBefore(links,legal);
 });
 function paintNav(){if(bar)bar.classList.toggle('scrolled',window.scrollY>8)}
