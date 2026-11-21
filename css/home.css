@@ -162,3 +162,4 @@
  .lf-type:has(> :nth-child(4)){grid-template-columns:1fr 1fr}
  .lf-tile-sm span{padding:12px 8px;font-size:14px}
 }
+.tr-agent img{object-position:50% 50%}
