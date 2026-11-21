@@ -136,6 +136,13 @@
   c.required=true;
   if(c.hasAttribute('checked')){c.checked=false;c.removeAttribute('checked')}
  });
+ document.querySelectorAll('footer .fl a').forEach(function(a){
+  if(/\+65\s*8083\s*0688|8083\s*0688/.test(a.textContent||'')){
+   a.href='tel:+6580830688';
+   a.removeAttribute('target');
+   a.textContent='+65 8083 0688';
+  }
+ });
  document.querySelectorAll('.js-book').forEach(function(a){
   const url=((cfg.BOOKING_URL)||'').trim();
   if(!url){a.hidden=true;return}

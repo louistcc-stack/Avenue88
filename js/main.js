@@ -111,6 +111,7 @@ document.querySelectorAll('form.a88-lead').forEach(f=>f.addEventListener('submit
  const msg=intro+'\n'+Object.entries(fields).map(([k,v])=>k+': '+v).join('\n');
  const url=window.A88_WA_URL?window.A88_WA_URL(msg,ref):('https://wa.me/'+A88_WA+'?text='+encodeURIComponent(msg));
  window.open(url,'_blank');
+ if(window.A88_TRACK_EVENT)window.A88_TRACK_EVENT('form_submit',{ref:ref,segment:document.body.dataset.segment||''});
  const body=Object.assign({_subject:f.dataset.subject||'New Avenue 88 website lead',_template:'table',_captcha:'false',_honey:''},fields);
  say('Sending...','#555');
  fetch(A88_MAIL,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(body)})
